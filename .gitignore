@@ -1,5 +1,20 @@
-# Prerequisites
-*.d
+# Eclipse-specific files
+.project
+.classpath
+.settings/
+.metadata/
+.cproject
+.externalToolBuilders/
+.launch
+.autotools
+
+# Build and output directories
+bin/
+build/
+tmp/
+*.log
+*.tmp
+*.bak
 
 # Compiled Object files
 *.slo
@@ -30,3 +45,4 @@
 *.exe
 *.out
 *.app
+
