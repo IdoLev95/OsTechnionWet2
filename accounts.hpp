@@ -20,6 +20,7 @@ public:
 	pthread_mutex_t lock_reader;
 	pthread_mutex_t lock_writer;
 	accounts(int Account_id,int Amount,int Password);
+	bool validate_password(int password_entered);
 	virtual ~accounts();
 };
 

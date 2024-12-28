@@ -12,7 +12,7 @@
 #include "Bank.hpp"
 
 using namespace std;
-Bank bank_params;
+extern Bank bank_params;
 
 
 #endif /* GLOBALS_HPP_ */

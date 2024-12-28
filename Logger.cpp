@@ -42,3 +42,24 @@ void Logger::WriteToLogger(string str_to_write) {
         reader_writer_bank_list.writer_unlocker();
     }
 }
+
+
+// EraseLoggerContent: Clears all content in the log file.
+void Logger::EraseLoggerContent() {
+    // Lock for writing since we are modifying the file
+    reader_writer_bank_list.writer_locker(); // Lock for thread-safe write operation
+
+    // Open the log file in **truncate mode** to clear its content
+    std::ofstream log_file(path_to_logger, std::ofstream::out | std::ofstream::trunc);
+
+    if (!log_file.is_open()) {
+        // Throw an exception if the file cannot be opened
+        throw std::runtime_error("Error: Unable to open log file for erasing content.");
+    }
+
+    // Close the file immediately after truncation
+    log_file.close();
+
+    // Unlock after finishing the write operation
+    reader_writer_bank_list.writer_unlocker(); // Unlock the writer lock
+}

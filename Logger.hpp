@@ -21,6 +21,7 @@ public:
 
 	virtual ~Logger();
 	void WriteToLogger(string str_to_write);
+	void EraseLoggerContent();
 };
 
 #endif /* LOGGER_HPP_ */

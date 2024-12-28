@@ -23,3 +23,7 @@ accounts::accounts(int Account_id,int Amount,int Password):reader_writer_user_ac
 accounts::~accounts() {
 }
 
+bool accounts::validate_password(int password_entered)
+{
+	return (password_entered == password)? true: false;
+}

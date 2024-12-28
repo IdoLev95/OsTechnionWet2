@@ -9,7 +9,7 @@
 #include <pthread.h>
 
 #include "ATM.hpp"
-
+#include "globals.hpp"
 using namespace std;
 /*=============================================================================
 * classes/structs declarations
@@ -24,6 +24,10 @@ using namespace std;
 =============================================================================*/
 int main(int argc, char* argv[])
 {
+
+
+
+	bank_params.EraseLoggerContent();
 	const int N = 20;
 	pthread_t atm_threads[N];
     void** pointers = new void*[N]; // Allocate array of void*
@@ -35,11 +39,10 @@ int main(int argc, char* argv[])
 	{
 		pthread_create(&atm_threads[ind], NULL, &single_atm_applier, pointers[ind]);
 	}
-	cout << "ido" << endl;
 	for(int ind =0;ind < N;ind++)
 	{
-		 // Waiting for the created thread to terminate
-		    pthread_join(atm_threads[ind], NULL);
+		// Waiting for the created thread to terminate
+		pthread_join(atm_threads[ind], NULL);
 	}
 	return 0;
 }

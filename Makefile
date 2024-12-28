@@ -3,7 +3,7 @@ CXX = g++
 CXXFLAGS = -std=c++11 -Wall -Werror -pedantic-errors -DNDEBUG -pthread
 
 # Source files
-SRC = bank_main.cpp ATM.cpp Bank.cpp ReaderWriter.cpp accounts.cpp Logger.cpp
+SRC = bank_main.cpp ATM.cpp Bank.cpp ReaderWriter.cpp accounts.cpp Logger.cpp globals.cpp
 # Object files
 OBJ = $(SRC:.cpp=.o)
 # Output executable
