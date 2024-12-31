@@ -21,7 +21,9 @@ int ReaderWriter::reader_locker() {
 	pthread_mutex_lock(&lock_reader);
 	readers++;
 	if (readers == 1)
-	pthread_mutex_lock(&lock_writer);
+	{
+		pthread_mutex_lock(&lock_writer);
+	}
 	pthread_mutex_unlock(&lock_reader);
 	return SUCCEDED_RETURN_VAL;
 }

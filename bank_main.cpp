@@ -25,10 +25,10 @@ using namespace std;
 int main(int argc, char* argv[])
 {
 
-
-
 	bank_params.EraseLoggerContent();
+
 	const int N = 20;
+	bank_params.set_num_atms(N);
 	pthread_t atm_threads[N];
     void** pointers = new void*[N]; // Allocate array of void*
 	for (int i = 0; i < N; ++i) {
