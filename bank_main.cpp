@@ -7,7 +7,7 @@
 #include <cstdio>
 #include <bits/stdc++.h>
 #include <pthread.h>
-
+#include <unistd.h>
 #include "ATM.hpp"
 #include "globals.hpp"
 using namespace std;
@@ -39,6 +39,13 @@ int main(int argc, char* argv[])
 	{
 		pthread_create(&atm_threads[ind], NULL, &single_atm_applier, pointers[ind]);
 	}
+	for(int ind =0;ind <4; ind++){
+		bank_params.print_bank_status();
+		sleep(1);
+	}
+	bank_params.restore_status_from_remember(2);
+	bank_params.print_bank_status();
+
 	for(int ind =0;ind < N;ind++)
 	{
 		// Waiting for the created thread to terminate

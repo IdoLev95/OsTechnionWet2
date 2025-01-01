@@ -16,6 +16,7 @@ using namespace std;
 #include <fstream>
 #include <sstream>
 #include <iostream>
+#include <unistd.h>
 
 void* single_atm_applier(void* argv);
 

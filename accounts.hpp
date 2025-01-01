@@ -29,5 +29,15 @@ public:
 	DepositStatus deposit(int money_to_deposit);
 	virtual ~accounts();
 };
-
+class account_no_locks{
+public:
+	const int password;
+	int account_id;
+	int amount;
+	account_no_locks(int Account_id,int Amount,int Password):password(Password)
+	{
+		account_id = Account_id;
+		amount = Amount;
+	}
+};
 #endif /* ACCOUNTS_HPP_ */

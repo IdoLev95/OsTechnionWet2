@@ -230,6 +230,30 @@ void Bank::close_atm(int target_atm_id,int source_atm_id)
 		logger.WriteToLogger(str_to_log);
 	}
 }
+void Bank::print_bank_status()
+{
+	printf("\033[2J");     // Clear the screen
+	printf("\033[1;1H");   // Move the cursor to row 1, column 1
+	reader_writer_bank_list.reader_locker();
+	for(const auto& pair: bank_accounts)
+	{
+		accounts* account = pair.second;
+		account->reader_writer_user_account.reader_locker();
+	}
+	for(const auto& pair: bank_accounts)
+	{
+		accounts* account = pair.second;
+		string str_to_cout = "‫‪Account‬‬ ‫‪" + to_string(account->account_id) + ":‬‬ ‫‪Balance‬‬ ‫‪-‬‬ " + to_string(account->amount) + " ‫‪$,‬‬ ‫‪Account‬‬ ‫‪Password‬‬ ‫‪-‬‬ " + to_string(account->password);
+		cout << str_to_cout << endl;
+	}
+	insert_status_to_remember();
+	for(const auto& pair: bank_accounts)
+	{
+		accounts* account = pair.second;
+		account->reader_writer_user_account.reader_unlocker();
+	}
+	reader_writer_bank_list.reader_unlocker();
+}
 void Bank::EraseLoggerContent()
 {
 	logger.EraseLoggerContent();
@@ -265,3 +289,103 @@ UserExistanceInBank Bank::IsPasswordCorrect(int account,int Password)
 	return user;
 }
 
+
+// Insert status into the deque with memory management
+void Bank::insert_status_to_remember()
+{
+    // Create a new map with fresh allocations for accounts*
+    map<int, account_no_locks*> new_allocated_status;
+
+    for (const auto& pair : bank_accounts) {
+        int account_id = pair.first;
+        accounts* old_account = pair.second;
+
+        // Allocate a new account with copied data
+        account_no_locks* new_account = new account_no_locks(
+            old_account->account_id, // Copy ID
+            old_account->amount,    // Copy balance
+            old_account->password   // Copy password
+        );
+
+        // Insert the new account into the map
+        new_allocated_status[account_id] = new_account;
+    }
+
+    // Push the newly allocated status into the deque
+    status_to_remeber.push_front(new_allocated_status);
+
+    // Check if deque size exceeds 120
+    if (status_to_remeber.size() > 120) {
+        // Get the oldest status (back of the deque)
+        map<int, account_no_locks*> old_status = status_to_remeber.back();
+
+        // De lete all dynamically allocated accounts in the old status
+        for (auto& pair : old_status) {
+            delete pair.second; // Free memory for each account
+        }
+
+        // Remove the oldest status from the deque
+        status_to_remeber.pop_back();
+    }
+}
+void Bank::restore_status_from_remember(int ind)
+{
+    // Bounds check for valid index
+    if (ind < 0 || ind >= static_cast<int>(status_to_remeber.size())) {
+        cerr << "Index out of bounds!" << endl;
+        return;
+    }
+
+    // Lock the bank accounts for safe modification
+    reader_writer_bank_list.writer_locker();
+
+    // Get the target status from the deque at position [ind]
+    map<int, account_no_locks*> target_status = status_to_remeber[ind];
+
+    // Step 1: Process existing accounts in bank_accounts
+    for (auto it = bank_accounts.begin(); it != bank_accounts.end(); ) {
+        int account_id = it->first;
+        accounts* account = it->second;
+        account->reader_writer_user_account.writer_locker();
+        // Check if the account exists in the target status
+        if (target_status.find(account_id) != target_status.end()) {
+
+            // Account exists in target, update its data
+            account_no_locks* target_account = target_status[account_id];
+            account->amount = target_account->amount;         // Update balance
+            account->reader_writer_user_account.writer_unlocker();
+            // Password and ID are constant, no need to update
+            ++it; // Move to the next element
+        } else {
+            // Account does not exist in target, delete it
+
+
+            it = bank_accounts.erase(it); // Remove from the map
+            account->reader_writer_user_account.writer_unlocker();
+            delete account;               // Free memory
+        }
+    }
+
+    // Step 2: Add new accounts from target_status that are not in bank_accounts
+    for (const auto& target_pair : target_status) {
+        int target_id = target_pair.first;
+
+        // If the account does not exist in bank_accounts, create a new one
+        if (bank_accounts.find(target_id) == bank_accounts.end()) {
+            account_no_locks* target_account = target_pair.second;
+
+            // Create a new accounts object using target_account data
+            accounts* new_account = new accounts(
+                target_account->account_id,   // ID
+                target_account->amount,      // Balance
+                target_account->password     // Password
+            );
+
+            // Insert the new account into bank_accounts
+            bank_accounts[target_id] = new_account;
+        }
+    }
+
+    // Unlock the bank accounts after modification
+    reader_writer_bank_list.writer_unlocker();
+}
