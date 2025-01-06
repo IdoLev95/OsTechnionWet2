@@ -3,15 +3,15 @@
 Error 0: Your transaction failed – account with the same id exists
 0: Account 101 new balance is 1099 after 99 $ was deposited
 Error 0: Your transaction failed – password for account id 101 is incorrect
-Error 0: Your transaction failed – account id 100 balance is lower than 1200
+Error 0: Your transaction failed – password for account id 100 is incorrect
 0: Account 101 new balance is 900 after 100 $ was withdrawn
 0: Account 101 balance is 900
-0: Transfer 100 from account 101 to account 100 new account balance is 800 new target account balance is 1100
-0: Account 101 balance is 800
-0: Account 100 balance is 1100
-0: Account 101 is now closed. Balance was 800
+Error 0: Your transaction failed – password for account id 101 is incorrect
+0: Account 101 balance is 900
+Error 0: Your transaction failed – password for account id 100 is incorrec
+0: Account 101 is now closed. Balance was 900
 Error 0: Your transaction failed – password for account id 100 is incorrect
-0: Account 100 is now closed. Balance was 1100
+Error 0: Your transaction failed – password for account id 100 is incorrect
 ‫‪Bank:‬‬ ‫‪ATM‬‬ ‫‪0 ‫‪closed‬‬ ‫‪1 ‫‪successfully‬‬
 ‫‪Error‬‬ 0:‬‬ ‫‪Your‬‬ ‫‪close‬‬ ‫‪operation‬‬ ‫‪failed‬‬ ‫–‬ ‫‪ATM‬‬ ‫‪ID‬‬ 1 ‫‪is‬‬ ‫‪already‬‬ ‫‪in‬‬ ‫‪a‬‬ ‫‪closed‬‬ state
 Error 0: Your transaction failed – ATM ID 32 does not exist

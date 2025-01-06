@@ -5,6 +5,10 @@
  *      Author: os
  */
 #include "globals.hpp"
+#include "Consumer_Producer.hpp"
+
+
+
 Bank bank_params (*(new pthread_mutex_t()),  // Placeholder mutex initialization
 	    *(new pthread_mutex_t()),  // Placeholder mutex initialization
 	    "bank_log.txt",            // Example log file path
@@ -16,4 +20,6 @@ Bank bank_params (*(new pthread_mutex_t()),  // Placeholder mutex initialization
 		);
 
 
+std::list<std::string> VIP_jobs[100]; // List of VIP jobs
 
+consumer_producer cp; // Consumer producer object

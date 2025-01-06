@@ -10,9 +10,16 @@
 
 
 #include "Bank.hpp"
+#include <list>
+#include <string>
 
 using namespace std;
+
+class consumer_producer; // Forward declaration
+
 extern Bank bank_params;
+extern std::list<std::string> VIP_jobs[100];
+extern consumer_producer cp;
 
 
 #endif /* GLOBALS_HPP_ */
