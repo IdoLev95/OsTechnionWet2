@@ -10,6 +10,8 @@
 
 #include "ATM.hpp"
 #include "globals.hpp"
+#include "vipATM.hpp"
+#include "Consumer_Producer.hpp"
 using namespace std;
 /*=============================================================================
 * classes/structs declarations
@@ -28,7 +30,7 @@ int main(int argc, char* argv[])
 
 
 	bank_params.EraseLoggerContent();
-	const int N = 20;
+	/*const int N = 20;
 	pthread_t atm_threads[N];
     void** pointers = new void*[N]; // Allocate array of void*
 	for (int i = 0; i < N; ++i) {
@@ -43,6 +45,22 @@ int main(int argc, char* argv[])
 	{
 		// Waiting for the created thread to terminate
 		pthread_join(atm_threads[ind], NULL);
+	}
+	*/
+	const int VIP_N = 100;
+	pthread_t vip_threads[VIP_N];
+	//void** vip_pointers = new void*[VIP_N]; // Allocate array of void*
+	for (int i = 0; i < VIP_N; ++i) {
+		string* value = new string(to_string(i)); // Create an int with value i
+		cp.producer(*value, i+1);
+	}
+	for (int i = 0; i<VIP_N; ++i) {
+		pthread_create(&vip_threads[i], NULL, &vip_atm_applier, NULL);
+
+		}
+	for(int ind =0;ind < VIP_N;ind++){
+		// Waiting for the created thread to terminate
+		pthread_join(vip_threads[ind], NULL);
 	}
 	return 0;
 }

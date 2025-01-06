@@ -1,12 +1,6 @@
-/*
- * ATM.hpp
- *
- *  Created on: Dec 22, 2024
- *      Author: os
- */
+#ifndef VIP_ATM_HPP
+#define VIP_ATM_HPP
 
-#ifndef ATM_HPP_
-#define ATM_HPP_
 using namespace std;
 #include <stdlib.h>
 #include <cstdio>
@@ -16,9 +10,12 @@ using namespace std;
 #include <fstream>
 #include <sstream>
 #include <iostream>
+#include "Consumer_Producer.hpp"
 
 
-void* single_atm_applier(void* argv);
+
+
+void* vip_atm_applier(void* argv);
 
 
 
