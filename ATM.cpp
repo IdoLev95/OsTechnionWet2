@@ -6,7 +6,7 @@ void* single_atm_applier(void* argv){
 	int atm_id = 0; // TODO - needs to change
     // Cast the argument to a string pointer
     string* path_to_read_actions = static_cast<string*>(argv);
-	consumer_producer cp;
+	//consumer_producer cp;
     // Open the file
     ifstream input_file(*path_to_read_actions);
 
@@ -26,12 +26,10 @@ void* single_atm_applier(void* argv){
     		bank_params.reader_writer_atm_active_list.reader_unlocker();
 			// Process each line
 			//cout << "Processing: " << line << endl;
-
 			// Split the line into tokens (assuming space-separated values)
 			std::stringstream ss(line);
 			std::string command;
 			ss >> command; // Read the command name (first token)
-
 			// Example: Process different commands based on the first token
 			if (command == "O") {
 				int account_id, password, initial_balance;
@@ -145,8 +143,8 @@ void* single_atm_applier(void* argv){
     	else{
     		bank_params.reader_writer_atm_active_list.reader_unlocker();
     	}
-    	sleep(1);
-    	sleep(0.1);
+    	//sleep(1);
+    	//sleep(0.1);
     }
 	
 
@@ -165,15 +163,15 @@ void* single_atm_applier(void* argv){
 
 
 int is_vip_atm(stringstream& SS){
-	string command;
-	SS >> command;
-	string vip_command;
-	SS >> vip_command;
-	if (vip_command.substr(0, 4) == "VIP=") {
+	string vip_priority;
+	SS >> vip_priority;
+	cout<<"is vip atm command is :"<<vip_priority<<endl;
+	//cout<<"is vip atm SS is :"<<SS.str()<<endl;
+	if (vip_priority.substr(0, 4) == "VIP=") {
 		int number;
 		try {
-			number = stoi(vip_command.substr(4));
-			//cout << "VIP=" << number << endl;
+			number = stoi(vip_priority.substr(4));
+			cout << "VIP=" << number << endl;
 		} catch (const invalid_argument& e) {
 		//cout << "Invalid VIP number" << endl;
 		}

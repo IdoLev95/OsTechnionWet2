@@ -45,9 +45,9 @@ int main(int argc, char* argv[])
 		bank_params.print_bank_status();
 		sleep(1);
 	}
-	bank_params.restore_status_from_remember(2);
+	/*bank_params.restore_status_from_remember(2);
 	bank_params.print_bank_status();
-
+*/
 	for(int ind =0;ind < N;ind++)
 	{
 		// Waiting for the created thread to terminate
@@ -56,18 +56,19 @@ int main(int argc, char* argv[])
 	const int VIP_N = 10;
 	pthread_t vip_threads[VIP_N];
 	//void** vip_pointers = new void*[VIP_N]; // Allocate array of void*
-	for (int i = 0; i < VIP_N; ++i) {
+	/*for (int i = 0; i < VIP_N; ++i) {
 		string* value = new string(to_string(i)); // Create an int with value i
 		cp.producer(*value, i+1);
-	}
+	}*/
 	for (int i = 0; i<VIP_N; ++i) {
 		pthread_create(&vip_threads[i], NULL, &vip_atm_applier, NULL);
 
-		}
+	}
+	/*sleep(100);
 	for(int ind =0;ind < VIP_N;ind++){
 		// Waiting for the created thread to terminate
 		pthread_join(vip_threads[ind], NULL);
-	}
+	}*/
 	return 0;
 }
 

@@ -2,6 +2,7 @@
 
 void* vip_atm_applier(void* argv){
     std::string line = cp.consumer();
+	cout << line << endl;
     int atm_id = 0; // TODO - needs to change
     std::istringstream ss (line);
     std::string command;
@@ -58,7 +59,7 @@ void* vip_atm_applier(void* argv){
 				bank_params.close_atm(dst_atm_id,atm_id);
 			}
 			else {
-				cout << "Unknown command: " << command << endl;
+				cout << "Unknown command from vip atm: " << command << endl;
 			}    	    
     // Exit the thread successfully
     pthread_exit(NULL);

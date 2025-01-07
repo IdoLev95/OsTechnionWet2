@@ -16,7 +16,7 @@ consumer_producer::~consumer_producer(){
 }
 
 std::string consumer_producer::consumer(){
-     std::string job = "";
+    std::string job = "";
     pthread_mutex_lock(&lock);
     while(production == 0){
         pthread_mutex_unlock(&lock);

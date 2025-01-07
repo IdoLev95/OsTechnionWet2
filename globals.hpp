@@ -12,6 +12,7 @@
 #include "Bank.hpp"
 #include <list>
 #include <string>
+#include "Consumer_Producer.hpp"
 
 using namespace std;
 
