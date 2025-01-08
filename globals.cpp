@@ -23,3 +23,4 @@ Bank bank_params (*(new pthread_mutex_t()),  // Placeholder mutex initialization
 std::list<std::string> VIP_jobs[100]; // List of VIP jobs
 
 consumer_producer cp; // Consumer producer object
+bool isNeededToFinishVipThreads = false;

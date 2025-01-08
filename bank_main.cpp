@@ -64,6 +64,8 @@ int main(int argc, char* argv[])
 		pthread_create(&vip_threads[i], NULL, &vip_atm_applier, NULL);
 
 		}
+	sleep(2);
+	isNeededToFinishVipThreads = true;
 	for(int ind =0;ind < VIP_N;ind++){
 		// Waiting for the created thread to terminate
 		pthread_join(vip_threads[ind], NULL);

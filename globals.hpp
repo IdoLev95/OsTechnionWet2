@@ -20,6 +20,6 @@ class consumer_producer; // Forward declaration
 extern Bank bank_params;
 extern std::list<std::string> VIP_jobs[100];
 extern consumer_producer cp;
-
+extern bool isNeededToFinishVipThreads;
 
 #endif /* GLOBALS_HPP_ */

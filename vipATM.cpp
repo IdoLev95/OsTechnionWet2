@@ -59,7 +59,7 @@ void* vip_atm_applier(void* argv){
 			}
 			else {
 				cout << "Unknown command: " << command << endl;
-			}    	    
+			}
     // Exit the thread successfully
     pthread_exit(NULL);
     }

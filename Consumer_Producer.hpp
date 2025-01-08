@@ -9,7 +9,7 @@ class consumer_producer{
     private:
     pthread_mutex_t lock;
     int production;
-
+    pthread_cond_t full;
     public:
     consumer_producer();
     virtual ~consumer_producer();
