@@ -14,6 +14,7 @@ class consumer_producer{
     consumer_producer();
     virtual ~consumer_producer();
     std::string consumer();
+    void send_bc_to_cv();
     void producer(const std::string& str , int priority);
 };
 #endif

@@ -17,6 +17,9 @@ using namespace std;
 #include <sstream>
 #include <iostream>
 #include <unistd.h>
+#include "Consumer_Producer.hpp"
+#include <stdbool.h>
+
 
 void* single_atm_applier(void* argv);
 

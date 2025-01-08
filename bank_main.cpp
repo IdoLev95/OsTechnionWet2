@@ -46,18 +46,12 @@ int main(int argc, char* argv[])
 	const int VIP_N = 10;
 	pthread_t vip_threads[VIP_N];
 
-	for (int i = 0; i < VIP_N; ++i) {
-		string* value = new string(to_string(i)); // Create an int with value i
-		cp.producer(*value, i+1);
-	}
 	//void** vip_pointers = new void*[VIP_N]; // Allocate array of void*
 	for (int i = 0; i<VIP_N; ++i) {
 		pthread_create(&vip_threads[i], NULL, &vip_atm_applier, NULL);
 
 	}
 
-	//bank_params.restore_status_from_remember(2);
-	//bank_params.print_bank_status();
 	int counter_for_tax_collection = 0;
 	while(IsExistingWorkingAtm())
 	{
@@ -77,6 +71,7 @@ int main(int argc, char* argv[])
 		pthread_join(atm_threads[ind], NULL);
 	}
 	isNeededToFinishVipThreads = true;
+	cp.send_bc_to_cv();
 	for(int ind =0;ind < VIP_N;ind++){
 		// Waiting for the created thread to terminate
 		pthread_join(vip_threads[ind], NULL);

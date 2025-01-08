@@ -19,7 +19,7 @@
 #include <list>
 #include <algorithm>  // For std::max_element
 #include <cstdlib>   // For rand() and srand()
-
+#include <unistd.h>
 using namespace std;
 enum UserExistanceInBank
 {
@@ -53,13 +53,13 @@ public:
 			   int num_init_atms);
 	virtual ~Bank();
 	void set_num_atms(int num_atms);
-	void insert_new_account(int Account,int Amount, int Password,int Atm_id);
-	void deposit(int Account,int Amount, int Password,int Atm_id);
-	void withdraw(int Account,int Amount, int Password,int Atm_id);
-	void close_existing_account(int Account,int Password,int Atm_id);
-	void get_balance(int Account,int Password,int Atm_id);
-	void transfer_money_between_accounts(int src_id_account,int src_password,int target_id_account,int amount,int Atm_id);
-	void close_atm(int target_atm_id,int source_atm_id,bool is_write_to_log =true);
+	void insert_new_account(int Account,int Amount, int Password,int Atm_id,bool PERSISTENT_flag);
+	void deposit(int Account,int Amount, int Password,int Atm_id,bool PERSISTENT_flag);
+	void withdraw(int Account,int Amount, int Password,int Atm_id,bool PERSISTENT_flag);
+	void close_existing_account(int Account,int Password,int Atm_id,bool PERSISTENT_flag);
+	void get_balance(int Account,int Password,int Atm_id,bool PERSISTENT_flag);
+	void transfer_money_between_accounts(int src_id_account,int src_password,int target_id_account,int amount,int Atm_id,bool PERSISTENT_flag);
+	void close_atm(int target_atm_id,int source_atm_id,bool PERSISTENT_flag,bool is_write_to_log =true);
 	void print_bank_status();
 	void EraseLoggerContent();
 	void insert_status_to_remember();

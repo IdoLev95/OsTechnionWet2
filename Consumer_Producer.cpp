@@ -57,6 +57,9 @@ void consumer_producer::producer(const std::string& str , int priority){
         pthread_mutex_unlock(&lock);
 
 }
+void consumer_producer::send_bc_to_cv(){
+	pthread_cond_broadcast(&full);
+}
 /*
 std::string consumer_producer::consumer(){
      std::string job = "";
