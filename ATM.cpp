@@ -4,10 +4,8 @@ int is_vip_atm(stringstream& SS);
 
 void* single_atm_applier(void* argv){
 	int atm_id = *((int*)argv);
-	cout << atm_id << endl;
     // Cast the argument to a string pointer
 	string* path_to_read_actions = new string("ATM_file" + to_string(atm_id) + ".txt");
-
 
 	//string* path_to_read_actions = string("ATM_file"+to_string(atm_id)+".txt"); // Create an int with value i
     //string* path_to_read_actions = static_cast<string*>(argv);
@@ -26,10 +24,13 @@ void* single_atm_applier(void* argv){
     std::string line;
     sleep(0.1);
     while (getline(input_file, line)) {
+
+    	//bank_params.logger.WriteToLogger(line);
 		int priority = 0;
     	bank_params.reader_writer_atm_active_list.reader_locker();
     	if(bank_params.isAtmActive[atm_id]){
     		bank_params.reader_writer_atm_active_list.reader_unlocker();
+
 			// Process each line
 			//cout << "Processing: " << line << endl;
 
@@ -49,6 +50,7 @@ void* single_atm_applier(void* argv){
 					cp.producer(vipss,priority);
 				}	
 				else{
+
 				bank_params.insert_new_account(account_id, initial_balance, password, atm_id);
 				}
 			
@@ -165,7 +167,8 @@ void* single_atm_applier(void* argv){
     	else{
     		bank_params.reader_writer_atm_active_list.reader_unlocker();
     	}
-    	sleep(1);
+
+    	//sleep(1);
     	sleep(0.1);
     }
 	

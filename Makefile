@@ -1,6 +1,6 @@
 # Compiler and flags
 CXX = g++
-CXXFLAGS = -std=c++11 -Wall -Werror -pedantic-errors -DNDEBUG -pthread
+CXXFLAGS = -std=c++11 -Wall -Werror -pedantic-errors -DNDEBUG -pthread -g
 
 # Source files
 SRC = bank_main.cpp ATM.cpp Bank.cpp ReaderWriter.cpp accounts.cpp Logger.cpp globals.cpp vipATM.cpp Consumer_Producer.cpp

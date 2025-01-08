@@ -16,7 +16,9 @@ public:
  	pthread_mutex_t lock_reader;
 	pthread_mutex_t lock_writer;
 	int readers;
-	ReaderWriter(pthread_mutex_t Lock_reader, pthread_mutex_t Lock_writer);
+	ReaderWriter(pthread_mutex_t lock_reader,pthread_mutex_t lock_writer);
+	ReaderWriter();
+	void SetLocks(pthread_mutex_t lock_reader,pthread_mutex_t lock_writer);
 	virtual ~ReaderWriter();
 	int reader_locker();
 	int reader_unlocker();

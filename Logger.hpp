@@ -14,9 +14,10 @@
 #include <pthread.h>
 class Logger {
 private:
-	ReaderWriter reader_writer_bank_list;
+
 	string path_to_logger;
 public:
+	ReaderWriter reader_writer_logger;
 	Logger(string Path_to_logger,pthread_mutex_t mutex_lock_write,pthread_mutex_t mutex_lock_read);
 
 	virtual ~Logger();

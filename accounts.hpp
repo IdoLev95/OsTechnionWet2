@@ -22,8 +22,8 @@ public:
 	int amount;
 
 
-	pthread_mutex_t lock_reader;
-	pthread_mutex_t lock_writer;
+	pthread_mutex_t* lock_reader;
+	pthread_mutex_t* lock_writer;
 	accounts(int Account_id,int Amount,int Password);
 	bool validate_password(int password_entered);
 	DepositStatus deposit(int money_to_deposit);

@@ -24,6 +24,7 @@ reader_writer_restore_req_list(mutex_lock_restore_req_list_read,mutex_lock_resto
 {
 	numInitAtms = num_init_atms;
 	isAtmActive = NULL;
+	srand(static_cast<unsigned int>(time(0)));
 }
 
 Bank::~Bank() {
@@ -49,15 +50,23 @@ void Bank::insert_new_account(int Account,int Amount,int Password,int Atm_id)
 		new_account->reader_writer_user_account.reader_locker();
 
 		bank_accounts[Account] = new_account;
-		reader_writer_bank_list.writer_unlocker();
+
 		str_to_logger = std::to_string(Atm_id) + ": New account id is " + std::to_string(Account) + " with password " + to_string(Password) + " and initial balance " + to_string(Amount);
-		new_account->reader_writer_user_account.reader_unlocker();
+		//cout <<"Here" << endl;
 		logger.WriteToLogger(str_to_logger);
+
+		logger.reader_writer_logger.writer_unlocker();
+		//cout << "Error?" << endl;
+		new_account->reader_writer_user_account.reader_unlocker();
+		reader_writer_bank_list.writer_unlocker();
 	}
 	else{
-		reader_writer_bank_list.writer_unlocker();
+
 		str_to_logger = "Error " + to_string(Atm_id) + ": Your transaction failed – account with the same id exists";
 		logger.WriteToLogger(str_to_logger);
+		logger.reader_writer_logger.writer_unlocker();
+		//cout << "Error?" << endl;
+		reader_writer_bank_list.writer_unlocker();
 	}
 }
 void Bank::close_existing_account(int Account,int Password,int Atm_id)
@@ -88,7 +97,7 @@ void Bank::close_existing_account(int Account,int Password,int Atm_id)
 	}
 	else if(user_res == NotExist)
 	{
-		reader_writer_bank_list.reader_unlocker();
+		reader_writer_bank_list.writer_unlocker();
 		PrintNotExistingUesr(Account,Atm_id);
 	}
 
@@ -273,6 +282,7 @@ void Bank::print_bank_status()
 {
 	printf("\033[2J");     // Clear the screen
 	printf("\033[1;1H");   // Move the cursor to row 1, column 1
+	printf("‫‪Current‬‬ ‫‪Bank‬‬ ‫‪Status‬‬\n");
 	reader_writer_bank_list.reader_locker();
 	for(const auto& pair: bank_accounts)
 	{
@@ -369,7 +379,21 @@ void Bank::insert_status_to_remember()
 }
 void Bank::collect_texas_from_all()
 {
-	cout << "Tex not implemented yet" << endl;
+	int commisionPercent =1+  (rand() % 5);
+	reader_writer_bank_list.reader_locker();
+	for(auto& pair:bank_accounts)
+	{
+		accounts* curr_account = pair.second;
+		curr_account->reader_writer_user_account.writer_locker();
+		int value_for_bank = (commisionPercent * curr_account->amount) / 100;
+
+		// Cast result to int (truncating the decimal part)
+		curr_account->amount -= value_for_bank;
+		string str_to_logger = "‫‪Bank:‬‬ ‫‪commissions‬‬ ‫‪of‬‬ ‫‪" + to_string(commisionPercent) + " %‬‬ ‫‪were‬‬ ‫‪charged,‬‬ ‫‪bank‬‬ ‫‪gained‬‬ " +to_string(value_for_bank) + " ‫‪from‬‬ ‫‪account‬‬ ‫‪" +to_string(curr_account->account_id);
+		logger.WriteToLogger(str_to_logger);
+		curr_account->reader_writer_user_account.writer_unlocker();
+	}
+	reader_writer_bank_list.reader_unlocker();
 }
 void Bank::check_and_apply_restore()
 {
@@ -451,7 +475,7 @@ void Bank::restore_status_from_remember(int ind)
             bank_accounts[target_id] = new_account;
         }
     }
-
+    //"‫‪<ATM‬‬ ‫‪ID>:‬‬ ‫‪Rollback‬‬ ‫‪to‬‬ ‫>‪<iterations‬‬ ‫‪bank‬‬ ‫‪iterations‬‬ ‫‪ago‬‬ ‫‪was‬‬ ‫‪completed‬‬ ‫‪successfully‬‬"
     // Unlock the bank accounts after modification
     reader_writer_bank_list.writer_unlocker();
 }

@@ -3,7 +3,7 @@
 
 // Constructor implementation
 Logger::Logger(string Path_to_logger,pthread_mutex_t mutex_lock_write,pthread_mutex_t mutex_lock_read)
-: reader_writer_bank_list(mutex_lock_read,mutex_lock_write) {
+: reader_writer_logger(mutex_lock_read,mutex_lock_write) {
     // Initialize mutex for thread safety
     if (pthread_mutex_init(&mutex_lock_write, nullptr) != 0) {
         throw std::runtime_error("Mutex initialization failed");
@@ -21,12 +21,16 @@ Logger::~Logger() {
 // WriteToLogger implementation
 void Logger::WriteToLogger(string str_to_write) {
     try {
-        // Acquire writer lock
-        reader_writer_bank_list.writer_locker();
+//        cout << "here" << endl;
+    	// Acquire writer lock
+        reader_writer_logger.writer_locker();
 
         // Open log file
         std::ofstream log_file(path_to_logger, std::ios::app);
         if (!log_file.is_open()) {
+        	reader_writer_logger.writer_unlocker();
+        	cout<<"There is an error"<<endl;
+
             throw std::runtime_error("Failed to open log file");
         }
 
@@ -35,19 +39,22 @@ void Logger::WriteToLogger(string str_to_write) {
 
         // Close file and release lock
         log_file.close();
-        reader_writer_bank_list.writer_unlocker();
+        reader_writer_logger.writer_unlocker();
     }
     catch (const std::exception& e) {
-        std::cerr << "Error writing to log: " << e.what() << std::endl;
-        reader_writer_bank_list.writer_unlocker();
+    	reader_writer_logger.writer_unlocker();
+    	std::cerr << "Error writing to log: " << e.what() << std::endl;
+
     }
+    reader_writer_logger.writer_unlocker();
+  //  cout << "wow" << endl;
 }
 
 
 // EraseLoggerContent: Clears all content in the log file.
 void Logger::EraseLoggerContent() {
     // Lock for writing since we are modifying the file
-    reader_writer_bank_list.writer_locker(); // Lock for thread-safe write operation
+    reader_writer_logger.writer_locker(); // Lock for thread-safe write operation
 
     // Open the log file in **truncate mode** to clear its content
     std::ofstream log_file(path_to_logger, std::ofstream::out | std::ofstream::trunc);
@@ -61,5 +68,5 @@ void Logger::EraseLoggerContent() {
     log_file.close();
 
     // Unlock after finishing the write operation
-    reader_writer_bank_list.writer_unlocker(); // Unlock the writer lock
+    reader_writer_logger.writer_unlocker(); // Unlock the writer lock
 }

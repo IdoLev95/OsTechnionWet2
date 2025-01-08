@@ -11,8 +11,18 @@ ReaderWriter::ReaderWriter(pthread_mutex_t Lock_reader, pthread_mutex_t Lock_wri
 	lock_reader = Lock_reader;
 	lock_writer = Lock_writer;
 	readers = 0;
+	pthread_mutex_unlock(&lock_reader);
+	pthread_mutex_unlock(&lock_writer);
 }
-
+ReaderWriter::ReaderWriter()
+{
+	readers = 0;
+}
+void ReaderWriter::SetLocks(pthread_mutex_t Lock_reader,pthread_mutex_t Lock_writer)
+{
+	lock_reader = Lock_reader;
+	lock_writer = Lock_writer;
+}
 ReaderWriter::~ReaderWriter() {
 	// TODO Auto-generated destructor stub
 }

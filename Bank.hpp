@@ -18,7 +18,7 @@
 #include <deque>
 #include <list>
 #include <algorithm>  // For std::max_element
-
+#include <cstdlib>   // For rand() and srand()
 
 using namespace std;
 enum UserExistanceInBank
@@ -29,9 +29,10 @@ enum UserExistanceInBank
 };
 
 class Bank {
-	private:
-	Logger logger;
+	//private:
+
 public:
+	Logger logger;
 	map<int,accounts*> bank_accounts;
 	ReaderWriter reader_writer_bank_list;
 	ReaderWriter reader_writer_atm_active_list;
