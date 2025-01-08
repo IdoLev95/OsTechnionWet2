@@ -16,6 +16,9 @@
 #include <string> // Required for std::string and std::to_string
 #include <pthread.h>
 #include <deque>
+#include <list>
+#include <algorithm>  // For std::max_element
+
 
 using namespace std;
 enum UserExistanceInBank
@@ -35,6 +38,8 @@ public:
 	int numInitAtms;
 	bool* isAtmActive;
 	deque<map<int,account_no_locks*>> status_to_remeber;
+	ReaderWriter reader_writer_restore_req_list;
+	list<int> restore_indices;  // List to hold the integers
 	Bank(pthread_mutex_t& Lock_bank_list_reader,
 	           pthread_mutex_t& Lock_bank_list_writer,
 	           string Path_to_logger,
@@ -42,6 +47,8 @@ public:
 	           pthread_mutex_t& mutex_lock_logger_read,
 			   pthread_mutex_t& mutex_lock_atms_active_write,
 			   pthread_mutex_t& mutex_lock_atms_active_read,
+			   pthread_mutex_t& mutex_lock_restore_req_list_write,
+			   pthread_mutex_t& mutex_lock_restore_req_list_read,
 			   int num_init_atms);
 	virtual ~Bank();
 	void set_num_atms(int num_atms);
@@ -51,12 +58,16 @@ public:
 	void close_existing_account(int Account,int Password,int Atm_id);
 	void get_balance(int Account,int Password,int Atm_id);
 	void transfer_money_between_accounts(int src_id_account,int src_password,int target_id_account,int amount,int Atm_id);
-	void close_atm(int target_atm_id,int source_atm_id);
+	void close_atm(int target_atm_id,int source_atm_id,bool is_write_to_log =true);
 	void print_bank_status();
 	void EraseLoggerContent();
 	void insert_status_to_remember();
 	void restore_status_from_remember(int ind);
+	void insert_restore_int_to_req_list(int restore_ind);
+	void check_and_apply_restore();
+	void collect_texas_from_all();
 private:
+	void PrintNotExistingUesr(int account,int atm_id);
 	bool IsExistingUser(int account);
 	UserExistanceInBank IsPasswordCorrect(int account,int Password);
 };

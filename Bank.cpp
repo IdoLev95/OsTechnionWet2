@@ -14,10 +14,13 @@ Bank::Bank(pthread_mutex_t& Lock_bank_list_reader,
            pthread_mutex_t& mutex_lock_read,
 		   pthread_mutex_t& mutex_lock_atms_active_write,
 		   pthread_mutex_t& mutex_lock_atms_active_read,
+		   pthread_mutex_t& mutex_lock_restore_req_list_write,
+		   pthread_mutex_t& mutex_lock_restore_req_list_read,
 		   int num_init_atms)
 : logger(Path_to_logger, mutex_lock_write, mutex_lock_read), // Pass by reference,
 reader_writer_bank_list(Lock_bank_list_reader, Lock_bank_list_writer), // Pass by reference
-reader_writer_atm_active_list(mutex_lock_atms_active_read,mutex_lock_atms_active_write)
+reader_writer_atm_active_list(mutex_lock_atms_active_read,mutex_lock_atms_active_write),
+reader_writer_restore_req_list(mutex_lock_restore_req_list_read,mutex_lock_restore_req_list_write)
 {
 	numInitAtms = num_init_atms;
 	isAtmActive = NULL;
@@ -76,12 +79,17 @@ void Bank::close_existing_account(int Account,int Password,int Atm_id)
 		delete account_to_erase;
 
 	}
-	else if(user_res == WrongPassword || user_res == NotExist)
+	else if(user_res == WrongPassword)
 	{
 		reader_writer_bank_list.writer_unlocker();
 		str_to_write = "Error " + to_string(Atm_id) + ": Your transaction failed – password for account id " +to_string(Account) + " is incorrect";
 		logger.WriteToLogger(str_to_write);
 
+	}
+	else if(user_res == NotExist)
+	{
+		reader_writer_bank_list.reader_unlocker();
+		PrintNotExistingUesr(Account,Atm_id);
 	}
 
 }
@@ -101,11 +109,16 @@ void Bank::deposit(int Account,int Amount, int Password,int Atm_id)
 		logger.WriteToLogger(str_to_log);
 
 	}
-	else if(user_res == WrongPassword || user_res == NotExist)
+	else if(user_res == WrongPassword)
 	{
 		reader_writer_bank_list.reader_unlocker();
 		str_to_log = "Error " + to_string(Atm_id) + ": Your transaction failed – password for account id " + to_string(Account) + " is incorrect";
 		logger.WriteToLogger(str_to_log);
+	}
+	else if(user_res == NotExist)
+	{
+		reader_writer_bank_list.reader_unlocker();
+		PrintNotExistingUesr(Account,Atm_id);
 	}
 }
 void Bank::withdraw(int Account,int Amount, int Password,int Atm_id)
@@ -134,11 +147,16 @@ void Bank::withdraw(int Account,int Amount, int Password,int Atm_id)
 		account_to_deposit->reader_writer_user_account.writer_unlocker();
 
 	}
-	else if(user_res == WrongPassword || user_res == NotExist)
+	else if(user_res == WrongPassword)
 	{
 		reader_writer_bank_list.reader_unlocker();
 		str_to_log = "Error " + to_string(Atm_id) + ": Your transaction failed – password for account id " + to_string(Account) + " is incorrect";
 		logger.WriteToLogger(str_to_log);
+	}
+	else if(user_res == NotExist)
+	{
+		reader_writer_bank_list.reader_unlocker();
+		PrintNotExistingUesr(Account,Atm_id);
 	}
 }
 void Bank::get_balance(int Account,int Password,int Atm_id)
@@ -155,6 +173,11 @@ void Bank::get_balance(int Account,int Password,int Atm_id)
 		reader_writer_bank_list.reader_unlocker();
 		str_to_log = to_string(Atm_id) + ": Account "+ to_string(Account) + " balance is "+ to_string(balance);
 		logger.WriteToLogger(str_to_log);
+	}
+	else if(user_res == NotExist)
+	{
+		reader_writer_bank_list.reader_unlocker();
+		PrintNotExistingUesr(Account,Atm_id);
 	}
 	else
 	{
@@ -200,13 +223,23 @@ void Bank::transfer_money_between_accounts(int src_id_account,int src_password,i
 		src_account->reader_writer_user_account.writer_unlocker();
 		dst_account->reader_writer_user_account.writer_unlocker();
 	}
+	else if(user_res == NotExist)
+	{
+		reader_writer_bank_list.reader_unlocker();
+		PrintNotExistingUesr(src_id_account,Atm_id);
+	}
+	else if(!is_target_user_exist )
+	{
+		reader_writer_bank_list.reader_unlocker();
+		PrintNotExistingUesr(target_id_account,Atm_id);
+	}
 	else{
 		reader_writer_bank_list.reader_unlocker();
 		str_to_log = "Error "+ to_string(Atm_id) + ": Your transaction failed – password for account id "+to_string(src_id_account) +" is incorrect";
 		logger.WriteToLogger(str_to_log);
 	}
 }
-void Bank::close_atm(int target_atm_id,int source_atm_id)
+void Bank::close_atm(int target_atm_id,int source_atm_id,bool is_write_to_log)
 {
 	string str_to_log;
 	if(target_atm_id < numInitAtms)
@@ -222,12 +255,18 @@ void Bank::close_atm(int target_atm_id,int source_atm_id)
 			str_to_log = "‫‪Error‬‬ " + to_string(source_atm_id) + ":‬‬ ‫‪Your‬‬ ‫‪close‬‬ ‫‪operation‬‬ ‫‪failed‬‬ ‫–‬ ‫‪ATM‬‬ ‫‪ID‬‬ "+ to_string(target_atm_id) +" ‫‪is‬‬ ‫‪already‬‬ ‫‪in‬‬ ‫‪a‬‬ ‫‪closed‬‬ state";
 
 		}
-		logger.WriteToLogger(str_to_log);
+		if(is_write_to_log)
+		{
+			logger.WriteToLogger(str_to_log);
+		}
 		reader_writer_atm_active_list.writer_unlocker();
 	}
 	else{
 		str_to_log = "Error " + to_string(source_atm_id) + ": Your transaction failed – ATM ID "+ to_string(target_atm_id) +" does not exist";
-		logger.WriteToLogger(str_to_log);
+		if(is_write_to_log)
+		{
+			logger.WriteToLogger(str_to_log);
+		}
 	}
 }
 void Bank::print_bank_status()
@@ -328,6 +367,33 @@ void Bank::insert_status_to_remember()
         status_to_remeber.pop_back();
     }
 }
+void Bank::collect_texas_from_all()
+{
+	cout << "Tex not implemented yet" << endl;
+}
+void Bank::check_and_apply_restore()
+{
+	reader_writer_restore_req_list.writer_locker();
+  if (!restore_indices.empty()) {
+		// Find the maximum value in the list
+		int maxValueToRestore = *std::max_element(restore_indices.begin(), restore_indices.end());
+		restore_indices.clear();
+		reader_writer_restore_req_list.writer_unlocker();
+		restore_status_from_remember(maxValueToRestore);
+		// Clear the list after reading the max value
+
+
+	}
+  else{
+	  reader_writer_restore_req_list.writer_unlocker();
+  }
+}
+void Bank::insert_restore_int_to_req_list(int restore_ind)
+{
+	reader_writer_restore_req_list.writer_locker();
+	restore_indices.push_back(restore_ind);
+	reader_writer_restore_req_list.writer_unlocker();
+}
 void Bank::restore_status_from_remember(int ind)
 {
     // Bounds check for valid index
@@ -388,4 +454,11 @@ void Bank::restore_status_from_remember(int ind)
 
     // Unlock the bank accounts after modification
     reader_writer_bank_list.writer_unlocker();
+}
+
+void Bank::PrintNotExistingUesr(int account,int atm_id)
+{
+	string str_to_log = "‫‪Error‬‬ " + to_string(atm_id) + ":‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ " + to_string(account) + " ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬";
+	logger.WriteToLogger(str_to_log);
+
 }

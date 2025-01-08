@@ -3,9 +3,14 @@
 int is_vip_atm(stringstream& SS);
 
 void* single_atm_applier(void* argv){
-	int atm_id = 0; // TODO - needs to change
+	int atm_id = *((int*)argv);
+	cout << atm_id << endl;
     // Cast the argument to a string pointer
-    string* path_to_read_actions = static_cast<string*>(argv);
+	string* path_to_read_actions = new string("ATM_file" + to_string(atm_id) + ".txt");
+
+
+	//string* path_to_read_actions = string("ATM_file"+to_string(atm_id)+".txt"); // Create an int with value i
+    //string* path_to_read_actions = static_cast<string*>(argv);
 	consumer_producer cp;
     // Open the file
     ifstream input_file(*path_to_read_actions);
@@ -13,6 +18,7 @@ void* single_atm_applier(void* argv){
     // Check if the file opened successfully
     if (!input_file.is_open()) {
         //cerr << "Error: Unable to open file " << *path_to_read_actions << endl;
+    	bank_params.close_atm(atm_id,atm_id,false);
         pthread_exit(NULL); // Exit the thread if the file cannot be opened
     }
 
@@ -136,7 +142,21 @@ void* single_atm_applier(void* argv){
 				else{
 				//cout << "Atm: " << atm_id << " is closing " << dst_atm_id << endl;
 				bank_params.close_atm(dst_atm_id,atm_id);
+				}
 			}
+			else if(command == "R")
+			{
+				int restore_ind;
+				ss>> restore_ind;
+				priority = is_vip_atm(ss);
+				if(priority >0){
+					string vipss=to_string(restore_ind);
+					cp.producer(vipss,priority); //TODO: This does not seems to work - missing for the cp the command. it seems to happen alot.
+				}
+				else
+				{
+					bank_params.insert_restore_int_to_req_list(restore_ind);
+				}
 			}
 			else {
 				cout << "Unknown command: " << command << endl;
@@ -149,10 +169,10 @@ void* single_atm_applier(void* argv){
     	sleep(0.1);
     }
 	
-
+    bank_params.close_atm(atm_id,atm_id,false);
     // Close the file
     input_file.close();
-
+    delete path_to_read_actions;
     // Exit the thread successfully
     pthread_exit(NULL);
 }
