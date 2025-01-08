@@ -22,7 +22,7 @@ Logger::~Logger() {
 void Logger::WriteToLogger(string str_to_write) {
     try {
         // Acquire writer lock
-        reader_writer_bank_list.writer_locker();
+      //  reader_writer_bank_list.writer_locker();
 
         // Open log file
         std::ofstream log_file(path_to_logger, std::ios::app);
@@ -35,11 +35,12 @@ void Logger::WriteToLogger(string str_to_write) {
 
         // Close file and release lock
         log_file.close();
-        reader_writer_bank_list.writer_unlocker();
+        //reader_writer_bank_list.writer_unlocker();
+
     }
     catch (const std::exception& e) {
         std::cerr << "Error writing to log: " << e.what() << std::endl;
-        reader_writer_bank_list.writer_unlocker();
+       // reader_writer_bank_list.writer_unlocker();
     }
 }
 

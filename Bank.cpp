@@ -35,7 +35,7 @@ void Bank::set_num_atms(int num_atms)
 	isAtmActive = new bool[num_atms];
 	fill(isAtmActive, isAtmActive + num_atms, true);
 }
-void Bank::insert_new_account(int Account,int Amount,int Password,int Atm_id)
+void Bank::insert_new_account(int Account,int Amount,int Password,int Atm_id,bool PERSISTENT_flag)
 {
 	std::string str_to_logger;
 	reader_writer_bank_list.writer_locker();
@@ -50,14 +50,24 @@ void Bank::insert_new_account(int Account,int Amount,int Password,int Atm_id)
 		str_to_logger = std::to_string(Atm_id) + ": New account id is " + std::to_string(Account) + " with password " + to_string(Password) + " and initial balance " + to_string(Amount);
 		new_account->reader_writer_user_account.reader_unlocker();
 		logger.WriteToLogger(str_to_logger);
+		
 	}
-	else{
+	else
+	{
+		if(PERSISTENT_flag){
+			reader_writer_bank_list.writer_unlocker();
+			PERSISTENT_flag = false;
+			sleep(1);
+			insert_new_account(Account,Amount,Password,Atm_id,PERSISTENT_flag);
+		}
+		else{
 		reader_writer_bank_list.writer_unlocker();
 		str_to_logger = "Error " + to_string(Atm_id) + ": Your transaction failed – account with the same id exists";
 		logger.WriteToLogger(str_to_logger);
+		}
 	}
 }
-void Bank::close_existing_account(int Account,int Password,int Atm_id)
+void Bank::close_existing_account(int Account,int Password,int Atm_id,bool PERSISTENT_flag)
 {
 
 	string str_to_write;
@@ -78,14 +88,21 @@ void Bank::close_existing_account(int Account,int Password,int Atm_id)
 	}
 	else if(user_res == WrongPassword || user_res == NotExist)
 	{
+		if(PERSISTENT_flag){
+			reader_writer_bank_list.writer_unlocker();
+			PERSISTENT_flag = false;
+			sleep(1);
+			close_existing_account(Account,Password,Atm_id,PERSISTENT_flag);
+		}
+		else{
 		reader_writer_bank_list.writer_unlocker();
 		str_to_write = "Error " + to_string(Atm_id) + ": Your transaction failed – password for account id " +to_string(Account) + " is incorrect";
 		logger.WriteToLogger(str_to_write);
-
+		}
 	}
 
 }
-void Bank::deposit(int Account,int Amount, int Password,int Atm_id)
+void Bank::deposit(int Account,int Amount, int Password,int Atm_id,bool PERSISTENT_flag)
 {
 	string str_to_log;
 	reader_writer_bank_list.reader_locker();
@@ -103,12 +120,20 @@ void Bank::deposit(int Account,int Amount, int Password,int Atm_id)
 	}
 	else if(user_res == WrongPassword || user_res == NotExist)
 	{
+		if(PERSISTENT_flag){
+			reader_writer_bank_list.reader_unlocker();
+			PERSISTENT_flag = false;
+			sleep(1);
+			deposit(Account,Amount,Password,Atm_id,PERSISTENT_flag);
+		}
+		else{
 		reader_writer_bank_list.reader_unlocker();
 		str_to_log = "Error " + to_string(Atm_id) + ": Your transaction failed – password for account id " + to_string(Account) + " is incorrect";
 		logger.WriteToLogger(str_to_log);
+		}
 	}
 }
-void Bank::withdraw(int Account,int Amount, int Password,int Atm_id)
+void Bank::withdraw(int Account,int Amount, int Password,int Atm_id,bool PERSISTENT_flag)
 {
 	string str_to_log;
 	reader_writer_bank_list.reader_locker();
@@ -127,8 +152,16 @@ void Bank::withdraw(int Account,int Amount, int Password,int Atm_id)
 			logger.WriteToLogger(str_to_log);
 		}
 		else{
+			if(PERSISTENT_flag){
+				reader_writer_bank_list.reader_unlocker();
+				PERSISTENT_flag = false;
+				sleep(1);
+				withdraw(Account,Amount,Password,Atm_id,PERSISTENT_flag);
+			}
+			else{
 			str_to_log = "Error " + to_string(Atm_id) + ": Your transaction failed – account id " + to_string(Account) + " balance is lower than "+to_string(Amount);
 			logger.WriteToLogger(str_to_log);
+			}
 		}
 
 		account_to_deposit->reader_writer_user_account.writer_unlocker();
@@ -136,12 +169,20 @@ void Bank::withdraw(int Account,int Amount, int Password,int Atm_id)
 	}
 	else if(user_res == WrongPassword || user_res == NotExist)
 	{
+		if(PERSISTENT_flag){
+			reader_writer_bank_list.reader_unlocker();
+			PERSISTENT_flag = false;
+			sleep(1);
+			withdraw(Account,Amount,Password,Atm_id,PERSISTENT_flag);
+		}
+		else{
 		reader_writer_bank_list.reader_unlocker();
 		str_to_log = "Error " + to_string(Atm_id) + ": Your transaction failed – password for account id " + to_string(Account) + " is incorrect";
 		logger.WriteToLogger(str_to_log);
+		}
 	}
 }
-void Bank::get_balance(int Account,int Password,int Atm_id)
+void Bank::get_balance(int Account,int Password,int Atm_id,bool PERSISTENT_flag)
 {
 	string str_to_log;
 	reader_writer_bank_list.reader_locker();
@@ -158,12 +199,20 @@ void Bank::get_balance(int Account,int Password,int Atm_id)
 	}
 	else
 	{
+		if(PERSISTENT_flag){
+			reader_writer_bank_list.reader_unlocker();
+			PERSISTENT_flag = false;
+			sleep(1);
+			get_balance(Account,Password,Atm_id,PERSISTENT_flag);
+		}
+		else{
 		reader_writer_bank_list.reader_unlocker();
 		str_to_log = "Error " + to_string(Atm_id) + ": Your transaction failed – password for account id "+to_string(Account)+" is incorrec";
 		logger.WriteToLogger(str_to_log);
+		}
 	}
 }
-void Bank::transfer_money_between_accounts(int src_id_account,int src_password,int target_id_account,int amount,int Atm_id)
+void Bank::transfer_money_between_accounts(int src_id_account,int src_password,int target_id_account,int amount,int Atm_id,bool PERSISTENT_flag)
 {
 	string str_to_log;
 	reader_writer_bank_list.reader_locker();
@@ -206,7 +255,7 @@ void Bank::transfer_money_between_accounts(int src_id_account,int src_password,i
 		logger.WriteToLogger(str_to_log);
 	}
 }
-void Bank::close_atm(int target_atm_id,int source_atm_id)
+void Bank::close_atm(int target_atm_id,int source_atm_id,bool PERSISTENT_flag)
 {
 	string str_to_log;
 	if(target_atm_id < numInitAtms)
@@ -226,8 +275,15 @@ void Bank::close_atm(int target_atm_id,int source_atm_id)
 		reader_writer_atm_active_list.writer_unlocker();
 	}
 	else{
+		if(PERSISTENT_flag){
+			PERSISTENT_flag = false;
+			sleep(1);
+			close_atm(target_atm_id,source_atm_id,PERSISTENT_flag);
+		}
+		else{
 		str_to_log = "Error " + to_string(source_atm_id) + ": Your transaction failed – ATM ID "+ to_string(target_atm_id) +" does not exist";
 		logger.WriteToLogger(str_to_log);
+		}
 	}
 }
 void Bank::print_bank_status()
