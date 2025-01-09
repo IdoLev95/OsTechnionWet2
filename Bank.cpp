@@ -50,15 +50,15 @@ void Bank::insert_new_account(int Account,int Amount,int Password,int Atm_id,boo
 		new_account->reader_writer_user_account.reader_locker();
 
 		bank_accounts[Account] = new_account;
-
+		reader_writer_bank_list.writer_unlocker();
 		str_to_logger = std::to_string(Atm_id) + ": New account id is " + std::to_string(Account) + " with password " + to_string(Password) + " and initial balance " + to_string(Amount);
 		//cout <<"Here" << endl;
 		logger.WriteToLogger(str_to_logger);
 
-		logger.reader_writer_logger.writer_unlocker();
+		//logger.reader_writer_logger.writer_unlocker();
 		//cout << "Error?" << endl;
 		new_account->reader_writer_user_account.reader_unlocker();
-		reader_writer_bank_list.writer_unlocker();
+
 	}
 	else{
 
@@ -126,9 +126,8 @@ void Bank::deposit(int Account,int Amount, int Password,int Atm_id,bool PERSISTE
 		reader_writer_bank_list.reader_unlocker();
 		account_to_deposit->deposit(Amount);
 		str_to_log =to_string(Atm_id) + ": Account " + to_string(Account) +  " new balance is "+to_string(account_to_deposit->amount) + " after " + to_string(Amount) + " $ was deposited";
-		account_to_deposit->reader_writer_user_account.writer_unlocker();
 		logger.WriteToLogger(str_to_log);
-
+		account_to_deposit->reader_writer_user_account.writer_unlocker();
 	}
 	if(PERSISTENT_flag){
 		reader_writer_bank_list.reader_unlocker();
@@ -210,10 +209,11 @@ void Bank::get_balance(int Account,int Password,int Atm_id,bool PERSISTENT_flag)
 		accounts* account_to_get_balance = bank_accounts[Account];
 		account_to_get_balance->reader_writer_user_account.reader_locker();
 		int balance = account_to_get_balance->amount;
-		account_to_get_balance->reader_writer_user_account.reader_unlocker();
+
 		reader_writer_bank_list.reader_unlocker();
 		str_to_log = to_string(Atm_id) + ": Account "+ to_string(Account) + " balance is "+ to_string(balance);
 		logger.WriteToLogger(str_to_log);
+		account_to_get_balance->reader_writer_user_account.reader_unlocker();
 	}
 	if(PERSISTENT_flag){
 		reader_writer_bank_list.reader_unlocker();
@@ -229,7 +229,7 @@ void Bank::get_balance(int Account,int Password,int Atm_id,bool PERSISTENT_flag)
 	else
 	{
 		reader_writer_bank_list.reader_unlocker();
-		str_to_log = "Error " + to_string(Atm_id) + ": Your transaction failed – password for account id "+to_string(Account)+" is incorrec";
+		str_to_log = "Error " + to_string(Atm_id) + ": Your transaction failed – password for account id "+to_string(Account)+" is incorrect";
 		logger.WriteToLogger(str_to_log);
 	}
 }

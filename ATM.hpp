@@ -23,7 +23,10 @@ using namespace std;
 
 void* single_atm_applier(void* argv);
 
-
+struct ThreadArgs {
+    int* atm_id;  // Can be any pointer (e.g., int*, std::string*, etc.)
+    string arg;
+};
 
 
 #endif /* ATM_HPP_ */

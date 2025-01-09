@@ -27,21 +27,28 @@ bool IsExistingWorkingAtm();
 =============================================================================*/
 int main(int argc, char* argv[])
 {
+    // Create a vector to store the arguments
+    std::vector<std::string> args;
+	for (int i = 2; i < argc; ++i) {
+	        args.push_back(argv[i]);
+	    }
 
 	bank_params.EraseLoggerContent();
-
-	const int N = 2;
+	const int N = argc-2;
 	bank_params.set_num_atms(N);
-	pthread_t atm_threads[N];
-    void** pointers = new void*[N]; // Allocate array of void*
+	 vector<pthread_t> atm_threads(N);
+	ThreadArgs** pointers = new ThreadArgs*[N]; // Allocate array of void*
 	for (int i = 0; i < N; ++i) {
 		//string* value = new string("ATM_file"+to_string(i)+".txt"); // Create an int with value i
 		int* value = new int(i);
-		pointers[i] = static_cast<void*>(value); // Store pointer as void*
+		ThreadArgs* threadArgs = new ThreadArgs();
+		pointers[i] = threadArgs;
+		threadArgs->atm_id = value; // Store the void* pointer
+		threadArgs->arg = args[i];
 	}
 	for(int ind =0; ind < N;ind++)
 	{
-		pthread_create(&atm_threads[ind], NULL, &single_atm_applier, pointers[ind]);
+		pthread_create(&atm_threads[ind], NULL, &single_atm_applier, static_cast<void*>(pointers[ind]));
 	}
 	const int VIP_N = 10;
 	pthread_t vip_threads[VIP_N];

@@ -4,14 +4,23 @@ bool is_PERSISTENT(stringstream& SS);
 int is_vip_atm(stringstream& SS);
 
 void* single_atm_applier(void* argv){
-	int atm_id = *((int*)argv);
+	ThreadArgs* threadArgs = static_cast<ThreadArgs*>(argv);
+
+	// Access the atm_id and arg fields
+	int atm_id = *(threadArgs->atm_id);  // Dereference the pointer to get atm_id value
+	string path_to_read_actions = threadArgs->arg;
+
+	    // Now you can use these values as needed
+	    //string* path_to_read_actions = new string("ATM_file" + to_string(atm_id) + ".txt");
+
+	//int atm_id = *((int*)argv);
     // Cast the argument to a string pointer
-	string* path_to_read_actions = new string("ATM_file" + to_string(atm_id) + ".txt");
+	//string* path_to_read_actions = new string("ATM_file" + to_string(atm_id) + ".txt");
 
 	//string* path_to_read_actions = string("ATM_file"+to_string(atm_id)+".txt"); // Create an int with value i
     //string* path_to_read_actions = static_cast<string*>(argv);
     // Open the file
-    ifstream input_file(*path_to_read_actions);
+    ifstream input_file(path_to_read_actions);
 
     // Check if the file opened successfully
     if (!input_file.is_open()) {
@@ -22,7 +31,7 @@ void* single_atm_applier(void* argv){
 
     // Read each line until reaching the end
     std::string line;
-    sleep(0.1);
+    usleep(100000);
     while (getline(input_file, line)) {
 
     	//bank_params.logger.WriteToLogger(line);
@@ -39,80 +48,85 @@ void* single_atm_applier(void* argv){
     		priority = is_vip_atm(ss);
 			PERSISTENT_flag = is_PERSISTENT(ss);
 			//cout << "PERSISTENT_flag is: " << PERSISTENT_flag << endl;// סתם לרצות את הקומפיילר הבן שרמוטה
-			if(!PERSISTENT_flag && priority >0){
+			if(priority >0){
 				string vipss = ss.str();
 				cp.producer(vipss,priority);
+				sleep(1);
 			}
-			// Example: Process different commands based on the first token
-			else if  (command == "O") {
-				int account_id, password, initial_balance;
-				ss >> account_id >> password >> initial_balance;
-				//cout << "Creating account: " << account_id << " with balance " << initial_balance << endl;
-				bank_params.insert_new_account(account_id, initial_balance, password, atm_id,PERSISTENT_flag);
-			}
-			else if (command == "Q") {
-				int account_id, password;
-				ss >> account_id >> password;
-				//cout << "Closing " << account_id<< " with password " << password  << endl;
-				bank_params.close_existing_account(account_id,password,atm_id,PERSISTENT_flag);
-			}
-			else if (command == "Q") {
-						int account_id, password;
-						ss >> account_id >> password;
-						//cout << "Closing " << account_id<< " with password " << password  << endl;
-						bank_params.close_existing_account(account_id,password,atm_id,PERSISTENT_flag);
-
+			else{
+				//sleep(1);
+				usleep(100000);
+				// Example: Process different commands based on the first token
+				if  (command == "O") {
+					int account_id, password, initial_balance;
+					ss >> account_id >> password >> initial_balance;
+					//cout << "Creating account: " << account_id << " with balance " << initial_balance << endl;
+					bank_params.insert_new_account(account_id, initial_balance, password, atm_id,PERSISTENT_flag);
 				}
-			else if (command == "D") {
-						int account_id, password,amount;
+				else if (command == "Q") {
+					int account_id, password;
+					ss >> account_id >> password;
+					//cout << "Closing " << account_id<< " with password " << password  << endl;
+					bank_params.close_existing_account(account_id,password,atm_id,PERSISTENT_flag);
+				}
+				else if (command == "Q") {
+							int account_id, password;
+							ss >> account_id >> password;
+							//cout << "Closing " << account_id<< " with password " << password  << endl;
+							bank_params.close_existing_account(account_id,password,atm_id,PERSISTENT_flag);
+
+					}
+				else if (command == "D") {
+							int account_id, password,amount;
+							ss >> account_id >> password >> amount;
+							//cout << "Deposit " << account_id<< " with password " << password  << endl;
+							bank_params.deposit(account_id,amount,password,atm_id,PERSISTENT_flag);
+
+					}
+				else if (command == "W") {
+					int account_id, password,amount;
 						ss >> account_id >> password >> amount;
-						//cout << "Deposit " << account_id<< " with password " << password  << endl;
-						bank_params.deposit(account_id,amount,password,atm_id,PERSISTENT_flag);
-
-				}	
-			else if (command == "W") {
-				int account_id, password,amount;
-					ss >> account_id >> password >> amount;
-					//cout << "Withdraw " << account_id<< " with password " << password  << endl;
-					bank_params.withdraw(account_id,amount,password,atm_id,PERSISTENT_flag);
-
-			}
-			else if (command == "B") {
-						int account_id, password;
-						ss >> account_id >> password;
-						//cout << "Checking balance " << account_id<< " with password " << password  << endl;
-						bank_params.get_balance(account_id,password,atm_id,PERSISTENT_flag);
-			}
-			else if (command == "T") {
-						int src_account_id, src_password,dst_account,amount;
-						ss >> src_account_id >> src_password >> dst_account >> amount;
-						//cout << "Transfer from account " << src_account_id<< " with password " << src_password << " To account " << dst_account << " the following balance: " << amount << endl;
-						bank_params.transfer_money_between_accounts(src_account_id,src_password,dst_account,amount,atm_id,PERSISTENT_flag);
+						//cout << "Withdraw " << account_id<< " with password " << password  << endl;
+						bank_params.withdraw(account_id,amount,password,atm_id,PERSISTENT_flag);
 
 				}
-			else if (command == "C"){
-				int dst_atm_id;
-				ss >> dst_atm_id;
-				//cout << "Atm: " << atm_id << " is closing " << dst_atm_id << endl;
-				bank_params.close_atm(dst_atm_id,atm_id,PERSISTENT_flag);
-
-			}
-			else if(command == "R")
-			{
-				int restore_ind;
-				ss>> restore_ind;
-				priority = is_vip_atm(ss);
-				if(priority >0){
-					string vipss=to_string(restore_ind);
-					cp.producer(vipss,priority); //TODO: This does not seems to work - missing for the cp the command. it seems to happen alot.
+				else if (command == "B") {
+							int account_id, password;
+							ss >> account_id >> password;
+							//cout << "Checking balance " << account_id<< " with password " << password  << endl;
+							bank_params.get_balance(account_id,password,atm_id,PERSISTENT_flag);
 				}
-				else
+				else if (command == "T") {
+							int src_account_id, src_password,dst_account,amount;
+							ss >> src_account_id >> src_password >> dst_account >> amount;
+							//cout << "Transfer from account " << src_account_id<< " with password " << src_password << " To account " << dst_account << " the following balance: " << amount << endl;
+							bank_params.transfer_money_between_accounts(src_account_id,src_password,dst_account,amount,atm_id,PERSISTENT_flag);
+
+					}
+				else if (command == "C"){
+					int dst_atm_id;
+					ss >> dst_atm_id;
+					//cout << "Atm: " << atm_id << " is closing " << dst_atm_id << endl;
+					bank_params.close_atm(dst_atm_id,atm_id,PERSISTENT_flag);
+
+				}
+				else if(command == "R")
 				{
-					bank_params.insert_restore_int_to_req_list(restore_ind);
+					int restore_ind;
+					ss>> restore_ind;
+					priority = is_vip_atm(ss);
+					if(priority >0){
+						string vipss=to_string(restore_ind);
+						cp.producer(vipss,priority); //TODO: This does not seems to work - missing for the cp the command. it seems to happen alot.
+					}
+					else
+					{
+						bank_params.insert_restore_int_to_req_list(restore_ind);
+					}
 				}
-			}
-			else {
-				cout << "Unknown command: " << command << endl;
+				else {
+					cout << "Unknown command: " << command << endl;
+				}
 			}
     	}
     	else{
@@ -120,13 +134,13 @@ void* single_atm_applier(void* argv){
     	}
 
     	//sleep(1);
-    	sleep(0.1);
+    	usleep(100000);
     }
 	
     bank_params.close_atm(atm_id,atm_id,false,false);
     // Close the file
     input_file.close();
-    delete path_to_read_actions;
+    //delete path_to_read_actions;
     // Exit the thread successfully
     pthread_exit(NULL);
 }

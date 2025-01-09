@@ -2,8 +2,8 @@
 
 
 // Constructor implementation
-Logger::Logger(string Path_to_logger,pthread_mutex_t mutex_lock_write,pthread_mutex_t mutex_lock_read)
-: reader_writer_logger(mutex_lock_read,mutex_lock_write) {
+Logger::Logger(string Path_to_logger,pthread_mutex_t& mutex_lock_write,pthread_mutex_t& mutex_lock_read)
+: reader_writer_logger() {
     // Initialize mutex for thread safety
     if (pthread_mutex_init(&mutex_lock_write, nullptr) != 0) {
         throw std::runtime_error("Mutex initialization failed");
@@ -11,6 +11,7 @@ Logger::Logger(string Path_to_logger,pthread_mutex_t mutex_lock_write,pthread_mu
     if (pthread_mutex_init(&mutex_lock_read, nullptr) != 0) {
             throw std::runtime_error("Mutex initialization failed");
         }
+    reader_writer_logger.SetLocks(mutex_lock_read,mutex_lock_write);
     path_to_logger = Path_to_logger;
 }
 

@@ -36,7 +36,7 @@ std::string consumer_producer::consumer() {
             VIP_jobs[i].pop_front();
             production--;
 
-            std::cout << "Consumed: " << job << std::endl;  // Print the consumed job
+            //std::cout << "Consumed: " << job << std::endl;  // Print the consumed job
 
             pthread_mutex_unlock(&lock);  // Unlock before returning the job
             return job;  // Returning by value
@@ -49,7 +49,7 @@ std::string consumer_producer::consumer() {
 void consumer_producer::producer(const std::string& str , int priority){
         pthread_mutex_lock(&lock);
 
-        cout << "Produced: " << str <<" "<<priority << endl; //print the produced job לבדיקה
+        //cout << "Produced: " << str <<" "<<priority << endl; //print the produced job לבדיקה
 		VIP_jobs[priority-1].push_back(str);
         production++;
 

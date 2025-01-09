@@ -18,7 +18,7 @@ private:
 	string path_to_logger;
 public:
 	ReaderWriter reader_writer_logger;
-	Logger(string Path_to_logger,pthread_mutex_t mutex_lock_write,pthread_mutex_t mutex_lock_read);
+	Logger(string Path_to_logger,pthread_mutex_t& mutex_lock_write,pthread_mutex_t& mutex_lock_read);
 
 	virtual ~Logger();
 	void WriteToLogger(string str_to_write);
