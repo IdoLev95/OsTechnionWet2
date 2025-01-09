@@ -301,7 +301,7 @@ void Bank::transfer_money_between_accounts(int src_id_account,int src_password,i
 		}
 		reader_writer_bank_list.reader_unlocker();
 	}
-	if(PERSISTENT_flag){
+	else if(PERSISTENT_flag){
 		reader_writer_bank_list.reader_unlocker();
 		PERSISTENT_flag = false;
 		sleep(1);
@@ -318,7 +318,7 @@ void Bank::transfer_money_between_accounts(int src_id_account,int src_password,i
 		reader_writer_bank_list.reader_unlocker();
 		PrintNotExistingUesr(target_id_account,Atm_id);
 	}
-	else{
+	else if(user_res == WrongPassword){
 		reader_writer_bank_list.reader_unlocker();
 		str_to_log = "Error "+ to_string(Atm_id) + ": Your transaction failed – password for account id "+to_string(src_id_account) +" is incorrect";
 		logger.WriteToLogger(str_to_log);

@@ -51,7 +51,7 @@ void* single_atm_applier(void* argv){
 			//cout << "PERSISTENT_flag is: " << PERSISTENT_flag << endl;// סתם לרצות את הקומפיילר הבן שרמוטה
 			if(priority >0){
 				string vipss = ss.str();
-				cp.producer(vipss,priority);
+				cp.producer(vipss,priority,atm_id);
 				sleep(1);
 			}
 			else{
@@ -112,15 +112,9 @@ void* single_atm_applier(void* argv){
 				{
 					int restore_ind;
 					ss>> restore_ind;
-					priority = is_vip_atm(ss);
-					if(priority >0){
-						string vipss=to_string(restore_ind);
-						cp.producer(vipss,priority); //TODO: This does not seems to work - missing for the cp the command. it seems to happen alot.
-					}
-					else
-					{
-						bank_params.insert_restore_int_to_req_list(restore_ind,atm_id);
-					}
+
+					bank_params.insert_restore_int_to_req_list(restore_ind,atm_id);
+
 				}
 				else {
 					cout << "Unknown command: " << command << endl;

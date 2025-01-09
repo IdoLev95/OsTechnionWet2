@@ -6,6 +6,32 @@
  */
 
 #include "ReaderWriter.hpp"
+class MutexLockException : public std::runtime_error {
+public:
+    MutexLockException(const std::string& message) : std::runtime_error(message) {}
+};
+
+#include <execinfo.h>
+#include <iostream>
+#include <stdexcept>
+#include <cstdlib>
+
+void print_stack_trace() {
+    const int max_frames = 64;  // Maximum number of stack frames to capture
+    void *frames[max_frames];
+    int frame_count = backtrace(frames, max_frames);  // Capture the stack trace
+
+    // Print the stack trace
+    char **frame_strings = backtrace_symbols(frames, frame_count);
+    if (frame_strings) {
+        std::cerr << "Stack trace:\n";
+        for (int i = 0; i < frame_count; ++i) {
+            std::cerr << frame_strings[i] << "\n";
+        }
+        free(frame_strings);  // Free the memory allocated by backtrace_symbols
+    }
+}
+
 
 ReaderWriter::ReaderWriter(pthread_mutex_t* Lock_reader, pthread_mutex_t* Lock_writer) {
 	lock_reader = Lock_reader;
@@ -44,6 +70,11 @@ ReaderWriter::~ReaderWriter() {
 int ReaderWriter::reader_locker() {
 	pthread_mutex_lock(lock_reader);
 	readers++;
+	if(readers == 0)
+	{
+		//print_stack_trace();
+		//throw MutexLockException("Readers value in reader_locker is not valid");
+	}
 	if (readers == 1)
 	{
 		pthread_mutex_lock(lock_writer);
@@ -56,6 +87,11 @@ int ReaderWriter::reader_unlocker()
 {
 	pthread_mutex_lock(lock_reader);
 	readers--;
+	if(readers < 0 )
+	{
+		//print_stack_trace();
+		//throw MutexLockException("Readers value in reader_unlocker is not valid");
+	}
 	if (readers == 0)
 	{
 		pthread_mutex_unlock(lock_writer);

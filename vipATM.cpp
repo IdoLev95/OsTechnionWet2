@@ -1,10 +1,10 @@
 #include "vipATM.hpp"
-#define VIP_ATM_ID -1
 void* vip_atm_applier(void* argv){
 	while(true)
 	{
-		std::string line = cp.consumer();
-		int atm_id = VIP_ATM_ID; // TODO - needs to change
+		AtmInfo job = cp.consumer();
+		std::string line = job.str;
+		int atm_id = job.atm_id; // TODO - needs to change
 		std::istringstream ss (line);
 		std::string command;
 		ss >> command;

@@ -5,6 +5,8 @@
 #include <string>
 #include "globals.hpp"
 
+
+
 class consumer_producer{
     private:
     pthread_mutex_t lock;
@@ -13,8 +15,8 @@ class consumer_producer{
     public:
     consumer_producer();
     virtual ~consumer_producer();
-    std::string consumer();
+    AtmInfo consumer();
     void send_bc_to_cv();
-    void producer(const std::string& str , int priority);
+    void producer(const std::string& str , int priority,int atm_id);
 };
 #endif

@@ -14,8 +14,8 @@ consumer_producer::consumer_producer(){
 consumer_producer::~consumer_producer(){
     pthread_mutex_destroy(&lock);
 }
-std::string consumer_producer::consumer() {
-    std::string job = "";
+AtmInfo consumer_producer::consumer() {
+	AtmInfo job("",0);
     pthread_mutex_lock(&lock);
 
     // Wait for condition
@@ -46,11 +46,10 @@ std::string consumer_producer::consumer() {
     pthread_mutex_unlock(&lock);  // Unlock mutex
     return job;  // Returning by value
 }
-void consumer_producer::producer(const std::string& str , int priority){
+void consumer_producer::producer(const std::string& str , int priority,int atm_id){
         pthread_mutex_lock(&lock);
-
-        //cout << "Produced: " << str <<" "<<priority << endl; //print the produced job לבדיקה
-		VIP_jobs[priority-1].push_back(str);
+        AtmInfo atm_info(str, atm_id);  // Create an instance of AtmInfo with str and atm_id
+        VIP_jobs[priority - 1].push_back(atm_info);
         production++;
 
         pthread_cond_signal(&full);

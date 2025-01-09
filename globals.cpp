@@ -24,7 +24,7 @@ Bank bank_params(&Lock_bank_list_reader, &Lock_bank_list_writer, "log.txt",
                  &mutex_lock_restore_req_list_write, &mutex_lock_restore_req_list_read,
                  0);
 
-std::list<std::string> VIP_jobs[100]; // List of VIP jobs
+std::list<AtmInfo> VIP_jobs[100]; // List of VIP jobs
 
 consumer_producer cp; // Consumer producer object
 bool isNeededToFinishVipThreads = false;
