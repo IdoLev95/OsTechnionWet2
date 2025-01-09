@@ -15,20 +15,15 @@ if [ ! -d "$folder" ]; then
     exit 1
 fi
 
-# Collect all files in the folder (excluding .bak files)
-files=()
+# Iterate through all files in the folder
 for file in "$folder"/*; do
-    if [[ ! "$file" =~ \.bak$ ]]; then
-        files+=("$file")
+    # Check if it's a file (skip directories)
+    if [ -f "$file" ]; then
+        # Print the "running" message
+        echo "Running: $file"
+        
+        # Run ./bank with the file as an argument
+        ./bank 10 "$file"
     fi
 done
-
-# Check if there are any files in the folder
-if [ ${#files[@]} -eq 0 ]; then
-    echo "No files found in the folder."
-    exit 1
-fi
-
-# Run ./bank with all the files as arguments
-./bank 10 ${files[@]}
 

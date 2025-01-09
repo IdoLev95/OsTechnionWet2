@@ -47,6 +47,7 @@ void* single_atm_applier(void* argv){
 			ss >> command; // Read the command name (first token)
     		priority = is_vip_atm(ss);
 			PERSISTENT_flag = is_PERSISTENT(ss);
+			//PERSISTENT_flag = false;
 			//cout << "PERSISTENT_flag is: " << PERSISTENT_flag << endl;// סתם לרצות את הקומפיילר הבן שרמוטה
 			if(priority >0){
 				string vipss = ss.str();
@@ -54,8 +55,8 @@ void* single_atm_applier(void* argv){
 				sleep(1);
 			}
 			else{
-				//sleep(1);
-				usleep(100000);
+				sleep(1);
+				//usleep(100000);
 				// Example: Process different commands based on the first token
 				if  (command == "O") {
 					int account_id, password, initial_balance;
@@ -69,13 +70,7 @@ void* single_atm_applier(void* argv){
 					//cout << "Closing " << account_id<< " with password " << password  << endl;
 					bank_params.close_existing_account(account_id,password,atm_id,PERSISTENT_flag);
 				}
-				else if (command == "Q") {
-							int account_id, password;
-							ss >> account_id >> password;
-							//cout << "Closing " << account_id<< " with password " << password  << endl;
-							bank_params.close_existing_account(account_id,password,atm_id,PERSISTENT_flag);
 
-					}
 				else if (command == "D") {
 							int account_id, password,amount;
 							ss >> account_id >> password >> amount;
@@ -90,12 +85,14 @@ void* single_atm_applier(void* argv){
 						bank_params.withdraw(account_id,amount,password,atm_id,PERSISTENT_flag);
 
 				}
+
 				else if (command == "B") {
 							int account_id, password;
 							ss >> account_id >> password;
 							//cout << "Checking balance " << account_id<< " with password " << password  << endl;
 							bank_params.get_balance(account_id,password,atm_id,PERSISTENT_flag);
 				}
+
 				else if (command == "T") {
 							int src_account_id, src_password,dst_account,amount;
 							ss >> src_account_id >> src_password >> dst_account >> amount;
@@ -103,6 +100,7 @@ void* single_atm_applier(void* argv){
 							bank_params.transfer_money_between_accounts(src_account_id,src_password,dst_account,amount,atm_id,PERSISTENT_flag);
 
 					}
+
 				else if (command == "C"){
 					int dst_atm_id;
 					ss >> dst_atm_id;
@@ -121,7 +119,7 @@ void* single_atm_applier(void* argv){
 					}
 					else
 					{
-						bank_params.insert_restore_int_to_req_list(restore_ind);
+						bank_params.insert_restore_int_to_req_list(restore_ind,atm_id);
 					}
 				}
 				else {
@@ -151,11 +149,11 @@ int is_vip_atm(stringstream& SS){
 	string vip_priority = SS.str();
     size_t pos = vip_priority.find("VIP=");
     if (pos != string::npos) {
-		cout << "is vip atm command is :" << vip_priority << endl;
+		//cout << "is vip atm command is :" << vip_priority << endl;
         int number;
         try {
             number = stoi(vip_priority.substr(pos + 4));
-            cout << "VIP=" << number << endl;
+           // cout << "VIP=" << number << endl;
         } catch (const invalid_argument& e) {
             // cout << "Invalid VIP number" << endl;
         }
@@ -168,7 +166,7 @@ bool is_PERSISTENT(stringstream& SS){
 	string vip_priority = SS.str();
 	size_t pos = vip_priority.find("PERSISTENT");
 	if (pos != string::npos) {
-		cout << "PERSISTENT command is :" << vip_priority << endl;
+		//cout << "PERSISTENT command is :" << vip_priority << endl;
 		return true;
 	}
 	return false;

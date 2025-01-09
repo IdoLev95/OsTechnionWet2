@@ -2,17 +2,14 @@
 
 
 // Constructor implementation
-Logger::Logger(string Path_to_logger,pthread_mutex_t& mutex_lock_write,pthread_mutex_t& mutex_lock_read)
-: reader_writer_logger() {
+Logger::Logger(string Path_to_logger,pthread_mutex_t* mutex_lock_write,pthread_mutex_t* mutex_lock_read)
+: reader_writer_logger(mutex_lock_read,mutex_lock_write) {
     // Initialize mutex for thread safety
-    if (pthread_mutex_init(&mutex_lock_write, nullptr) != 0) {
-        throw std::runtime_error("Mutex initialization failed");
-    }
-    if (pthread_mutex_init(&mutex_lock_read, nullptr) != 0) {
-            throw std::runtime_error("Mutex initialization failed");
-        }
+
     reader_writer_logger.SetLocks(mutex_lock_read,mutex_lock_write);
     path_to_logger = Path_to_logger;
+    log_file.open(path_to_logger.c_str(), std::ios::out | std::ios::app);
+
 }
 
 // Destructor implementation
@@ -25,7 +22,12 @@ void Logger::WriteToLogger(string str_to_write) {
 //        cout << "here" << endl;
     	// Acquire writer lock
         reader_writer_logger.writer_locker();
-
+        if (log_file.is_open()) {
+                log_file << str_to_write << std::endl;
+            } else {
+                std::cerr << "Error: Log file is not open!" << std::endl;
+            }
+        /*
         // Open log file
         std::ofstream log_file(path_to_logger, std::ios::app);
         if (!log_file.is_open()) {
@@ -40,6 +42,7 @@ void Logger::WriteToLogger(string str_to_write) {
 
         // Close file and release lock
         log_file.close();
+        */
         reader_writer_logger.writer_unlocker();
     }
     catch (const std::exception& e) {
@@ -47,7 +50,7 @@ void Logger::WriteToLogger(string str_to_write) {
     	std::cerr << "Error writing to log: " << e.what() << std::endl;
 
     }
-    reader_writer_logger.writer_unlocker();
+    //reader_writer_logger.writer_unlocker();
   //  cout << "wow" << endl;
 }
 
@@ -66,7 +69,7 @@ void Logger::EraseLoggerContent() {
     }
 
     // Close the file immediately after truncation
-    log_file.close();
+    //log_file.close();
 
     // Unlock after finishing the write operation
     reader_writer_logger.writer_unlocker(); // Unlock the writer lock

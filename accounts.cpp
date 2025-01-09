@@ -20,7 +20,7 @@ accounts::accounts(int Account_id,int Amount,int Password)
 	 if (pthread_mutex_init(lock_writer, NULL) != 0) {
 			printf("\n mutex init has failed\n");
 		}
-	reader_writer_user_account.SetLocks(*lock_reader,*lock_writer);
+	reader_writer_user_account.SetLocks(lock_reader,lock_writer);
 
 }
 

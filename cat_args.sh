@@ -30,5 +30,5 @@ if [ ${#files[@]} -eq 0 ]; then
 fi
 
 # Run ./bank with all the files as arguments
-./bank 10 ${files[@]}
+echo "./bank 10 ${files[@]}"
 

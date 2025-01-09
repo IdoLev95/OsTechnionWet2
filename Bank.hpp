@@ -21,11 +21,25 @@
 #include <cstdlib>   // For rand() and srand()
 #include <unistd.h>
 using namespace std;
+
 enum UserExistanceInBank
 {
 	NotExist,
 	WrongPassword,
 	Valid,
+};
+struct RestoreRequest {
+    int restore_ind;
+    int atm_id;
+    // Constructor to initialize the struct
+	RestoreRequest(int restore_ind, int atm_id) : restore_ind(restore_ind), atm_id(atm_id) {}
+
+};
+// Comparator for std::max_element to compare restore_ind
+struct CompareRestoreRequest {
+    bool operator()(const RestoreRequest& a, const RestoreRequest& b) const {
+        return a.restore_ind < b.restore_ind;  // Compare based on restore_ind
+    }
 };
 
 class Bank {
@@ -40,16 +54,16 @@ public:
 	bool* isAtmActive;
 	deque<map<int,account_no_locks*>> status_to_remeber;
 	ReaderWriter reader_writer_restore_req_list;
-	list<int> restore_indices;  // List to hold the integers
-	Bank(pthread_mutex_t& Lock_bank_list_reader,
-	           pthread_mutex_t& Lock_bank_list_writer,
+	list<RestoreRequest> restore_indices;  // List to hold the integers
+	Bank(pthread_mutex_t* Lock_bank_list_reader,
+	           pthread_mutex_t* Lock_bank_list_writer,
 	           string Path_to_logger,
-	           pthread_mutex_t& mutex_lock_logger_write,
-	           pthread_mutex_t& mutex_lock_logger_read,
-			   pthread_mutex_t& mutex_lock_atms_active_write,
-			   pthread_mutex_t& mutex_lock_atms_active_read,
-			   pthread_mutex_t& mutex_lock_restore_req_list_write,
-			   pthread_mutex_t& mutex_lock_restore_req_list_read,
+	           pthread_mutex_t* mutex_lock_logger_write,
+	           pthread_mutex_t* mutex_lock_logger_read,
+			   pthread_mutex_t* mutex_lock_atms_active_write,
+			   pthread_mutex_t* mutex_lock_atms_active_read,
+			   pthread_mutex_t* mutex_lock_restore_req_list_write,
+			   pthread_mutex_t* mutex_lock_restore_req_list_read,
 			   int num_init_atms);
 	virtual ~Bank();
 	void set_num_atms(int num_atms);
@@ -64,7 +78,7 @@ public:
 	void EraseLoggerContent();
 	void insert_status_to_remember();
 	void restore_status_from_remember(int ind);
-	void insert_restore_int_to_req_list(int restore_ind);
+	void insert_restore_int_to_req_list(int restore_ind,int atm_id);
 	void check_and_apply_restore();
 	void collect_texas_from_all();
 private:

@@ -7,15 +7,15 @@
 
 #include "Bank.hpp"
 
-Bank::Bank(pthread_mutex_t& Lock_bank_list_reader,
-           pthread_mutex_t& Lock_bank_list_writer,
+Bank::Bank(pthread_mutex_t* Lock_bank_list_reader,
+           pthread_mutex_t* Lock_bank_list_writer,
            string Path_to_logger,
-           pthread_mutex_t& mutex_lock_write,
-           pthread_mutex_t& mutex_lock_read,
-		   pthread_mutex_t& mutex_lock_atms_active_write,
-		   pthread_mutex_t& mutex_lock_atms_active_read,
-		   pthread_mutex_t& mutex_lock_restore_req_list_write,
-		   pthread_mutex_t& mutex_lock_restore_req_list_read,
+           pthread_mutex_t* mutex_lock_write,
+           pthread_mutex_t* mutex_lock_read,
+		   pthread_mutex_t* mutex_lock_atms_active_write,
+		   pthread_mutex_t* mutex_lock_atms_active_read,
+		   pthread_mutex_t* mutex_lock_restore_req_list_write,
+		   pthread_mutex_t* mutex_lock_restore_req_list_read,
 		   int num_init_atms)
 : logger(Path_to_logger, mutex_lock_write, mutex_lock_read), // Pass by reference,
 reader_writer_bank_list(Lock_bank_list_reader, Lock_bank_list_writer), // Pass by reference
@@ -67,6 +67,7 @@ void Bank::insert_new_account(int Account,int Amount,int Password,int Atm_id,boo
 		PERSISTENT_flag = false;
 		sleep(1);
 		insert_new_account(Account,Amount,Password,Atm_id,PERSISTENT_flag);
+		return;
 		}
 		else{
 			reader_writer_bank_list.writer_unlocker();
@@ -77,7 +78,6 @@ void Bank::insert_new_account(int Account,int Amount,int Password,int Atm_id,boo
 }
 void Bank::close_existing_account(int Account,int Password,int Atm_id,bool PERSISTENT_flag)
 {
-
 	string str_to_write;
 	reader_writer_bank_list.writer_locker();
 	UserExistanceInBank user_res = IsPasswordCorrect(Account,Password);
@@ -99,6 +99,7 @@ void Bank::close_existing_account(int Account,int Password,int Atm_id,bool PERSI
 		PERSISTENT_flag = false;
 		sleep(1);
 		close_existing_account(Account,Password,Atm_id,PERSISTENT_flag);
+		return;
 	}
 	else if(user_res == WrongPassword)
 	{
@@ -129,11 +130,12 @@ void Bank::deposit(int Account,int Amount, int Password,int Atm_id,bool PERSISTE
 		logger.WriteToLogger(str_to_log);
 		account_to_deposit->reader_writer_user_account.writer_unlocker();
 	}
-	if(PERSISTENT_flag){
+	else if(PERSISTENT_flag){
 		reader_writer_bank_list.reader_unlocker();
 		PERSISTENT_flag = false;
 		sleep(1);
 		deposit(Account,Amount,Password,Atm_id,PERSISTENT_flag);
+		return;
 	}
 	else if(user_res == WrongPassword)
 	{
@@ -171,6 +173,7 @@ void Bank::withdraw(int Account,int Amount, int Password,int Atm_id,bool PERSIST
 						PERSISTENT_flag = false;
 						sleep(1);
 						withdraw(Account,Amount,Password,Atm_id,PERSISTENT_flag);
+						return;
 					}
 			else{
 				str_to_log = "Error " + to_string(Atm_id) + ": Your transaction failed – account id " + to_string(Account) + " balance is lower than "+to_string(Amount);
@@ -181,11 +184,12 @@ void Bank::withdraw(int Account,int Amount, int Password,int Atm_id,bool PERSIST
 		account_to_deposit->reader_writer_user_account.writer_unlocker();
 
 	}
-	if(PERSISTENT_flag){
+	else if(PERSISTENT_flag){
 			reader_writer_bank_list.reader_unlocker();
 			PERSISTENT_flag = false;
 			sleep(1);
 			withdraw(Account,Amount,Password,Atm_id,PERSISTENT_flag);
+			return;
 		}
 	else if(user_res == WrongPassword)
 	{
@@ -215,11 +219,12 @@ void Bank::get_balance(int Account,int Password,int Atm_id,bool PERSISTENT_flag)
 		logger.WriteToLogger(str_to_log);
 		account_to_get_balance->reader_writer_user_account.reader_unlocker();
 	}
-	if(PERSISTENT_flag){
+	else if(PERSISTENT_flag){
 		reader_writer_bank_list.reader_unlocker();
 		PERSISTENT_flag = false;
 		sleep(1);
 		get_balance(Account,Password,Atm_id,PERSISTENT_flag);
+		return;
 	}
 	else if(user_res == NotExist)
 	{
@@ -235,6 +240,7 @@ void Bank::get_balance(int Account,int Password,int Atm_id,bool PERSISTENT_flag)
 }
 void Bank::transfer_money_between_accounts(int src_id_account,int src_password,int target_id_account,int amount,int Atm_id,bool PERSISTENT_flag)
 {
+
 	string str_to_log;
 	reader_writer_bank_list.reader_locker();
 	UserExistanceInBank user_res = IsPasswordCorrect(src_id_account,src_password);
@@ -248,12 +254,17 @@ void Bank::transfer_money_between_accounts(int src_id_account,int src_password,i
 			src_account->reader_writer_user_account.writer_locker();
 			dst_account->reader_writer_user_account.writer_locker();
 		}
-		else
+		else if(target_id_account < src_id_account)
 		{
 			dst_account->reader_writer_user_account.writer_locker();
 			src_account->reader_writer_user_account.writer_locker();
 		}
-		reader_writer_bank_list.reader_unlocker();
+		else
+		{
+			reader_writer_bank_list.reader_unlocker();
+			return;
+		}
+
 		DepositStatus deposit_status = src_account->deposit(-amount);
 		if(deposit_status == Successfull)
 		{
@@ -267,23 +278,35 @@ void Bank::transfer_money_between_accounts(int src_id_account,int src_password,i
 			if(PERSISTENT_flag){
 				src_account->reader_writer_user_account.writer_unlocker();
 				dst_account->reader_writer_user_account.writer_unlocker();
+				reader_writer_bank_list.reader_unlocker();
 				PERSISTENT_flag = false;
 				sleep(1);
 				transfer_money_between_accounts(src_id_account,src_password,target_id_account,amount,Atm_id,PERSISTENT_flag);
+				return;
 			}
 			else{
 				str_to_log = "Error "+to_string(Atm_id) + ": Your transaction failed – account id "+to_string(src_id_account) + " is balance is lower than "+to_string(amount);
 				logger.WriteToLogger(str_to_log);
 			}
 		}
-		src_account->reader_writer_user_account.writer_unlocker();
-		dst_account->reader_writer_user_account.writer_unlocker();
+		if(src_id_account < target_id_account)
+		{
+			src_account->reader_writer_user_account.writer_unlocker();
+			dst_account->reader_writer_user_account.writer_unlocker();
+		}
+		else
+		{
+			dst_account->reader_writer_user_account.writer_unlocker();
+			src_account->reader_writer_user_account.writer_unlocker();
+		}
+		reader_writer_bank_list.reader_unlocker();
 	}
 	if(PERSISTENT_flag){
 		reader_writer_bank_list.reader_unlocker();
 		PERSISTENT_flag = false;
 		sleep(1);
 		transfer_money_between_accounts(src_id_account,src_password,target_id_account,amount,Atm_id,PERSISTENT_flag);
+		return;
 	}
 	else if(user_res == NotExist)
 	{
@@ -300,6 +323,8 @@ void Bank::transfer_money_between_accounts(int src_id_account,int src_password,i
 		str_to_log = "Error "+ to_string(Atm_id) + ": Your transaction failed – password for account id "+to_string(src_id_account) +" is incorrect";
 		logger.WriteToLogger(str_to_log);
 	}
+
+
 }
 void Bank::close_atm(int target_atm_id,int source_atm_id,bool PERSISTENT_flag,bool is_write_to_log)
 {
@@ -325,6 +350,7 @@ void Bank::close_atm(int target_atm_id,int source_atm_id,bool PERSISTENT_flag,bo
 				PERSISTENT_flag = false;
 				sleep(1);
 				close_atm(target_atm_id,source_atm_id,PERSISTENT_flag,is_write_to_log);
+				return;
 			}
 			else{
 					str_to_log = "‫‪Error‬‬ " + to_string(source_atm_id) + ":‬‬ ‫‪Your‬‬ ‫‪close‬‬ ‫‪operation‬‬ ‫‪failed‬‬ ‫–‬ ‫‪ATM‬‬ ‫‪ID‬‬ "+ to_string(target_atm_id) +" ‫‪is‬‬ ‫‪already‬‬ ‫‪in‬‬ ‫‪a‬‬ ‫‪closed‬‬ state";
@@ -341,10 +367,11 @@ void Bank::close_atm(int target_atm_id,int source_atm_id,bool PERSISTENT_flag,bo
 	else{
 		if(PERSISTENT_flag)
 		{
-			reader_writer_atm_active_list.writer_unlocker();
+			//reader_writer_atm_active_list.writer_unlocker();
 			PERSISTENT_flag = false;
 			sleep(1);
 			close_atm(target_atm_id,source_atm_id,PERSISTENT_flag,is_write_to_log);
+			return;
 		}
 		else{
 			str_to_log = "Error " + to_string(source_atm_id) + ": Your transaction failed – ATM ID "+ to_string(target_atm_id) +" does not exist";
@@ -357,29 +384,52 @@ void Bank::close_atm(int target_atm_id,int source_atm_id,bool PERSISTENT_flag,bo
 }
 void Bank::print_bank_status()
 {
-	printf("\033[2J");     // Clear the screen
-	printf("\033[1;1H");   // Move the cursor to row 1, column 1
-	printf("‫‪Current‬‬ ‫‪Bank‬‬ ‫‪Status‬‬\n");
-	reader_writer_bank_list.reader_locker();
-	for(const auto& pair: bank_accounts)
-	{
-		accounts* account = pair.second;
-		account->reader_writer_user_account.reader_locker();
-	}
-	for(const auto& pair: bank_accounts)
-	{
-		accounts* account = pair.second;
-		string str_to_cout = "‫‪Account‬‬ ‫‪" + to_string(account->account_id) + ":‬‬ ‫‪Balance‬‬ ‫‪-‬‬ " + to_string(account->amount) + " ‫‪$,‬‬ ‫‪Account‬‬ ‫‪Password‬‬ ‫‪-‬‬ " + to_string(account->password);
-		cout << str_to_cout << endl;
-	}
-	insert_status_to_remember();
-	for(const auto& pair: bank_accounts)
-	{
-		accounts* account = pair.second;
-		account->reader_writer_user_account.reader_unlocker();
-	}
-	reader_writer_bank_list.reader_unlocker();
+    // Clear the screen and move cursor (optional, if you want this in your application)
+    printf("\033[2J");     // Clear the screen
+    printf("\033[1;1H");   // Move the cursor to row 1, column 1
+
+    printf("‫‪Current‬‬ ‫‪Bank‬‬ ‫‪Status‬‬\n");
+    //return;
+    // Lock the bank list first
+    reader_writer_bank_list.reader_locker();
+
+    // Create a vector of pairs to sort the accounts by account ID (pair.first)
+    vector<pair<int, accounts*>> sorted_accounts(bank_accounts.begin(), bank_accounts.end());
+    sort(sorted_accounts.begin(), sorted_accounts.end(), [](const pair<int, accounts*>& a, const pair<int, accounts*>& b) {
+        return a.first < b.first;  // Sort by account ID (pair.first)
+    });
+
+    // Lock each account in the sorted order
+    for (const auto& pair : sorted_accounts)
+    {
+    	//cout << pair.first << endl;
+        accounts* account = pair.second;
+        account->reader_writer_user_account.reader_locker();
+    }
+    //return;
+
+    // Print the status of each account in sorted order
+    for (const auto& pair : sorted_accounts)
+    {
+        accounts* account = pair.second;
+        string str_to_cout = "‫‪Account‬‬ ‫‪" + to_string(account->account_id) + ":‬‬ ‫‪Balance‬‬ ‫‪-‬‬ " + to_string(account->amount) + " ‫‪$,‬‬ ‫‪Account‬‬ ‫‪Password‬‬ ‫‪-‬‬ " + to_string(account->password);
+        cout << str_to_cout << endl;
+    }
+
+    // Insert status to remember (assuming this function is implemented)
+    insert_status_to_remember();
+
+    // Unlock each account in reverse order of locking (to avoid deadlocks)
+    for (const auto& pair : sorted_accounts)
+    {
+        accounts* account = pair.second;
+        account->reader_writer_user_account.reader_unlocker();
+    }
+
+    // Unlock the bank list
+    reader_writer_bank_list.reader_unlocker();
 }
+
 void Bank::EraseLoggerContent()
 {
 	logger.EraseLoggerContent();
@@ -458,7 +508,11 @@ void Bank::collect_texas_from_all()
 {
 	int commisionPercent =1+  (rand() % 5);
 	reader_writer_bank_list.reader_locker();
-	for(auto& pair:bank_accounts)
+	vector<pair<int, accounts*>> sorted_accounts(bank_accounts.begin(), bank_accounts.end());
+		sort(sorted_accounts.begin(), sorted_accounts.end(), [](const pair<int, accounts*>& a, const pair<int, accounts*>& b) {
+			return a.first < b.first;  // Sort by account ID (pair.first)
+		});;
+	for(auto& pair:sorted_accounts)
 	{
 		accounts* curr_account = pair.second;
 		curr_account->reader_writer_user_account.writer_locker();
@@ -477,29 +531,32 @@ void Bank::check_and_apply_restore()
 	reader_writer_restore_req_list.writer_locker();
   if (!restore_indices.empty()) {
 		// Find the maximum value in the list
-		int maxValueToRestore = *std::max_element(restore_indices.begin(), restore_indices.end());
-		restore_indices.clear();
+	  	auto max_iter = std::max_element(restore_indices.begin(), restore_indices.end(), CompareRestoreRequest());
+	  	int maxValueToRestore = max_iter->restore_ind;
+		int correspondingAtmId = max_iter->atm_id;
+		//int maxValueToRestore = *std::max_element(restore_indices.begin(), restore_indices.end());
+		//restore_indices.clear();
 		reader_writer_restore_req_list.writer_unlocker();
 		restore_status_from_remember(maxValueToRestore);
 		// Clear the list after reading the max value
-
-
+		string str_to_log = to_string(correspondingAtmId) + ":‬‬ ‫‪Rollback‬‬ ‫‪to " +to_string(maxValueToRestore)+ "‬‬ ‫‪bank‬‬ ‫‪iterations‬‬ ‫‪ago‬‬ ‫‪was‬‬ ‫‪completed‬‬ ‫‪successfully‬‬";
+		logger.WriteToLogger(str_to_log);
 	}
   else{
 	  reader_writer_restore_req_list.writer_unlocker();
   }
 }
-void Bank::insert_restore_int_to_req_list(int restore_ind)
+void Bank::insert_restore_int_to_req_list(int restore_ind,int atm_id)
 {
 	reader_writer_restore_req_list.writer_locker();
-	restore_indices.push_back(restore_ind);
+	restore_indices.push_back(RestoreRequest(restore_ind, atm_id));
 	reader_writer_restore_req_list.writer_unlocker();
 }
 void Bank::restore_status_from_remember(int ind)
 {
     // Bounds check for valid index
     if (ind < 0 || ind >= static_cast<int>(status_to_remeber.size())) {
-        cerr << "Index out of bounds!" << endl;
+        //cerr << "Index out of bounds!" << endl;
         return;
     }
 

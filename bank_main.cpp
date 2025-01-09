@@ -35,6 +35,7 @@ int main(int argc, char* argv[])
 
 	bank_params.EraseLoggerContent();
 	const int N = argc-2;
+	//const int N = 20;
 	bank_params.set_num_atms(N);
 	 vector<pthread_t> atm_threads(N);
 	ThreadArgs** pointers = new ThreadArgs*[N]; // Allocate array of void*
@@ -50,8 +51,8 @@ int main(int argc, char* argv[])
 	{
 		pthread_create(&atm_threads[ind], NULL, &single_atm_applier, static_cast<void*>(pointers[ind]));
 	}
-	const int VIP_N = 10;
-	pthread_t vip_threads[VIP_N];
+	const int VIP_N = atoi(argv[1]);
+	vector<pthread_t> vip_threads(VIP_N);
 
 	//void** vip_pointers = new void*[VIP_N]; // Allocate array of void*
 	for (int i = 0; i<VIP_N; ++i) {
@@ -62,12 +63,14 @@ int main(int argc, char* argv[])
 	int counter_for_tax_collection = 0;
 	while(IsExistingWorkingAtm())
 	{
+
 		counter_for_tax_collection++;
 		usleep(500000);
 		bank_params.print_bank_status();
 		bank_params.check_and_apply_restore();
 		if (counter_for_tax_collection == 6)//once every 3 seconds
 		{
+		//	cout << "Here" << endl;
 			counter_for_tax_collection = 0;
 			bank_params.collect_texas_from_all();
 		}
