@@ -535,7 +535,7 @@ void Bank::check_and_apply_restore()
 	  	int maxValueToRestore = max_iter->restore_ind;
 		int correspondingAtmId = max_iter->atm_id;
 		//int maxValueToRestore = *std::max_element(restore_indices.begin(), restore_indices.end());
-		//restore_indices.clear();
+		restore_indices.clear();
 		reader_writer_restore_req_list.writer_unlocker();
 		restore_status_from_remember(maxValueToRestore);
 		// Clear the list after reading the max value
