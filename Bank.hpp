@@ -20,6 +20,7 @@
 #include <algorithm>  // For std::max_element
 #include <cstdlib>   // For rand() and srand()
 #include <unistd.h>
+#include <vector>
 using namespace std;
 
 enum UserExistanceInBank

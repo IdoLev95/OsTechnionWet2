@@ -1,777 +1,868 @@
-‫‪Error‬‬ 0:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-3: New account id is 2222 with password 22 and initial balance 2000
-‫‪Error‬‬ 4:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-2: Account 2222 new balance is 2010 after 10 $ was deposited
-5: Account 2222 new balance is 2020 after 10 $ was deposited
-8: Account 2222 new balance is 2030 after 10 $ was deposited
-‫‪Error‬‬ 11:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 9:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 1111 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-6: New account id is 1111 with password 11 and initial balance 1000
-19: Transfer 100 from account 2222 to account 1111 new account balance is 1930 new target account balance is 1100
-Error 19: Your transaction failed – password for account id 2222 is incorrect
-‫‪Error‬‬ 15:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-Error 16: Your transaction failed – password for account id 2222 is incorrect
-7: Transfer 100 from account 2222 to account 1111 new account balance is 1830 new target account balance is 1200
-Error 7: Your transaction failed – password for account id 2222 is incorrect
-‫‪Error‬‬ 12:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-10: Transfer 100 from account 2222 to account 1111 new account balance is 1730 new target account balance is 1300
-Error 10: Your transaction failed – password for account id 2222 is incorrect
-‫‪Error‬‬ 17:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-18: Transfer 100 from account 1111 to account 2222 new account balance is 1200 new target account balance is 1830
-Error 18: Your transaction failed – password for account id 1111 is incorrect
-Error 22: Your transaction failed – account with the same id exists
-20: Account 2222 new balance is 1820 after 10 $ was withdrawn
-‫‪Error‬‬ 24:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-21: Account 1111 is now closed. Balance was 1200
-23: Account 2222 is now closed. Balance was 1820
-‫‪Error‬‬ 1:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 26:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 27:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 2222 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 28:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 2222 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 25:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 1111 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-30: New account id is 4444 with password 44 and initial balance 4000
-Error 29: Your transaction failed – account with the same id exists
-31: Account 4444 new balance is 4010 after 10 $ was deposited
-37: Account 4444 is now closed. Balance was 4010
-‫‪Error‬‬ 33:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 34:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 1111 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 32:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 39:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 2222 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 35:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 2222 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 38:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 2222 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 36:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 44:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 40:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 2222 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 49:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 51:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 53:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 2222 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 50:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 1111 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 43:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 2222 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 42:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-41: New account id is 2222 with password 22 and initial balance 2000
-45: New account id is 1111 with password 11 and initial balance 1000
-46: Account 1111 is now closed. Balance was 1000
-‫‪Error‬‬ 48:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 1111 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 47:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-54: Account 2222 new balance is 2010 after 10 $ was deposited
-‫‪Error‬‬ 52:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 1111 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 57:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 55:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 56:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 1111 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-58: Account 2222 is now closed. Balance was 2010
-‫‪Error‬‬ 59:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 13:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 2222 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 14:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 9:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 6:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 19:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 2222 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 20:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 2222 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 18:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 2222 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 24:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 28:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-21: New account id is 1111 with password 11 and initial balance 1000
-‫‪Error‬‬ 25:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-30: New account id is 3333 with password 33 and initial balance 3000
-31: Account 3333 new balance is 3010 after 10 $ was deposited
-8: Account 1111 new balance is 1010 after 10 $ was deposited
-34: New account id is 4444 with password 44 and initial balance 4000
-12: New account id is 2222 with password 22 and initial balance 2000
-Error 5: Your transaction failed – account with the same id exists
-2: Account 1111 new balance is 1000 after 10 $ was withdrawn
-38: Transfer 300 from account 2222 to account 1111 new account balance is 1700 new target account balance is 1300
-Error 38: Your transaction failed – password for account id 2222 is incorrect
-36: Transfer 100 from account 1111 to account 2222 new account balance is 1200 new target account balance is 1800
-Error 36: Your transaction failed – password for account id 1111 is incorrect
-‫‪Error‬‬ 11:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 2222 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-Error 10: Your transaction failed – account with the same id exists
-16: Account 4444 new balance is 3990 after 10 $ was withdrawn
-27: Account 4444 new balance is 3980 after 10 $ was withdrawn
-33: Transfer 100 from account 2222 to account 1111 new account balance is 1700 new target account balance is 1300
-Error 7: Your transaction failed – account with the same id exists
-35: Transfer 100 from account 2222 to account 1111 new account balance is 1600 new target account balance is 1400
-Error 35: Your transaction failed – password for account id 2222 is incorrect
-39: Transfer 100 from account 4444 to account 1111 new account balance is 3880 new target account balance is 1500
-Error 39: Your transaction failed – password for account id 4444 is incorrect
-Error 33: Your transaction failed – password for account id 2222 is incorrect
-Error 44: Your transaction failed – account with the same id exists
-Error 32: Your transaction failed – account with the same id exists
-Error 26: Your transaction failed – account with the same id exists
-3: Account 4444 new balance is 3890 after 10 $ was deposited
-Error 22: Your transaction failed – account with the same id exists
-23: Account 3333 new balance is 3000 after 10 $ was withdrawn
-Error 4: Your transaction failed – account with the same id exists
-17: Transfer 100 from account 1111 to account 2222 new account balance is 1400 new target account balance is 1700
-Error 17: Your transaction failed – password for account id 1111 is incorrect
-15: Account 1111 new balance is 1410 after 10 $ was deposited
-Error 0: Your transaction failed – password for account id 2222 is incorrect
-40: Transfer 100 from account 4444 to account 2222 new account balance is 3790 new target account balance is 1800
-Error 40: Your transaction failed – password for account id 4444 is incorrect
-37: Account 2222 new balance is 1810 after 10 $ was deposited
-1: Transfer 300 from account 2222 to account 1111 new account balance is 1510 new target account balance is 1710
-Error 1: Your transaction failed – password for account id 2222 is incorrect
-29: Transfer 100 from account 4444 to account 1111 new account balance is 3690 new target account balance is 1810
-Error 29: Your transaction failed – password for account id 4444 is incorrect
-51: Transfer 100 from account 2222 to account 1111 new account balance is 1410 new target account balance is 1910
-Error 51: Your transaction failed – password for account id 2222 is incorrect
-53: Account 3333 new balance is 3010 after 10 $ was deposited
-49: Account 2222 new balance is 1420 after 10 $ was deposited
-50: Account 4444 is now closed. Balance was 3690
-‫‪Error‬‬ 45:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-41: New account id is 4444 with password 44 and initial balance 4000
-48: Account 4444 new balance is 4010 after 10 $ was deposited
-47: Transfer 100 from account 4444 to account 2222 new account balance is 3910 new target account balance is 1520
-Error 47: Your transaction failed – password for account id 4444 is incorrect
-46: Transfer 100 from account 4444 to account 2222 new account balance is 3810 new target account balance is 1620
-Error 46: Your transaction failed – password for account id 4444 is incorrect
-43: Account 1111 new balance is 1920 after 10 $ was deposited
-42: Transfer 100 from account 4444 to account 3333 new account balance is 3710 new target account balance is 3110
-Error 42: Your transaction failed – password for account id 4444 is incorrect
-55: Account 1111 new balance is 1930 after 10 $ was deposited
-Error 54: Your transaction failed – account with the same id exists
-52: Account 3333 new balance is 3120 after 10 $ was deposited
-57: Account 1111 new balance is 1940 after 10 $ was deposited
-56: Transfer 100 from account 4444 to account 2222 new account balance is 3610 new target account balance is 1720
-Error 56: Your transaction failed – password for account id 4444 is incorrect
-59: Account 3333 new balance is 3110 after 10 $ was withdrawn
-58: Account 1111 new balance is 1950 after 10 $ was deposited
-Error 13: Your transaction failed – account with the same id exists
-14: Transfer 100 from account 2222 to account 1111 new account balance is 1620 new target account balance is 2050
-Error 14: Your transaction failed – password for account id 2222 is incorrect
-‫‪Bank:‬‬ ‫‪commissions‬‬ ‫‪of‬‬ ‫‪5 %‬‬ ‫‪were‬‬ ‫‪charged,‬‬ ‫‪bank‬‬ ‫‪gained‬‬ 102 ‫‪from‬‬ ‫‪account‬‬ ‫‪1111
-‫‪Bank:‬‬ ‫‪commissions‬‬ ‫‪of‬‬ ‫‪5 %‬‬ ‫‪were‬‬ ‫‪charged,‬‬ ‫‪bank‬‬ ‫‪gained‬‬ 81 ‫‪from‬‬ ‫‪account‬‬ ‫‪2222
-‫‪Bank:‬‬ ‫‪commissions‬‬ ‫‪of‬‬ ‫‪5 %‬‬ ‫‪were‬‬ ‫‪charged,‬‬ ‫‪bank‬‬ ‫‪gained‬‬ 155 ‫‪from‬‬ ‫‪account‬‬ ‫‪3333
-‫‪Bank:‬‬ ‫‪commissions‬‬ ‫‪of‬‬ ‫‪5 %‬‬ ‫‪were‬‬ ‫‪charged,‬‬ ‫‪bank‬‬ ‫‪gained‬‬ 180 ‫‪from‬‬ ‫‪account‬‬ ‫‪4444
-28: Account 4444 is now closed. Balance was 3430
-24: Account 3333 new balance is 2965 after 10 $ was deposited
-Error 6: Your transaction failed – account with the same id exists
-‫‪Error‬‬ 9:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-21: Account 3333 is now closed. Balance was 2965
-25: Account 1111 new balance is 1958 after 10 $ was deposited
-Error 19: Your transaction failed – password for account id 2222 is incorrect
-‫‪Error‬‬ 20:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 30:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 31:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-Error 18: Your transaction failed – account with the same id exists
-10: Transfer 100 from account 2222 to account 1111 new account balance is 1439 new target account balance is 2058
-Error 10: Your transaction failed – password for account id 2222 is incorrect
-7: Transfer 100 from account 1111 to account 2222 new account balance is 1958 new target account balance is 1539
-Error 7: Your transaction failed – password for account id 1111 is incorrect
-Error 3: Your transaction failed – account with the same id exists
-‫‪Error‬‬ 26:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-27: Account 2222 new balance is 1529 after 10 $ was withdrawn
-Error 22: Your transaction failed – password for account id 2222 is incorrect
-‫‪Error‬‬ 23:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-4: Transfer 100 from account 1111 to account 2222 new account balance is 1858 new target account balance is 1629
-Error 4: Your transaction failed – password for account id 1111 is incorrect
-16: Account 2222 new balance is 1639 after 10 $ was deposited
-15: Transfer 100 from account 2222 to account 1111 new account balance is 1539 new target account balance is 1958
-Error 15: Your transaction failed – password for account id 2222 is incorrect
-17: Account 1111 new balance is 1948 after 10 $ was withdrawn
-‫‪Error‬‬ 38:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-Error 0: Your transaction failed – password for account id 1111 is incorrect
-36: Account 1111 new balance is 1938 after 10 $ was withdrawn
-40: Account 2222 new balance is 1529 after 10 $ was withdrawn
-Error 34: Your transaction failed – account with the same id exists
-29: Account 1111 is now closed. Balance was 1938
-‫‪Error‬‬ 46:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 48:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 1111 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 47:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-Error 45: Your transaction failed – account with the same id exists
-‫‪Error‬‬ 42:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 1111 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 41:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 54:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 1111 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-Error 52: Your transaction failed – account with the same id exists
-‫‪Error‬‬ 57:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-59: Account 2222 new balance is 1519 after 10 $ was withdrawn
-‫‪Error‬‬ 11:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 1111 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 5:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 1111 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-12: Account 2222 new balance is 1529 after 10 $ was deposited
-‫‪Error‬‬ 51:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 1111 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 53:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-8: Account 2222 new balance is 1539 after 10 $ was deposited
-33: New account id is 3333 with password 33 and initial balance 3000
-‫‪Error‬‬ 2:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-43: Account 3333 new balance is 3010 after 10 $ was deposited
-35: New account id is 1111 with password 11 and initial balance 1000
-49: Account 3333 new balance is 3000 after 10 $ was withdrawn
-Error 44: Your transaction failed – account with the same id exists
-39: New account id is 4444 with password 44 and initial balance 4000
-55: Account 1111 new balance is 1010 after 10 $ was deposited
-32: Account 2222 new balance is 1529 after 10 $ was withdrawn
-50: Account 2222 is now closed. Balance was 1529
-‫‪Error‬‬ 37:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 2222 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 1:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 2222 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-56: New account id is 2222 with password 22 and initial balance 2000
-58: Account 2222 new balance is 2010 after 10 $ was deposited
-13: Account 1111 new balance is 1020 after 10 $ was deposited
-14: Account 2222 is now closed. Balance was 2010
-24: Account 3333 new balance is 3010 after 10 $ was deposited
-‫‪Error‬‬ 28:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 2222 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 6:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 2222 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 9:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 2222 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-21: Account 4444 new balance is 3990 after 10 $ was withdrawn
-‫‪Error‬‬ 25:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 2222 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-Error 19: Your transaction failed – account with the same id exists
-20: Transfer 10 from account 3333 to account 1111 new account balance is 3000 new target account balance is 1030
-Error 20: Your transaction failed – password for account id 3333 is incorrect
-Error 30: Your transaction failed – account with the same id exists
-‫‪Error‬‬ 31:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 2222 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-18: Account 4444 new balance is 3980 after 10 $ was withdrawn
-‫‪Error‬‬ 3:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 2222 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 22:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 2222 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-Error 27: Your transaction failed – account with the same id exists
-26: Account 4444 new balance is 3970 after 10 $ was withdrawn
-Error 23: Your transaction failed – account with the same id exists
-16: Account 3333 new balance is 2990 after 10 $ was withdrawn
-‫‪Error‬‬ 4:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 2222 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 7:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 2222 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 15:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 2222 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-Error 10: Your transaction failed – account with the same id exists
-17: New account id is 2222 with password 22 and initial balance 2000
-46: Account 2222 new balance is 2010 after 10 $ was deposited
-48: Account 1111 is now closed. Balance was 1030
-‫‪Error‬‬ 38:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 1111 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-Error 0: Your transaction failed – account with the same id exists
-47: Account 4444 new balance is 3980 after 10 $ was deposited
-45: Account 3333 new balance is 3000 after 10 $ was deposited
-54: Account 4444 new balance is 3970 after 10 $ was withdrawn
-52: Account 4444 new balance is 3980 after 10 $ was deposited
-Error 36: Your transaction failed – account with the same id exists
-‫‪Error‬‬ 42:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 1111 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-40: Transfer 100 from account 4444 to account 3333 new account balance is 3880 new target account balance is 3100
-Error 40: Your transaction failed – password for account id 4444 is incorrect
-‫‪Error‬‬ 34:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 1111 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-57: Transfer 100 from account 4444 to account 3333 new account balance is 3780 new target account balance is 3200
-Error 57: Your transaction failed – password for account id 4444 is incorrect
-29: Account 3333 new balance is 3190 after 10 $ was withdrawn
-59: Transfer 100 from account 4444 to account 2222 new account balance is 3680 new target account balance is 2110
-Error 59: Your transaction failed – password for account id 4444 is incorrect
-‫‪Error‬‬ 41:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 1111 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-12: New account id is 1111 with password 11 and initial balance 1000
-51: Account 4444 new balance is 3670 after 10 $ was withdrawn
-53: Transfer 10 from account 3333 to account 1111 new account balance is 3180 new target account balance is 1010
-Error 53: Your transaction failed – password for account id 3333 is incorrect
-8: Account 3333 new balance is 3170 after 10 $ was withdrawn
-33: Account 1111 new balance is 1000 after 10 $ was withdrawn
-5: Account 4444 new balance is 3680 after 10 $ was deposited
-Error 2: Your transaction failed – account with the same id exists
-43: Account 2222 new balance is 2120 after 10 $ was deposited
-35: Account 1111 new balance is 990 after 10 $ was withdrawn
-Error 11: Your transaction failed – account with the same id exists
-49: Account 4444 is now closed. Balance was 3680
-44: Account 2222 is now closed. Balance was 2120
-39: New account id is 2222 with password 22 and initial balance 2000
-55: Account 2222 is now closed. Balance was 2000
-‫‪Error‬‬ 32:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 2222 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 50:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 2222 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-37: Account 1111 new balance is 980 after 10 $ was withdrawn
-‫‪Error‬‬ 56:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 2222 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-58: New account id is 4444 with password 44 and initial balance 4000
-1: Account 3333 new balance is 3160 after 10 $ was withdrawn
-Error 14: Your transaction failed – account with the same id exists
-13: Account 3333 new balance is 3150 after 10 $ was withdrawn
-‫‪Error‬‬ 6:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 2222 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-9: Transfer 10 from account 3333 to account 1111 new account balance is 3140 new target account balance is 990
-Error 9: Your transaction failed – password for account id 3333 is incorrect
-‫‪Error‬‬ 21:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 2222 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-28: Account 4444 new balance is 3990 after 10 $ was withdrawn
-‫‪Error‬‬ 19:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 2222 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-Error 25: Your transaction failed – account with the same id exists
-24: New account id is 2222 with password 22 and initial balance 2000
-20: Account 1111 is now closed. Balance was 990
-‫‪Error‬‬ 30:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 1111 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-31: Account 2222 new balance is 1990 after 10 $ was withdrawn
-18: Account 2222 new balance is 2000 after 10 $ was deposited
-23: Account 4444 new balance is 3980 after 10 $ was withdrawn
-Error 0: Your transaction failed – password for account id 2222 is incorrect
-5: Account 4444 new balance is 3990 after 10 $ was deposited
-‫‪Error‬‬ 8:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 1111 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-33: Account 2222 new balance is 2010 after 10 $ was deposited
-Error 53: Your transaction failed – account with the same id exists
-12: Account 3333 new balance is 3130 after 10 $ was withdrawn
-51: Account 2222 new balance is 2020 after 10 $ was deposited
-‫‪Error‬‬ 2:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 1111 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 43:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 1111 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-35: Account 2222 new balance is 2030 after 10 $ was deposited
-‫‪Error‬‬ 11:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 1111 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 49:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 1111 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 44:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 1111 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-39: Account 3333 new balance is 3120 after 10 $ was withdrawn
-55: New account id is 1111 with password 11 and initial balance 1000
-32: Account 2222 new balance is 2020 after 10 $ was withdrawn
-50: Account 4444 new balance is 3980 after 10 $ was withdrawn
-Error 37: Your transaction failed – account with the same id exists
-56: Account 1111 is now closed. Balance was 1000
-Error 1: Your transaction failed – account with the same id exists
-22: Account 3333 new balance is 3130 after 10 $ was deposited
-26: Account 4444 new balance is 3970 after 10 $ was withdrawn
-4: Account 4444 is now closed. Balance was 3970
-16: Transfer 100 from account 2222 to account 1111 new account balance is 1920 new target account balance is 1100
-Error 16: Your transaction failed – password for account id 2222 is incorrect
-7: Account 2222 new balance is 1930 after 10 $ was deposited
-58: Account 3333 new balance is 3120 after 10 $ was withdrawn
-‫‪Error‬‬ 38:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 1111 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-3: New account id is 1111 with password 11 and initial balance 1000
-Error 47: Your transaction failed – account with the same id exists
-Error 42: Your transaction failed – account with the same id exists
-27: Transfer 300 from account 2222 to account 1111 new account balance is 1630 new target account balance is 1400
-Error 27: Your transaction failed – password for account id 2222 is incorrect
-15: Transfer 100 from account 1111 to account 2222 new account balance is 1300 new target account balance is 1730
-Error 15: Your transaction failed – password for account id 1111 is incorrect
-17: Account 2222 new balance is 1740 after 10 $ was deposited
-48: Account 2222 new balance is 1730 after 10 $ was withdrawn
-46: Transfer 100 from account 2222 to account 1111 new account balance is 1630 new target account balance is 1400
-Error 46: Your transaction failed – password for account id 2222 is incorrect
-45: Account 1111 new balance is 1390 after 10 $ was withdrawn
-54: Transfer 300 from account 2222 to account 1111 new account balance is 1330 new target account balance is 1690
-Error 54: Your transaction failed – password for account id 2222 is incorrect
-Error 34: Your transaction failed – account with the same id exists
-57: Account 2222 new balance is 1320 after 10 $ was withdrawn
-41: Account 2222 new balance is 1310 after 10 $ was withdrawn
-59: Account 2222 new balance is 1300 after 10 $ was withdrawn
-10: Account 2222 new balance is 1290 after 10 $ was withdrawn
-40: Account 3333 new balance is 3130 after 10 $ was deposited
-52: Transfer 10 from account 3333 to account 1111 new account balance is 3120 new target account balance is 1700
-Error 52: Your transaction failed – password for account id 3333 is incorrect
-36: Transfer 100 from account 2222 to account 1111 new account balance is 1190 new target account balance is 1800
-Error 36: Your transaction failed – password for account id 2222 is incorrect
-29: Account 3333 is now closed. Balance was 3120
+‫‪Error‬‬ -1:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 2222 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+‫‪Error‬‬ 14:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 1111 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+8: New account id is 12345 with password 1234 and initial balance 500
+Error 18: Your transaction failed – password for account id 2222 is incorrect
+12: New account id is 2222 with password 22 and initial balance 200
+‫‪Error‬‬ 16:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 1111 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+‫‪Error‬‬ 17:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 1111 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+7: New account id is 12346 with password 1233 and initial balance 50
+Error 0: Your transaction failed – ATM ID 20 does not exist
+15: Account 2222 new balance is 400 after 200 $ was deposited
+Error 9: Your transaction failed - account with the same id exists
+Error 10: Your transaction failed - account with the same id exists
+Error 1: Your transaction failed - account with the same id exists
+Error 3: Your transaction failed - account with the same id exists
+Error 4: Your transaction failed - account with the same id exists
 ‫‪Error‬‬ 13:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-14: Account 2222 new balance is 1200 after 10 $ was deposited
-‫‪Bank:‬‬ ‫‪commissions‬‬ ‫‪of‬‬ ‫‪4 %‬‬ ‫‪were‬‬ ‫‪charged,‬‬ ‫‪bank‬‬ ‫‪gained‬‬ 40 ‫‪from‬‬ ‫‪account‬‬ ‫‪1111
-‫‪Bank:‬‬ ‫‪commissions‬‬ ‫‪of‬‬ ‫‪4 %‬‬ ‫‪were‬‬ ‫‪charged,‬‬ ‫‪bank‬‬ ‫‪gained‬‬ 48 ‫‪from‬‬ ‫‪account‬‬ ‫‪2222
-22: New account id is 3333 with password 33 and initial balance 3000
-53: Account 1111 new balance is 950 after 10 $ was withdrawn
-4: Transfer 100 from account 2222 to account 1111 new account balance is 1052 new target account balance is 1050
-Error 4: Your transaction failed – password for account id 2222 is incorrect
-12: Account 2222 new balance is 1042 after 10 $ was withdrawn
-16: Account 1111 new balance is 1040 after 10 $ was withdrawn
-‫‪Error‬‬ 5:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-Error 33: Your transaction failed – account with the same id exists
-8: Account 3333 new balance is 2990 after 10 $ was withdrawn
-7: Transfer 100 from account 1111 to account 2222 new account balance is 940 new target account balance is 1142
-Error 7: Your transaction failed – password for account id 1111 is incorrect
-‫‪Error‬‬ 51:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-27: Account 3333 new balance is 3000 after 10 $ was deposited
-10: Transfer 300 from account 2222 to account 1111 new account balance is 842 new target account balance is 1240
-Error 10: Your transaction failed – password for account id 2222 is incorrect
-Error 15: Your transaction failed – account with the same id exists
-17: Account 1111 new balance is 1250 after 10 $ was deposited
-23: Transfer 300 from account 2222 to account 1111 new account balance is 542 new target account balance is 1550
-Error 23: Your transaction failed – password for account id 2222 is incorrect
-‫‪Error‬‬ 48:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-2: Account 2222 new balance is 532 after 10 $ was withdrawn
-46: Account 2222 is now closed. Balance was 532
-‫‪Error‬‬ 3:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 2222 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-43: Account 1111 is now closed. Balance was 1550
-‫‪Error‬‬ 26:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 2222 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 0:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 38:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 1111 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 47:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 1111 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 35:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 2222 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 45:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 2222 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 11:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-Error 54: Your transaction failed – account with the same id exists
-‫‪Error‬‬ 52:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-9: Account 3333 new balance is 2990 after 10 $ was withdrawn
-‫‪Error‬‬ 21:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 2222 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-49: New account id is 1111 with password 11 and initial balance 1000
-‫‪Error‬‬ 28:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 2222 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 19:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-6: New account id is 4444 with password 44 and initial balance 4000
-‫‪Error‬‬ 25:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 2222 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-Error 24: Your transaction failed – account with the same id exists
-Error 20: Your transaction failed – account with the same id exists
-‫‪Error‬‬ 30:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 2222 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-44: Account 1111 new balance is 1010 after 10 $ was deposited
-36: Account 4444 is now closed. Balance was 4000
-‫‪Error‬‬ 31:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 34:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 42:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 2222 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 55:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 2222 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 32:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-50: Account 3333 is now closed. Balance was 2990
-Error 57: Your transaction failed – account with the same id exists
-‫‪Error‬‬ 39:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 29:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 37:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 40:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 2222 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 56:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 2222 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 41:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 2222 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 59:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 2222 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 18:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 58:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 1:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 2222 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 13:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 2222 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 14:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 53:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 8:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 51:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 2222 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 7:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 27:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 2222 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 15:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 10:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 2222 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 4:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 2222 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-33: Account 1111 new balance is 1020 after 10 $ was deposited
-‫‪Error‬‬ 17:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 2222 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 12:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 2222 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 23:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 48:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 2222 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-2: New account id is 4444 with password 44 and initial balance 4000
-‫‪Error‬‬ 3:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 2222 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 46:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 43:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-0: New account id is 2222 with password 2222 and initial balance 2000
-Error 38: Your transaction failed – account with the same id exists
-47: Account 1111 is now closed. Balance was 1020
-‫‪Error‬‬ 22:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 1111 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 35:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 1111 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-Error 5: Your transaction failed – password for account id 2222 is incorrect
-‫‪Error‬‬ 45:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-Error 11: Your transaction failed – account with the same id exists
-‫‪Error‬‬ 54:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 1111 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 52:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 1111 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 9:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 1111 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 26:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 1111 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-21: Account 4444 new balance is 4010 after 10 $ was deposited
-Error 49: Your transaction failed – password for account id 2222 is incorrect
-Error 16: Your transaction failed – account with the same id exists
-28: New account id is 3333 with password 33 and initial balance 3000
-19: Account 3333 new balance is 3010 after 10 $ was deposited
-Error 6: Your transaction failed – account with the same id exists
-25: Account 4444 is now closed. Balance was 4010
-‫‪Error‬‬ 24:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 1111 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-Error 20: Your transaction failed – password for account id 2222 is incorrect
-‫‪Error‬‬ 30:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 1111 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-44: Account 3333 is now closed. Balance was 3010
-36: New account id is 4444 with password 44 and initial balance 4000
-Error 31: Your transaction failed – password for account id 2222 is incorrect
-‫‪Error‬‬ 34:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-42: Account 4444 new balance is 4010 after 10 $ was deposited
-‫‪Error‬‬ 55:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 1111 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-32: New account id is 1111 with password 11 and initial balance 1000
-‫‪Error‬‬ 50:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-Error 57: Your transaction failed – password for account id 2222 is incorrect
-Error 39: Your transaction failed – password for account id 2222 is incorrect
-‫‪Error‬‬ 29:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-Error 37: Your transaction failed – account with the same id exists
-Error 40: Your transaction failed – password for account id 2222 is incorrect
-56: New account id is 3333 with password 33 and initial balance 3000
-41: Account 4444 new balance is 4020 after 10 $ was deposited
-Error 59: Your transaction failed – password for account id 2222 is incorrect
-18: Account 1111 new balance is 1010 after 10 $ was deposited
-Error 58: Your transaction failed – password for account id 2222 is incorrect
-1: Account 4444 is now closed. Balance was 4020
-‫‪Error‬‬ 14:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-13: Account 3333 is now closed. Balance was 3000
-51: Account 1111 new balance is 1020 after 10 $ was deposited
-Error 7: Your transaction failed – password for account id 2222 is incorrect
-27: Account 1111 is now closed. Balance was 1020
+6: Account 12345 is now closed. Balance was 500
+2: New account id is 12345 with password 1234 and initial balance 100
+Error 5: Your transaction failed - account with the same id exists
+Error 11: Your transaction failed - account with the same id exists
+Error -1: Your transaction failed - account with the same id exists
+8: New account id is 12350 with password 1250 and initial balance 50
+1: Account 12345 new balance is 50 after 50 $ was withdrawn
+4: Account 12346 new balance is 250 after 200 $ was deposited
+3: Account 12345 new balance is 550 after 500 $ was deposited
 ‫‪Error‬‬ 15:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 1111 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 10:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 4:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 33:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-12: New account id is 1111 with password 11 and initial balance 1000
-17: New account id is 3333 with password 33 and initial balance 3000
-23: Account 1111 new balance is 1010 after 10 $ was deposited
-Error 48: Your transaction failed – password for account id 2222 is incorrect
-‫‪Error‬‬ 3:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-Error 43: Your transaction failed – account with the same id exists
-46: Account 3333 new balance is 2990 after 10 $ was withdrawn
-Error 2: Your transaction failed – password for account id 2222 is incorrect
-Error 0: Your transaction failed – account with the same id exists
-8: New account id is 4444 with password 44 and initial balance 4000
-35: Account 3333 new balance is 2980 after 10 $ was withdrawn
-38: Transfer 100 from account 4444 to account 1111 new account balance is 3900 new target account balance is 1110
-Error 38: Your transaction failed – password for account id 4444 is incorrect
-47: Transfer 100 from account 4444 to account 1111 new account balance is 3800 new target account balance is 1210
-Error 47: Your transaction failed – password for account id 4444 is incorrect
-5: Account 3333 new balance is 2970 after 10 $ was withdrawn
-Error 26: Your transaction failed – password for account id 2222 is incorrect
-Error 6: Your transaction failed – password for account id 2222 is incorrect
-44: Account 3333 new balance is 2960 after 10 $ was withdrawn
-Error 36: Your transaction failed – password for account id 2222 is incorrect
-32: Account 4444 new balance is 3790 after 10 $ was withdrawn
-Error 57: Your transaction failed – password for account id 2222 is incorrect
-Error 29: Your transaction failed – password for account id 2222 is incorrect
-Error 37: Your transaction failed – password for account id 2222 is incorrect
-56: Transfer 100 from account 4444 to account 2222 new account balance is 3690 new target account balance is 2100
-22: Transfer 100 from account 1111 to account 2222 new account balance is 1110 new target account balance is 2200
-Error 22: Your transaction failed – password for account id 1111 is incorrect
-53: Account 1111 is now closed. Balance was 1110
-45: New account id is 1111 with password 11 and initial balance 1000
-Error 41: Your transaction failed – password for account id 2222 is incorrect
-Error 21: Your transaction failed – account with the same id exists
-Error 59: Your transaction failed – password for account id 2222 is incorrect
-Error 56: Your transaction failed – password for account id 4444 is incorrect
-49: Account 4444 is now closed. Balance was 3690
-Error 1: Your transaction failed – password for account id 2222 is incorrect
-Error 11: Your transaction failed – account with the same id exists
-Error 16: Your transaction failed – account with the same id exists
-Error 54: Your transaction failed – account with the same id exists
+‫‪Error‬‬ 14:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 1111 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+‫‪Error‬‬ 18:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+2: Account 12345 new balance is 850 after 300 $ was deposited
+‫‪Error‬‬ 13:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 1111 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+5: Account 12345 new balance is 1050 after 200 $ was deposited
+10: Account 12346 new balance is 200 after 50 $ was withdrawn
+9: Account 12346 is now closed. Balance was 200
+‫‪Error‬‬ 16:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+12: New account id is 3333 with password 33 and initial balance 300
+19: Account 3333 balance is 300
+‫‪Error‬‬ 7:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 12346 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+‫‪Error‬‬ 17:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 1111 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+11: Account 12345 new balance is 1040 after 10 $ was withdrawn
+6: Account 12345 new balance is 990 after 50 $ was withdrawn
+Bank: commissions of 3 % were charged, bank gained 12 ‫‪from‬‬ ‫‪account‬‬ ‫‪2222
+Bank: commissions of 3 % were charged, bank gained 9 ‫‪from‬‬ ‫‪account‬‬ ‫‪3333
+Bank: commissions of 3 % were charged, bank gained 29 ‫‪from‬‬ ‫‪account‬‬ ‫‪12345
+Bank: commissions of 3 % were charged, bank gained 1 ‫‪from‬‬ ‫‪account‬‬ ‫‪12350
+8: Account 12345 new balance is 941 after 20 $ was withdrawn
+1: Account 12345 new balance is 911 after 30 $ was withdrawn
+‫‪Error‬‬ 15:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+‫‪Error‬‬ 14:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 1111 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+‫‪Error‬‬ 18:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+4: Account 12345 new balance is 861 after 50 $ was withdrawn
+Error 2: Your transaction failed – password for account id 12345 is incorrect
+‫‪Error‬‬ 13:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 1111 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+3: Account 12345 new balance is 796 after 65 $ was withdrawn
+Error 5: Your transaction failed – password for account id 12345 is incorrect
+11: Account 12345 new balance is 816 after 20 $ was deposited
+Error 10: Your transaction failed – password for account id 12345 is incorrect
+‫‪Error‬‬ 12:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+9: Account 12345 new balance is 811 after 5 $ was withdrawn
+‫‪Error‬‬ 16:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+6: Account 12345 new balance is 821 after 10 $ was deposited
+Error 7: Your transaction failed – password for account id 12345 is incorrect
+0: Account 12345 new balance is 811 after 10 $ was withdrawn
+‫‪Error‬‬ 17:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 1111 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+‫‪Error‬‬ 19:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 1111 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+8: Account 12345 new balance is 861 after 50 $ was deposited
+1: Account 12345 new balance is 961 after 100 $ was deposited
+‫‪Error‬‬ 12:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 1111 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+‫‪Error‬‬ 9:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 12346 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+Error 16: Your transaction failed - account with the same id exists
+Error 10: Your transaction failed – password for account id 12345 is incorrect
+Error 6: Your transaction failed - account with the same id exists
+Error 7: Your transaction failed – password for account id 12345 is incorrect
+0: Account 12345 new balance is 981 after 20 $ was deposited
+‫‪Error‬‬ 17:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+‫‪Error‬‬ 18:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+2: New account id is 12349 with password 1266 and initial balance 1000
+‫‪Error‬‬ 15:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+‫‪Error‬‬ 14:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 1111 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+Error 13: Your transaction failed = password for account id 3333 is incorrect
+3: Account 12345 new balance is 1181 after 200 $ was deposited
+5: Account 12345 balance is 1181
+11: New account id is 12346 with password 1233 and initial balance 50
+-1: Account 12345 balance is 1181
+4: Account 12346 balance is 50
+Error 1: Your transaction failed – password for account id 12345 is incorrect
+8: Account 12346 is now closed. Balance was 50
+2: Account 12349 new balance is 950 after 50 $ was withdrawn
+15: New account id is 1111 with password 11 and initial balance 100
+18: Account 1111 new balance is 0 after 100 $ was withdrawn
+Error 14: Your transaction failed – password for account id 2222 is incorrect
 ‫‪Error‬‬ 13:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-Error 14: Your transaction failed – account with the same id exists
-Error 28: Your transaction failed – account with the same id exists
-52: New account id is 4444 with password 44 and initial balance 4000
-Error 19: Your transaction failed – account with the same id exists
-Error 25: Your transaction failed – account with the same id exists
-Error 24: Your transaction failed – account with the same id exists
-Error 20: Your transaction failed – account with the same id exists
-Error 34: Your transaction failed – account with the same id exists
-Error 42: Your transaction failed – account with the same id exists
-55: Account 1111 is now closed. Balance was 1000
-50: New account id is 1111 with password 11 and initial balance 1000
-39: Account 3333 is now closed. Balance was 2960
-58: New account id is 3333 with password 33 and initial balance 3000
-‫‪Bank:‬‬ ‫‪commissions‬‬ ‫‪of‬‬ ‫‪3 %‬‬ ‫‪were‬‬ ‫‪charged,‬‬ ‫‪bank‬‬ ‫‪gained‬‬ 30 ‫‪from‬‬ ‫‪account‬‬ ‫‪1111
-‫‪Bank:‬‬ ‫‪commissions‬‬ ‫‪of‬‬ ‫‪3 %‬‬ ‫‪were‬‬ ‫‪charged,‬‬ ‫‪bank‬‬ ‫‪gained‬‬ 66 ‫‪from‬‬ ‫‪account‬‬ ‫‪2222
-‫‪Bank:‬‬ ‫‪commissions‬‬ ‫‪of‬‬ ‫‪3 %‬‬ ‫‪were‬‬ ‫‪charged,‬‬ ‫‪bank‬‬ ‫‪gained‬‬ 90 ‫‪from‬‬ ‫‪account‬‬ ‫‪3333
-‫‪Bank:‬‬ ‫‪commissions‬‬ ‫‪of‬‬ ‫‪3 %‬‬ ‫‪were‬‬ ‫‪charged,‬‬ ‫‪bank‬‬ ‫‪gained‬‬ 120 ‫‪from‬‬ ‫‪account‬‬ ‫‪4444
-Error 7: Your transaction failed – account with the same id exists
-Error 27: Your transaction failed – account with the same id exists
-Error 10: Your transaction failed – password for account id 2222 is incorrect
-4: Account 1111 new balance is 960 after 10 $ was withdrawn
-33: Account 1111 new balance is 950 after 10 $ was withdrawn
-Error 17: Your transaction failed – account with the same id exists
-Error 23: Your transaction failed – account with the same id exists
-48: Account 3333 new balance is 2900 after 10 $ was withdrawn
-3: Account 3333 new balance is 2890 after 10 $ was withdrawn
-43: Transfer 100 from account 1111 to account 2222 new account balance is 850 new target account balance is 2234
-Error 43: Your transaction failed – password for account id 1111 is incorrect
-2: Transfer 100 from account 4444 to account 2222 new account balance is 3780 new target account balance is 2334
-Error 2: Your transaction failed – password for account id 4444 is incorrect
-46: Account 3333 is now closed. Balance was 2890
-Error 0: Your transaction failed – password for account id 4444 is incorrect
-‫‪Error‬‬ 15:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 8:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-Error 47: Your transaction failed – password for account id 2222 is incorrect
-‫‪Error‬‬ 35:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-38: New account id is 3333 with password 33 and initial balance 3000
-Error 53: Your transaction failed – password for account id 2222 is incorrect
-22: Account 4444 new balance is 3770 after 10 $ was withdrawn
-51: Transfer 100 from account 1111 to account 2222 new account balance is 750 new target account balance is 2434
-Error 51: Your transaction failed – password for account id 1111 is incorrect
-45: Transfer 10 from account 3333 to account 1111 new account balance is 2990 new target account balance is 760
-Error 45: Your transaction failed – password for account id 3333 is incorrect
-Error 5: Your transaction failed – account with the same id exists
-12: Account 4444 new balance is 3760 after 10 $ was withdrawn
-54: Account 3333 new balance is 3000 after 10 $ was deposited
-52: Account 4444 new balance is 3750 after 10 $ was withdrawn
-11: Transfer 100 from account 4444 to account 1111 new account balance is 3650 new target account balance is 860
-Error 11: Your transaction failed – password for account id 4444 is incorrect
-41: Transfer 100 from account 1111 to account 2222 new account balance is 760 new target account balance is 2534
-Error 41: Your transaction failed – password for account id 1111 is incorrect
-Error 14: Your transaction failed – account with the same id exists
-Error 13: Your transaction failed – account with the same id exists
-Error 26: Your transaction failed – account with the same id exists
-Error 21: Your transaction failed – password for account id 2222 is incorrect
-Error 25: Your transaction failed – account with the same id exists
-24: Account 4444 new balance is 3640 after 10 $ was withdrawn
-Error 6: Your transaction failed – account with the same id exists
-19: Transfer 10 from account 3333 to account 1111 new account balance is 2990 new target account balance is 770
-Error 19: Your transaction failed – password for account id 3333 is incorrect
-Error 20: Your transaction failed – account with the same id exists
-Error 28: Your transaction failed – password for account id 2222 is incorrect
-49: Transfer 100 from account 1111 to account 2222 new account balance is 670 new target account balance is 2634
-Error 49: Your transaction failed – password for account id 1111 is incorrect
-Error 16: Your transaction failed – password for account id 2222 is incorrect
-36: Account 4444 new balance is 3630 after 10 $ was withdrawn
-Error 34: Your transaction failed – account with the same id exists
-Error 42: Your transaction failed – account with the same id exists
-Error 32: Your transaction failed – password for account id 2222 is incorrect
-44: Account 4444 new balance is 3640 after 10 $ was deposited
-50: Account 1111 is now closed. Balance was 670
-Error 55: Your transaction failed – account with the same id exists
-57: Account 3333 new balance is 2980 after 10 $ was withdrawn
-39: Transfer 100 from account 4444 to account 3333 new account balance is 3540 new target account balance is 3080
-Error 39: Your transaction failed – password for account id 4444 is incorrect
-29: New account id is 1111 with password 11 and initial balance 1000
-37: Account 4444 new balance is 3550 after 10 $ was deposited
-59: Transfer 100 from account 4444 to account 1111 new account balance is 3450 new target account balance is 1100
-Error 59: Your transaction failed – password for account id 4444 is incorrect
-Error 56: Your transaction failed – account with the same id exists
-Error 58: Your transaction failed – account with the same id exists
-Error 1: Your transaction failed – account with the same id exists
-4: Account 3333 new balance is 3090 after 10 $ was deposited
-Error 10: Your transaction failed – password for account id 2222 is incorrect
-Error 33: Your transaction failed – password for account id 2222 is incorrect
-Error 17: Your transaction failed – password for account id 2222 is incorrect
-Error 23: Your transaction failed – account with the same id exists
-Error 48: Your transaction failed – account with the same id exists
-Error 3: Your transaction failed – account with the same id exists
-46: Account 3333 new balance is 3100 after 10 $ was deposited
-2: Transfer 100 from account 1111 to account 2222 new account balance is 1000 new target account balance is 2734
-Error 2: Your transaction failed – password for account id 1111 is incorrect
-0: Transfer 100 from account 2222 to account 1111 new account balance is 2634 new target account balance is 1100
-Error 0: Your transaction failed – password for account id 2222 is incorrect
+3: Account 12345 balance is 1181
+‫‪Error‬‬ 5:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 12346 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+16: Account 2222 balance is 388
+Error 10: Your transaction failed – password for account id 12345 is incorrect
+‫‪Error‬‬ 12:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+0: New account id is 12346 with password 1233 and initial balance 50
+9: New account id is 12351 with password 1251 and initial balance 100
+17: Account 1111 balance is 0
+11: Account 12345 new balance is 1131 after 50 $ was withdrawn
+-1: Account 12345 new balance is 1081 after 50 $ was withdrawn
+-1: Transfer 100 from account 12345 to account 12349 new account balance is 981 new target account balance is 1050
+Error -1: Your transaction failed – password for account id 12345 is incorrect
+Bank: commissions of 4 % were charged, bank gained 0 ‫‪from‬‬ ‫‪account‬‬ ‫‪1111
+Bank: commissions of 4 % were charged, bank gained 15 ‫‪from‬‬ ‫‪account‬‬ ‫‪2222
+Bank: commissions of 4 % were charged, bank gained 11 ‫‪from‬‬ ‫‪account‬‬ ‫‪3333
+Bank: commissions of 4 % were charged, bank gained 39 ‫‪from‬‬ ‫‪account‬‬ ‫‪12345
+Bank: commissions of 4 % were charged, bank gained 2 ‫‪from‬‬ ‫‪account‬‬ ‫‪12346
+Bank: commissions of 4 % were charged, bank gained 42 ‫‪from‬‬ ‫‪account‬‬ ‫‪12349
+Bank: commissions of 4 % were charged, bank gained 1 ‫‪from‬‬ ‫‪account‬‬ ‫‪12350
+Bank: commissions of 4 % were charged, bank gained 4 ‫‪from‬‬ ‫‪account‬‬ ‫‪12351
+19: Transfer 100 from account 2222 to account 1111 new account balance is 273 new target account balance is 100
+Error 19: Your transaction failed – password for account id 2222 is incorrect
+4: New account id is 12348 with password 1255 and initial balance 500
+Error 7: Your transaction failed – password for account id 12345 is incorrect
+‫‪Error‬‬ 8:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 12347 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+1: New account id is 12347 with password 1244 and initial balance 100
+Error 16: Your transaction failed - account with the same id exists
+11: Account 12345 new balance is 982 after 40 $ was deposited
+18: Transfer 10 from account 3333 to account 1111 new account balance is 270 new target account balance is 110
+Error 18: Your transaction failed – password for account id 3333 is incorrect
+‫‪Error‬‬ 12:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+3: Account 12347 is now closed. Balance was 100
+15: Account 1111 new balance is 10 after 100 $ was withdrawn
+14: Transfer 100 from account 2222 to account 1111 new account balance is 173 new target account balance is 110
+Error 14: Your transaction failed – password for account id 2222 is incorrect
+13: Account 1111 balance is 110
+5: Account 12346 new balance is 38 after 10 $ was withdrawn
+6: Account 12346 is now closed. Balance was 38
+‫‪Error‬‬ 10:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 12346 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+9: Account 12345 is now closed. Balance was 982
+17: Rollback to 0 bank iterations ago was completed successfully
+‫‪Error‬‬ 19:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+Error 4: Your transaction failed – password for account id 12348 is incorrect
+‫‪Error‬‬ 7:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 12346 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+‫‪Error‬‬ 1:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 12345 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+‫‪Error‬‬ 8:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 12345 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+‫‪Error‬‬ 11:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 12345 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+‫‪Error‬‬ 0:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 12345 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+16: Account 2222 balance is 173
+17: Transfer 100 from account 1111 to account 2222 new account balance is 10 new target account balance is 273
+Error 17: Your transaction failed – password for account id 1111 is incorrect
+Error 18: Your transaction failed – password for account id 1111 is incorrect
+12: Transfer 10 from account 3333 to account 1111 new account balance is 260 new target account balance is 20
+Error 12: Your transaction failed – password for account id 3333 is incorrect
+14: Account 1111 balance is 20
+Error 15: Your transaction failed – account id 2222 is balance is lower than 300
 Error 15: Your transaction failed – password for account id 2222 is incorrect
-Error 8: Your transaction failed – password for account id 2222 is incorrect
-47: Transfer 100 from account 4444 to account 3333 new account balance is 3350 new target account balance is 3200
-Error 47: Your transaction failed – password for account id 4444 is incorrect
-43: Account 4444 new balance is 3360 after 10 $ was deposited
-7: Account 3333 new balance is 3190 after 10 $ was withdrawn
-35: Account 4444 new balance is 3350 after 10 $ was withdrawn
-38: Account 3333 new balance is 3200 after 10 $ was deposited
-53: Transfer 100 from account 1111 to account 2222 new account balance is 1000 new target account balance is 2734
-Error 53: Your transaction failed – password for account id 1111 is incorrect
-Error 22: Your transaction failed – account with the same id exists
-Error 51: Your transaction failed – account with the same id exists
-Error 45: Your transaction failed – password for account id 2222 is incorrect
-Error 5: Your transaction failed – account with the same id exists
-27: Account 3333 new balance is 3190 after 10 $ was withdrawn
-Error 12: Your transaction failed – password for account id 2222 is incorrect
-Error 54: Your transaction failed – password for account id 2222 is incorrect
-Error 52: Your transaction failed – password for account id 2222 is incorrect
-Error 11: Your transaction failed – password for account id 2222 is incorrect
-Error 41: Your transaction failed – password for account id 2222 is incorrect
-Error 13: Your transaction failed – password for account id 2222 is incorrect
-Error 14: Your transaction failed – account with the same id exists
-Error 20: Your transaction failed – password for account id 2222 is incorrect
-26: Transfer 100 from account 4444 to account 1111 new account balance is 3250 new target account balance is 1100
-Error 26: Your transaction failed – password for account id 4444 is incorrect
-25: Transfer 100 from account 4444 to account 2222 new account balance is 3150 new target account balance is 2834
-Error 25: Your transaction failed – password for account id 4444 is incorrect
-Error 6: Your transaction failed – password for account id 2222 is incorrect
-21: Account 1111 new balance is 1090 after 10 $ was withdrawn
-24: Account 1111 is now closed. Balance was 1090
-Error 28: Your transaction failed – password for account id 2222 is incorrect
-19: Account 3333 new balance is 3180 after 10 $ was withdrawn
-Error 16: Your transaction failed – account with the same id exists
-Error 49: Your transaction failed – account with the same id exists
-‫‪Error‬‬ 36:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 1111 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 34:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 1111 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-42: Account 4444 new balance is 3140 after 10 $ was withdrawn
-‫‪Error‬‬ 32:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 1111 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-44: Account 4444 new balance is 3130 after 10 $ was withdrawn
-50: Transfer 100 from account 4444 to account 2222 new account balance is 3030 new target account balance is 2934
-Error 50: Your transaction failed – password for account id 4444 is incorrect
-55: New account id is 1111 with password 11 and initial balance 1000
-Error 57: Your transaction failed – account with the same id exists
-Error 39: Your transaction failed – account with the same id exists
-Error 29: Your transaction failed – password for account id 2222 is incorrect
-37: Account 1111 new balance is 990 after 10 $ was withdrawn
-Error 59: Your transaction failed – account with the same id exists
-56: Transfer 100 from account 1111 to account 2222 new account balance is 890 new target account balance is 3034
-Error 56: Your transaction failed – password for account id 1111 is incorrect
-58: Account 3333 new balance is 3190 after 10 $ was deposited
-Error 1: Your transaction failed – account with the same id exists
-‫‪Bank:‬‬ ‫‪commissions‬‬ ‫‪of‬‬ ‫‪1 %‬‬ ‫‪were‬‬ ‫‪charged,‬‬ ‫‪bank‬‬ ‫‪gained‬‬ 8 ‫‪from‬‬ ‫‪account‬‬ ‫‪1111
-‫‪Bank:‬‬ ‫‪commissions‬‬ ‫‪of‬‬ ‫‪1 %‬‬ ‫‪were‬‬ ‫‪charged,‬‬ ‫‪bank‬‬ ‫‪gained‬‬ 30 ‫‪from‬‬ ‫‪account‬‬ ‫‪2222
-‫‪Bank:‬‬ ‫‪commissions‬‬ ‫‪of‬‬ ‫‪1 %‬‬ ‫‪were‬‬ ‫‪charged,‬‬ ‫‪bank‬‬ ‫‪gained‬‬ 31 ‫‪from‬‬ ‫‪account‬‬ ‫‪3333
-‫‪Bank:‬‬ ‫‪commissions‬‬ ‫‪of‬‬ ‫‪1 %‬‬ ‫‪were‬‬ ‫‪charged,‬‬ ‫‪bank‬‬ ‫‪gained‬‬ 30 ‫‪from‬‬ ‫‪account‬‬ ‫‪4444
-Error 28: Your transaction failed – account with the same id exists
-Error 26: Your transaction failed – account with the same id exists
-24: Account 1111 new balance is 872 after 10 $ was withdrawn
-39: Transfer 100 from account 1111 to account 2222 new account balance is 772 new target account balance is 3104
-Error 39: Your transaction failed – password for account id 1111 is incorrect
-55: Transfer 100 from account 1111 to account 2222 new account balance is 672 new target account balance is 3204
-Error 55: Your transaction failed – password for account id 1111 is incorrect
-Error 33: Your transaction failed – password for account id 2222 is incorrect
-Error 19: Your transaction failed – account with the same id exists
-50: Account 3333 new balance is 3169 after 10 $ was deposited
-Error 0: Your transaction failed – password for account id 1111 is incorrect
-Error 8: Your transaction failed – password for account id 2222 is incorrect
-Error 29: Your transaction failed – account with the same id exists
-Error 16: Your transaction failed – password for account id 2222 is incorrect
-Error 6: Your transaction failed – password for account id 2222 is incorrect
-Error 25: Your transaction failed – password for account id 2222 is incorrect
-21: Account 4444 new balance is 3010 after 10 $ was deposited
-Error 35: Your transaction failed – password for account id 2222 is incorrect
-Error 43: Your transaction failed – password for account id 2222 is incorrect
-Error 5: Your transaction failed – password for account id 2222 is incorrect
-Error 27: Your transaction failed – password for account id 2222 is incorrect
-Error 54: Your transaction failed – password for account id 2222 is incorrect
-47: Account 4444 new balance is 3000 after 10 $ was withdrawn
-59: Account 4444 new balance is 3010 after 10 $ was deposited
-Error 56: Your transaction failed – password for account id 2222 is incorrect
-Error 1: Your transaction failed – password for account id 2222 is incorrect
-14: Account 4444 new balance is 3020 after 10 $ was deposited
-57: Transfer 100 from account 4444 to account 2222 new account balance is 2920 new target account balance is 3304
-3: Account 4444 new balance is 2910 after 10 $ was withdrawn
-46: Account 4444 new balance is 2920 after 10 $ was deposited
-Error 57: Your transaction failed – password for account id 4444 is incorrect
-20: Transfer 100 from account 4444 to account 1111 new account balance is 2820 new target account balance is 772
-Error 20: Your transaction failed – password for account id 4444 is incorrect
-37: Transfer 100 from account 4444 to account 1111 new account balance is 2720 new target account balance is 872
-Error 37: Your transaction failed – password for account id 4444 is incorrect
-13: Account 4444 new balance is 2710 after 10 $ was withdrawn
-51: Transfer 100 from account 4444 to account 1111 new account balance is 2610 new target account balance is 972
-Error 51: Your transaction failed – password for account id 4444 is incorrect
-2: Transfer 100 from account 4444 to account 3333 new account balance is 2510 new target account balance is 3269
-44: Account 3333 new balance is 3279 after 10 $ was deposited
-Error 2: Your transaction failed – password for account id 4444 is incorrect
-7: Account 4444 new balance is 2520 after 10 $ was deposited
-23: Transfer 100 from account 4444 to account 2222 new account balance is 2420 new target account balance is 3404
-Error 23: Your transaction failed – password for account id 4444 is incorrect
-32: Account 3333 new balance is 3269 after 10 $ was withdrawn
-49: Account 3333 is now closed. Balance was 3269
-Error 36: Your transaction failed – account with the same id exists
-‫‪Error‬‬ 42:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-34: Account 4444 is now closed. Balance was 2420
-Error 10: Your transaction failed – account with the same id exists
-17: New account id is 3333 with password 33 and initial balance 3000
-Error 48: Your transaction failed – account with the same id exists
-Error 15: Your transaction failed – account with the same id exists
-4: Transfer 100 from account 4444 to account 3333 new account balance is 2900 new target account balance is 3369
-Error 4: Your transaction failed – password for account id 4444 is incorrect
-22: Transfer 100 from account 4444 to account 2222 new account balance is 2800 new target account balance is 3504
-Error 22: Your transaction failed – password for account id 4444 is incorrect
-38: New account id is 4444 with password 44 and initial balance 4000
-Error 53: Your transaction failed – password for account id 2222 is incorrect
-45: Account 3333 is now closed. Balance was 2800
-Error 12: Your transaction failed – account with the same id exists
-52: Transfer 100 from account 1111 to account 2222 new account balance is 872 new target account balance is 3604
-Error 52: Your transaction failed – password for account id 1111 is incorrect
-11: Account 1111 new balance is 882 after 10 $ was deposited
-41: Account 1111 new balance is 872 after 10 $ was withdrawn
-58: Transfer 100 from account 1111 to account 2222 new account balance is 772 new target account balance is 3704
-Error 58: Your transaction failed – password for account id 1111 is incorrect
-Error 39: Your transaction failed – password for account id 2222 is incorrect
-24: Transfer 100 from account 1111 to account 2222 new account balance is 672 new target account balance is 3804
-Error 24: Your transaction failed – password for account id 1111 is incorrect
-Error 28: Your transaction failed – password for account id 2222 is incorrect
-Error 55: Your transaction failed – password for account id 2222 is incorrect
-‫‪Error‬‬ 26:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 33:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-Error 3: Your transaction failed – account with the same id exists
-19: Account 1111 new balance is 682 after 10 $ was deposited
-‫‪Error‬‬ 50:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-0: Transfer 100 from account 4444 to account 2222 new account balance is 3900 new target account balance is 3904
-Error 16: Your transaction failed – password for account id 2222 is incorrect
-‫‪Error‬‬ 29:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-Error 0: Your transaction failed – password for account id 4444 is incorrect
-8: Account 1111 new balance is 672 after 10 $ was withdrawn
-6: Account 1111 is now closed. Balance was 672
-25: Account 4444 new balance is 3890 after 10 $ was withdrawn
-‫‪Error‬‬ 21:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 35:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 5:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 1111 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 27:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-Error 54: Your transaction failed – account with the same id exists
-Error 47: Your transaction failed – password for account id 2222 is incorrect
-‫‪Error‬‬ 59:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 1111 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 56:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 1111 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-‫‪Error‬‬ 13:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-51: New account id is 1111 with password 11 and initial balance 1000
-Error 20: Your transaction failed – password for account id 2222 is incorrect
-11: Transfer 100 from account 4444 to account 2222 new account balance is 3790 new target account balance is 4004
-Error 11: Your transaction failed – password for account id 4444 is incorrect
-Error 52: Your transaction failed – password for account id 2222 is incorrect
-Error 41: Your transaction failed – password for account id 2222 is incorrect
-Error 4: Your transaction failed – password for account id 2222 is incorrect
-‫‪Error‬‬ 36:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-42: Account 1111 new balance is 990 after 10 $ was withdrawn
-48: Transfer 100 from account 4444 to account 2222 new account balance is 3690 new target account balance is 4104
-Error 48: Your transaction failed – password for account id 4444 is incorrect
-10: Account 4444 new balance is 3680 after 10 $ was withdrawn
-‫‪Error‬‬ 17:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-Error 46: Your transaction failed – password for account id 2222 is incorrect
-44: Account 4444 new balance is 3690 after 10 $ was deposited
+13: Account 3333 balance is 260
+‫‪Error‬‬ 5:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 12347 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+‫‪Error‬‬ 9:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 12345 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+19: Account 1111 balance is 20
+‫‪Error‬‬ 11:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 12345 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+‫‪Error‬‬ 0:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 12345 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+Error 16: Your transaction failed - account with the same id exists
+17: Account 1111 balance is 20
+12: Account 2222 balance is 273
+Error 14: Your transaction failed – password for account id 1111 is incorrect
+15: Account 1111 balance is 20
+Error 13: Your transaction failed - account with the same id exists
+5: Account 12349 is now closed. Balance was 1008
+‫‪Error‬‬ 18:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+Bank: commissions of 5 % were charged, bank gained 1 ‫‪from‬‬ ‫‪account‬‬ ‫‪1111
+Bank: commissions of 5 % were charged, bank gained 13 ‫‪from‬‬ ‫‪account‬‬ ‫‪2222
+Bank: commissions of 5 % were charged, bank gained 13 ‫‪from‬‬ ‫‪account‬‬ ‫‪3333
+Bank: commissions of 5 % were charged, bank gained 25 ‫‪from‬‬ ‫‪account‬‬ ‫‪12348
+Bank: commissions of 5 % were charged, bank gained 2 ‫‪from‬‬ ‫‪account‬‬ ‫‪12350
+Bank: commissions of 5 % were charged, bank gained 4 ‫‪from‬‬ ‫‪account‬‬ ‫‪12351
+Error 19: Your transaction failed – password for account id 2222 is incorrect
+Error 16: Your transaction failed – password for account id 1111 is incorrect
+‫‪Error‬‬ 0:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 12345 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+17: Account 3333 balance is 247
+Error 18: Your transaction failed – account id 1111 is balance is lower than 100
+Error 18: Your transaction failed – password for account id 1111 is incorrect
+12: Account 1111 balance is 19
+13: Account 1111 balance is 19
+14: Account 3333 balance is 247
+15: Account 2222 balance is 260
+19: Account 2222 new balance is 460 after 200 $ was deposited
+Error 18: Your transaction failed – account id 1111 balance is lower than 100
+14: Account 1111 balance is 19
+Error 15: Your transaction failed - account with the same id exists
+Error 17: Your transaction failed – password for account id 2222 is incorrect
+Error 12: Your transaction failed – account id 1111 balance is lower than 100
+16: Account 1111 balance is 19
+13: Account 3333 is now closed. Balance was 247
+Error 19: Your transaction failed – account id 1111 balance is lower than 100
+Bank: commissions of 2 % were charged, bank gained 0 ‫‪from‬‬ ‫‪account‬‬ ‫‪1111
+Bank: commissions of 2 % were charged, bank gained 9 ‫‪from‬‬ ‫‪account‬‬ ‫‪2222
+Bank: commissions of 2 % were charged, bank gained 9 ‫‪from‬‬ ‫‪account‬‬ ‫‪12348
+Bank: commissions of 2 % were charged, bank gained 0 ‫‪from‬‬ ‫‪account‬‬ ‫‪12350
+Bank: commissions of 2 % were charged, bank gained 1 ‫‪from‬‬ ‫‪account‬‬ ‫‪12351
+18: Transfer 300 from account 2222 to account 1111 new account balance is 151 new target account balance is 319
+Error 18: Your transaction failed – password for account id 2222 is incorrect
+16: Account 2222 balance is 151
+13: Account 2222 balance is 151
+12: Account 2222 balance is 151
 ‫‪Error‬‬ 15:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-Error 58: Your transaction failed – password for account id 2222 is incorrect
-1: Transfer 100 from account 4444 to account 2222 new account balance is 3590 new target account balance is 4204
-Error 1: Your transaction failed – password for account id 4444 is incorrect
 ‫‪Error‬‬ 14:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
-Error 57: Your transaction failed – password for account id 2222 is incorrect
-23: Account 1111 new balance is 980 after 10 $ was withdrawn
-7: Account 1111 new balance is 990 after 10 $ was deposited
+17: Account 1111 new balance is 219 after 100 $ was withdrawn
+19: Transfer 100 from account 2222 to account 1111 new account balance is 51 new target account balance is 319
+Error 19: Your transaction failed – password for account id 2222 is incorrect
+18: Account 2222 new balance is 251 after 200 $ was deposited
+14: Account 1111 balance is 319
+15: New account id is 4444 with password 44 and initial balance 1000
+17: Account 4444 balance is 1000
+Error 13: Your transaction failed – password for account id 2222 is incorrect
+12: Transfer 100 from account 1111 to account 2222 new account balance is 219 new target account balance is 351
+Error 12: Your transaction failed – password for account id 1111 is incorrect
+16: Transfer 300 from account 2222 to account 1111 new account balance is 51 new target account balance is 519
+Error 16: Your transaction failed – password for account id 2222 is incorrect
+19: Account 1111 balance is 519
+18: Account 1111 new balance is 619 after 100 $ was deposited
+Error 15: Your transaction failed – password for account id 1111 is incorrect
+Error 14: Your transaction failed – account id 2222 is balance is lower than 300
+Error 14: Your transaction failed – password for account id 2222 is incorrect
+‫‪Error‬‬ 17:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+13: Account 4444 is now closed. Balance was 1000
+‫‪Error‬‬ 12:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+‫‪Error‬‬ 16:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+Bank: commissions of 2 % were charged, bank gained 12 ‫‪from‬‬ ‫‪account‬‬ ‫‪1111
+Bank: commissions of 2 % were charged, bank gained 1 ‫‪from‬‬ ‫‪account‬‬ ‫‪2222
+Bank: commissions of 2 % were charged, bank gained 9 ‫‪from‬‬ ‫‪account‬‬ ‫‪12348
+Bank: commissions of 2 % were charged, bank gained 0 ‫‪from‬‬ ‫‪account‬‬ ‫‪12350
+Bank: commissions of 2 % were charged, bank gained 1 ‫‪from‬‬ ‫‪account‬‬ ‫‪12351
+Error 19: Your transaction failed – password for account id 2222 is incorrect
+Error 18: Your transaction failed – password for account id 1111 is incorrect
+14: Account 2222 balance is 50
+Error 17: Your transaction failed – account id 2222 is balance is lower than 100
+Error 17: Your transaction failed – password for account id 2222 is incorrect
+15: Transfer 100 from account 1111 to account 2222 new account balance is 507 new target account balance is 150
+Error 15: Your transaction failed – password for account id 1111 is incorrect
+13: Account 1111 balance is 507
+Error 12: Your transaction failed – password for account id 2222 is incorrect
+Error 16: Your transaction failed – password for account id 2222 is incorrect
+Error 19: Your transaction failed – password for account id 1111 is incorrect
+18: New account id is 4444 with password 44 and initial balance 1000
+17: Transfer 100 from account 4444 to account 1111 new account balance is 900 new target account balance is 607
+Error 17: Your transaction failed – password for account id 4444 is incorrect
+15: Account 2222 new balance is 350 after 200 $ was deposited
+Error 12: Your transaction failed - account with the same id exists
+16: Transfer 300 from account 2222 to account 1111 new account balance is 50 new target account balance is 907
+Error 16: Your transaction failed – password for account id 2222 is incorrect
+14: Account 1111 new balance is 807 after 100 $ was withdrawn
+13: Account 1111 balance is 807
+19: Account 1111 new balance is 707 after 100 $ was withdrawn
+18: Transfer 100 from account 1111 to account 2222 new account balance is 607 new target account balance is 150
+Error 18: Your transaction failed – password for account id 1111 is incorrect
+Error 12: Your transaction failed – password for account id 2222 is incorrect
+15: Account 1111 balance is 607
+17: Account 1111 new balance is 507 after 100 $ was withdrawn
+Error 16: Your transaction failed – password for account id 1111 is incorrect
+13: Transfer 100 from account 4444 to account 2222 new account balance is 800 new target account balance is 250
+Error 13: Your transaction failed – password for account id 4444 is incorrect
+14: Account 4444 balance is 800
+Bank: commissions of 5 % were charged, bank gained 25 ‫‪from‬‬ ‫‪account‬‬ ‫‪1111
+Bank: commissions of 5 % were charged, bank gained 12 ‫‪from‬‬ ‫‪account‬‬ ‫‪2222
+Bank: commissions of 5 % were charged, bank gained 40 ‫‪from‬‬ ‫‪account‬‬ ‫‪4444
+Bank: commissions of 5 % were charged, bank gained 22 ‫‪from‬‬ ‫‪account‬‬ ‫‪12348
+Bank: commissions of 5 % were charged, bank gained 2 ‫‪from‬‬ ‫‪account‬‬ ‫‪12350
+Bank: commissions of 5 % were charged, bank gained 4 ‫‪from‬‬ ‫‪account‬‬ ‫‪12351
+Error 19: Your transaction failed – password for account id 1111 is incorrect
+‫‪Error‬‬ 14:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+‫‪Error‬‬ 13:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+12: Account 1111 balance is 482
+‫‪Error‬‬ 15:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+Error 18: Your transaction failed - account with the same id exists
+Error 17: Your transaction failed - account with the same id exists
+16: Account 1111 new balance is 382 after 100 $ was withdrawn
+19: Account 4444 balance is 760
+‫‪Error‬‬ 15:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+18: Account 1111 balance is 382
+Error 12: Your transaction failed – password for account id 1111 is incorrect
+13: Account 1111 new balance is 482 after 100 $ was deposited
+Error 17: Your transaction failed - account with the same id exists
+14: Transfer 100 from account 4444 to account 2222 new account balance is 660 new target account balance is 338
+Error 14: Your transaction failed – password for account id 4444 is incorrect
+Error 16: Your transaction failed – password for account id 1111 is incorrect
+‫‪Error‬‬ 19:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+17: Account 1111 balance is 482
+Error 13: Your transaction failed - account with the same id exists
+Error 12: Your transaction failed – password for account id 2222 is incorrect
+18: Transfer 100 from account 4444 to account 2222 new account balance is 560 new target account balance is 438
+Error 18: Your transaction failed – password for account id 4444 is incorrect
+Error 14: Your transaction failed - account with the same id exists
+Error 15: Your transaction failed - account with the same id exists
+16: Transfer 100 from account 4444 to account 2222 new account balance is 460 new target account balance is 538
+Error 16: Your transaction failed – password for account id 4444 is incorrect
+Bank: commissions of 4 % were charged, bank gained 19 ‫‪from‬‬ ‫‪account‬‬ ‫‪1111
+Bank: commissions of 4 % were charged, bank gained 21 ‫‪from‬‬ ‫‪account‬‬ ‫‪2222
+Bank: commissions of 4 % were charged, bank gained 18 ‫‪from‬‬ ‫‪account‬‬ ‫‪4444
+Bank: commissions of 4 % were charged, bank gained 17 ‫‪from‬‬ ‫‪account‬‬ ‫‪12348
+Bank: commissions of 4 % were charged, bank gained 1 ‫‪from‬‬ ‫‪account‬‬ ‫‪12350
+Bank: commissions of 4 % were charged, bank gained 3 ‫‪from‬‬ ‫‪account‬‬ ‫‪12351
+19: Account 1111 balance is 463
+17: Account 1111 balance is 463
+13: Transfer 100 from account 1111 to account 2222 new account balance is 363 new target account balance is 617
+Error 13: Your transaction failed – password for account id 1111 is incorrect
+12: Account 1111 balance is 363
+Error 18: Your transaction failed – password for account id 1111 is incorrect
+‫‪Error‬‬ 14:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+15: Account 1111 new balance is 263 after 100 $ was withdrawn
+‫‪Error‬‬ 16:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+19: Account 4444 balance is 442
+Error 18: Your transaction failed - account with the same id exists
+15: Account 1111 new balance is 363 after 100 $ was deposited
+12: Transfer 300 from account 2222 to account 1111 new account balance is 317 new target account balance is 663
+Error 12: Your transaction failed – password for account id 2222 is incorrect
+13: Account 1111 balance is 663
+14: Account 1111 new balance is 563 after 100 $ was withdrawn
+17: Account 2222 balance is 317
+16: Account 2222 new balance is 517 after 200 $ was deposited
+Bank: commissions of 5 % were charged, bank gained 28 ‫‪from‬‬ ‫‪account‬‬ ‫‪1111
+Bank: commissions of 5 % were charged, bank gained 25 ‫‪from‬‬ ‫‪account‬‬ ‫‪2222
+Bank: commissions of 5 % were charged, bank gained 22 ‫‪from‬‬ ‫‪account‬‬ ‫‪4444
+Bank: commissions of 5 % were charged, bank gained 20 ‫‪from‬‬ ‫‪account‬‬ ‫‪12348
+Bank: commissions of 5 % were charged, bank gained 2 ‫‪from‬‬ ‫‪account‬‬ ‫‪12350
+Bank: commissions of 5 % were charged, bank gained 4 ‫‪from‬‬ ‫‪account‬‬ ‫‪12351
+Error 19: Your transaction failed – password for account id 2222 is incorrect
+13: Transfer 100 from account 2222 to account 1111 new account balance is 392 new target account balance is 635
+Error 13: Your transaction failed – password for account id 2222 is incorrect
+15: Account 1111 new balance is 535 after 100 $ was withdrawn
+12: Account 1111 new balance is 435 after 100 $ was withdrawn
+14: New account id is 3333 with password 33 and initial balance 300
+Error 18: Your transaction failed – password for account id 2222 is incorrect
+17: Account 2222 new balance is 592 after 200 $ was deposited
+16: Account 1111 balance is 435
+19: Transfer 300 from account 2222 to account 1111 new account balance is 292 new target account balance is 735
+Error 19: Your transaction failed – password for account id 2222 is incorrect
+18: Account 1111 new balance is 635 after 100 $ was withdrawn
+17: Account 3333 is now closed. Balance was 300
+12: Account 1111 new balance is 735 after 100 $ was deposited
+‫‪Error‬‬ 14:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+‫‪Error‬‬ 15:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+Error 13: Your transaction failed - account with the same id exists
+16: Account 2222 balance is 292
+19: Transfer 100 from account 1111 to account 2222 new account balance is 635 new target account balance is 392
+Error 19: Your transaction failed – password for account id 1111 is incorrect
+Error 13: Your transaction failed – password for account id 1111 is incorrect
+15: Transfer 100 from account 1111 to account 2222 new account balance is 535 new target account balance is 492
+Error 15: Your transaction failed – password for account id 1111 is incorrect
+14: New account id is 3333 with password 33 and initial balance 300
+12: Account 3333 balance is 300
+17: Transfer 100 from account 4444 to account 3333 new account balance is 320 new target account balance is 400
+Error 17: Your transaction failed – password for account id 4444 is incorrect
+18: Account 3333 balance is 400
+16: Transfer 100 from account 4444 to account 1111 new account balance is 220 new target account balance is 635
+Error 16: Your transaction failed – password for account id 4444 is incorrect
+Bank: commissions of 5 % were charged, bank gained 31 ‫‪from‬‬ ‫‪account‬‬ ‫‪1111
+Bank: commissions of 5 % were charged, bank gained 24 ‫‪from‬‬ ‫‪account‬‬ ‫‪2222
+Bank: commissions of 5 % were charged, bank gained 20 ‫‪from‬‬ ‫‪account‬‬ ‫‪3333
+Bank: commissions of 5 % were charged, bank gained 11 ‫‪from‬‬ ‫‪account‬‬ ‫‪4444
+Bank: commissions of 5 % were charged, bank gained 19 ‫‪from‬‬ ‫‪account‬‬ ‫‪12348
+Bank: commissions of 5 % were charged, bank gained 2 ‫‪from‬‬ ‫‪account‬‬ ‫‪12350
+Bank: commissions of 5 % were charged, bank gained 3 ‫‪from‬‬ ‫‪account‬‬ ‫‪12351
+19: Account 1111 balance is 604
+15: Account 3333 is now closed. Balance was 380
+14: Account 1111 balance is 604
+12: Account 1111 balance is 604
+Error 17: Your transaction failed – password for account id 1111 is incorrect
+13: Account 4444 balance is 209
+18: Transfer 100 from account 4444 to account 1111 new account balance is 109 new target account balance is 704
+Error 18: Your transaction failed – password for account id 4444 is incorrect
+16: Account 1111 balance is 704
+19: Account 1111 new balance is 804 after 100 $ was deposited
+15: Account 1111 balance is 804
+Error 17: Your transaction failed – password for account id 1111 is incorrect
+12: Account 2222 balance is 468
+18: Account 1111 balance is 804
+13: Account 4444 is now closed. Balance was 109
+14: Account 2222 balance is 468
+16: Account 1111 new balance is 704 after 100 $ was withdrawn
+-1: Account 1111 balance is 704
+‫‪Error‬‬ 19:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+Error 18: Your transaction failed - account with the same id exists
+13: New account id is 3333 with password 33 and initial balance 300
+12: Transfer 100 from account 2222 to account 1111 new account balance is 368 new target account balance is 804
+Error 12: Your transaction failed – password for account id 2222 is incorrect
+14: Account 1111 new balance is 704 after 100 $ was withdrawn
+Error 17: Your transaction failed - account with the same id exists
+‫‪Error‬‬ 16:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+-1: Account 1111 balance is 704
+Bank: commissions of 3 % were charged, bank gained 21 ‫‪from‬‬ ‫‪account‬‬ ‫‪1111
+Bank: commissions of 3 % were charged, bank gained 11 ‫‪from‬‬ ‫‪account‬‬ ‫‪2222
+Bank: commissions of 3 % were charged, bank gained 9 ‫‪from‬‬ ‫‪account‬‬ ‫‪3333
+Bank: commissions of 3 % were charged, bank gained 11 ‫‪from‬‬ ‫‪account‬‬ ‫‪12348
+Bank: commissions of 3 % were charged, bank gained 1 ‫‪from‬‬ ‫‪account‬‬ ‫‪12350
+Bank: commissions of 3 % were charged, bank gained 2 ‫‪from‬‬ ‫‪account‬‬ ‫‪12351
+Error 19: Your transaction failed - account with the same id exists
+14: Account 3333 balance is 291
+12: Account 1111 balance is 683
+Error 13: Your transaction failed – password for account id 2222 is incorrect
+18: Account 2222 new balance is 557 after 200 $ was deposited
+Error 17: Your transaction failed - account with the same id exists
+Error 16: Your transaction failed = password for account id 3333 is incorrect
+Error 19: Your transaction failed – password for account id 1111 is incorrect
+17: Account 3333 balance is 291
+Error 18: Your transaction failed – password for account id 2222 is incorrect
+13: Account 1111 new balance is 583 after 100 $ was withdrawn
+12: Account 2222 new balance is 757 after 200 $ was deposited
+Error 14: Your transaction failed – password for account id 1111 is incorrect
+15: Account 1111 new balance is 483 after 100 $ was withdrawn
+Error 16: Your transaction failed – password for account id 2222 is incorrect
+19: Account 3333 balance is 291
+Bank: commissions of 5 % were charged, bank gained 24 ‫‪from‬‬ ‫‪account‬‬ ‫‪1111
+Bank: commissions of 5 % were charged, bank gained 37 ‫‪from‬‬ ‫‪account‬‬ ‫‪2222
+Bank: commissions of 5 % were charged, bank gained 14 ‫‪from‬‬ ‫‪account‬‬ ‫‪3333
+Bank: commissions of 5 % were charged, bank gained 18 ‫‪from‬‬ ‫‪account‬‬ ‫‪12348
+Bank: commissions of 5 % were charged, bank gained 1 ‫‪from‬‬ ‫‪account‬‬ ‫‪12350
+Bank: commissions of 5 % were charged, bank gained 3 ‫‪from‬‬ ‫‪account‬‬ ‫‪12351
+‫‪Error‬‬ 18:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+Error 13: Your transaction failed – password for account id 1111 is incorrect
+12: Transfer 100 from account 1111 to account 2222 new account balance is 359 new target account balance is 820
+Error 12: Your transaction failed – password for account id 1111 is incorrect
+14: Transfer 300 from account 2222 to account 1111 new account balance is 520 new target account balance is 659
+Error 14: Your transaction failed – password for account id 2222 is incorrect
+17: Transfer 100 from account 2222 to account 1111 new account balance is 420 new target account balance is 759
+Error 17: Your transaction failed – password for account id 2222 is incorrect
+15: Account 1111 balance is 759
+16: Account 1111 balance is 759
+‫‪Error‬‬ 19:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+Error 15: Your transaction failed - account with the same id exists
+14: Account 2222 new balance is 620 after 200 $ was deposited
+12: Account 2222 new balance is 820 after 200 $ was deposited
+13: Transfer 300 from account 2222 to account 1111 new account balance is 520 new target account balance is 1059
+Error 13: Your transaction failed – password for account id 2222 is incorrect
+17: Transfer 10 from account 3333 to account 1111 new account balance is 267 new target account balance is 1069
+Error 17: Your transaction failed – password for account id 3333 is incorrect
+Error 18: Your transaction failed = password for account id 3333 is incorrect
+‫‪Error‬‬ 16:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+19: Transfer 100 from account 2222 to account 1111 new account balance is 420 new target account balance is 1169
+Error 19: Your transaction failed – password for account id 2222 is incorrect
+15: Account 1111 balance is 1169
+18: Account 1111 balance is 1169
+12: Transfer 100 from account 2222 to account 1111 new account balance is 320 new target account balance is 1269
+Error 12: Your transaction failed – password for account id 2222 is incorrect
+17: Account 1111 new balance is 1169 after 100 $ was withdrawn
+13: Account 2222 new balance is 520 after 200 $ was deposited
+14: Account 1111 new balance is 1069 after 100 $ was withdrawn
+16: Transfer 100 from account 1111 to account 2222 new account balance is 969 new target account balance is 620
+Error 16: Your transaction failed – password for account id 1111 is incorrect
+Bank: commissions of 4 % were charged, bank gained 38 ‫‪from‬‬ ‫‪account‬‬ ‫‪1111
+Bank: commissions of 4 % were charged, bank gained 24 ‫‪from‬‬ ‫‪account‬‬ ‫‪2222
+Bank: commissions of 4 % were charged, bank gained 10 ‫‪from‬‬ ‫‪account‬‬ ‫‪3333
+Bank: commissions of 4 % were charged, bank gained 14 ‫‪from‬‬ ‫‪account‬‬ ‫‪12348
+Bank: commissions of 4 % were charged, bank gained 1 ‫‪from‬‬ ‫‪account‬‬ ‫‪12350
+Bank: commissions of 4 % were charged, bank gained 2 ‫‪from‬‬ ‫‪account‬‬ ‫‪12351
+Error 19: Your transaction failed – password for account id 2222 is incorrect
+15: Transfer 100 from account 2222 to account 1111 new account balance is 496 new target account balance is 1031
+Error 15: Your transaction failed – password for account id 2222 is incorrect
+14: Transfer 10 from account 3333 to account 1111 new account balance is 247 new target account balance is 1041
+Error 14: Your transaction failed – password for account id 3333 is incorrect
+Error 13: Your transaction failed - account with the same id exists
+‫‪Error‬‬ 12:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+18: Account 1111 balance is 1041
+Error 17: Your transaction failed - account with the same id exists
+‫‪Error‬‬ 16:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+Error 19: Your transaction failed - account with the same id exists
+Error 15: Your transaction failed – password for account id 2222 is incorrect
+12: Account 1111 balance is 1041
+Error 18: Your transaction failed - account with the same id exists
+‫‪Error‬‬ 13:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+Error 17: Your transaction failed - account with the same id exists
+14: Account 1111 balance is 1041
+16: Transfer 100 from account 2222 to account 1111 new account balance is 396 new target account balance is 1141
+Error 16: Your transaction failed – password for account id 2222 is incorrect
+19: Account 2222 new balance is 596 after 200 $ was deposited
+Error 15: Your transaction failed – password for account id 2222 is incorrect
+‫‪Error‬‬ 18:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+13: Account 2222 new balance is 796 after 200 $ was deposited
+17: Account 1111 new balance is 1041 after 100 $ was withdrawn
+Error 14: Your transaction failed – password for account id 2222 is incorrect
+12: Account 1111 balance is 1041
+16: Account 1111 balance is 1041
+Bank: commissions of 4 % were charged, bank gained 41 ‫‪from‬‬ ‫‪account‬‬ ‫‪1111
+Bank: commissions of 4 % were charged, bank gained 31 ‫‪from‬‬ ‫‪account‬‬ ‫‪2222
+Bank: commissions of 4 % were charged, bank gained 9 ‫‪from‬‬ ‫‪account‬‬ ‫‪3333
+Bank: commissions of 4 % were charged, bank gained 13 ‫‪from‬‬ ‫‪account‬‬ ‫‪12348
+Bank: commissions of 4 % were charged, bank gained 1 ‫‪from‬‬ ‫‪account‬‬ ‫‪12350
+Bank: commissions of 4 % were charged, bank gained 2 ‫‪from‬‬ ‫‪account‬‬ ‫‪12351
+Error 19: Your transaction failed - account with the same id exists
+15: Account 2222 balance is 765
+12: Account 3333 balance is 238
+17: Transfer 10 from account 3333 to account 1111 new account balance is 228 new target account balance is 1010
+Error 17: Your transaction failed – password for account id 3333 is incorrect
+14: Account 1111 new balance is 910 after 100 $ was withdrawn
+‫‪Error‬‬ 13:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+18: Account 1111 new balance is 810 after 100 $ was withdrawn
+16: Account 1111 balance is 810
+Error -1: Your transaction failed – password for account id 2222 is incorrect
+Error 19: Your transaction failed - account with the same id exists
+13: Transfer 100 from account 1111 to account 2222 new account balance is 710 new target account balance is 865
+Error 13: Your transaction failed – password for account id 1111 is incorrect
+Error 18: Your transaction failed – password for account id 2222 is incorrect
+14: Account 2222 balance is 865
+Error 17: Your transaction failed = password for account id 3333 is incorrect
+Error 12: Your transaction failed = password for account id 3333 is incorrect
+16: New account id is 4444 with password 44 and initial balance 1000
+Error 19: Your transaction failed = password for account id 3333 is incorrect
+15: Account 3333 balance is 228
+12: Transfer 10 from account 3333 to account 1111 new account balance is 218 new target account balance is 720
+Error 12: Your transaction failed – password for account id 3333 is incorrect
+17: Account 3333 balance is 218
+14: Transfer 100 from account 4444 to account 3333 new account balance is 900 new target account balance is 318
+Error 14: Your transaction failed – password for account id 4444 is incorrect
+Error 18: Your transaction failed - account with the same id exists
+13: Account 2222 balance is 865
+16: Transfer 100 from account 2222 to account 1111 new account balance is 765 new target account balance is 820
+Error 16: Your transaction failed – password for account id 2222 is incorrect
+Bank: commissions of 2 % were charged, bank gained 16 ‫‪from‬‬ ‫‪account‬‬ ‫‪1111
+Bank: commissions of 2 % were charged, bank gained 15 ‫‪from‬‬ ‫‪account‬‬ ‫‪2222
+Bank: commissions of 2 % were charged, bank gained 6 ‫‪from‬‬ ‫‪account‬‬ ‫‪3333
+Bank: commissions of 2 % were charged, bank gained 18 ‫‪from‬‬ ‫‪account‬‬ ‫‪4444
+Bank: commissions of 2 % were charged, bank gained 6 ‫‪from‬‬ ‫‪account‬‬ ‫‪12348
+Bank: commissions of 2 % were charged, bank gained 0 ‫‪from‬‬ ‫‪account‬‬ ‫‪12350
+Bank: commissions of 2 % were charged, bank gained 1 ‫‪from‬‬ ‫‪account‬‬ ‫‪12351
+19: Account 1111 new balance is 704 after 100 $ was withdrawn
+18: Account 3333 is now closed. Balance was 312
+Error 17: Your transaction failed – password for account id 1111 is incorrect
+14: Transfer 100 from account 2222 to account 1111 new account balance is 650 new target account balance is 804
+Error 14: Your transaction failed – password for account id 2222 is incorrect
+12: Account 1111 new balance is 704 after 100 $ was withdrawn
+13: Transfer 100 from account 2222 to account 1111 new account balance is 550 new target account balance is 804
+Error 13: Your transaction failed – password for account id 2222 is incorrect
+‫‪Error‬‬ 15:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+16: Account 1111 new balance is 704 after 100 $ was withdrawn
+19: New account id is 3333 with password 33 and initial balance 300
+12: Account 1111 new balance is 804 after 100 $ was deposited
+17: Account 2222 new balance is 750 after 200 $ was deposited
+Error 14: Your transaction failed - account with the same id exists
+18: Transfer 10 from account 3333 to account 1111 new account balance is 290 new target account balance is 814
+Error 18: Your transaction failed – password for account id 3333 is incorrect
+13: Transfer 100 from account 4444 to account 1111 new account balance is 782 new target account balance is 914
+Error 13: Your transaction failed – password for account id 4444 is incorrect
+Error 15: Your transaction failed – password for account id 2222 is incorrect
+Error 16: Your transaction failed = password for account id 3333 is incorrect
+Error 19: Your transaction failed - account with the same id exists
+Bank: commissions of 1 % were charged, bank gained 9 ‫‪from‬‬ ‫‪account‬‬ ‫‪1111
+Bank: commissions of 1 % were charged, bank gained 7 ‫‪from‬‬ ‫‪account‬‬ ‫‪2222
+Bank: commissions of 1 % were charged, bank gained 2 ‫‪from‬‬ ‫‪account‬‬ ‫‪3333
+Bank: commissions of 1 % were charged, bank gained 7 ‫‪from‬‬ ‫‪account‬‬ ‫‪4444
+Bank: commissions of 1 % were charged, bank gained 3 ‫‪from‬‬ ‫‪account‬‬ ‫‪12348
+Bank: commissions of 1 % were charged, bank gained 0 ‫‪from‬‬ ‫‪account‬‬ ‫‪12350
+Bank: commissions of 1 % were charged, bank gained 0 ‫‪from‬‬ ‫‪account‬‬ ‫‪12351
+15: Account 4444 balance is 775
+17: Transfer 100 from account 1111 to account 2222 new account balance is 805 new target account balance is 843
+Error 17: Your transaction failed – password for account id 1111 is incorrect
+14: Account 1111 new balance is 905 after 100 $ was deposited
+18: Account 4444 is now closed. Balance was 775
+13: Transfer 100 from account 2222 to account 1111 new account balance is 743 new target account balance is 1005
+Error 13: Your transaction failed – password for account id 2222 is incorrect
+12: Transfer 300 from account 2222 to account 1111 new account balance is 443 new target account balance is 1305
+Error 12: Your transaction failed – password for account id 2222 is incorrect
+Error 16: Your transaction failed - account with the same id exists
+19: Account 2222 balance is 443
+‫‪Error‬‬ 14:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+18: Account 3333 balance is 288
+Error 13: Your transaction failed - account with the same id exists
+12: Account 1111 balance is 1305
+17: Account 1111 balance is 1305
+15: Account 1111 balance is 1305
+Error 16: Your transaction failed – password for account id 2222 is incorrect
+19: Account 3333 is now closed. Balance was 288
+‫‪Error‬‬ 17:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+‫‪Error‬‬ 12:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+‫‪Error‬‬ 13:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+18: Account 1111 balance is 1305
+14: New account id is 4444 with password 44 and initial balance 1000
+Error 15: Your transaction failed - account with the same id exists
+‫‪Error‬‬ 16:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+Bank: commissions of 3 % were charged, bank gained 39 ‫‪from‬‬ ‫‪account‬‬ ‫‪1111
+Bank: commissions of 3 % were charged, bank gained 13 ‫‪from‬‬ ‫‪account‬‬ ‫‪2222
+Bank: commissions of 3 % were charged, bank gained 30 ‫‪from‬‬ ‫‪account‬‬ ‫‪4444
+Bank: commissions of 3 % were charged, bank gained 9 ‫‪from‬‬ ‫‪account‬‬ ‫‪12348
+Bank: commissions of 3 % were charged, bank gained 1 ‫‪from‬‬ ‫‪account‬‬ ‫‪12350
+Bank: commissions of 3 % were charged, bank gained 1 ‫‪from‬‬ ‫‪account‬‬ ‫‪12351
+19: Transfer 100 from account 4444 to account 2222 new account balance is 870 new target account balance is 530
+Error 19: Your transaction failed – password for account id 4444 is incorrect
+13: Account 1111 balance is 1266
+18: Account 2222 balance is 530
+14: Transfer 100 from account 2222 to account 1111 new account balance is 430 new target account balance is 1366
+Error 14: Your transaction failed – password for account id 2222 is incorrect
+Error 12: Your transaction failed – password for account id 2222 is incorrect
+17: Transfer 100 from account 4444 to account 2222 new account balance is 770 new target account balance is 530
+Error 17: Your transaction failed – password for account id 4444 is incorrect
+15: Transfer 100 from account 2222 to account 1111 new account balance is 430 new target account balance is 1466
+Error 15: Your transaction failed – password for account id 2222 is incorrect
+16: Account 1111 new balance is 1566 after 100 $ was deposited
+19: Account 1111 balance is 1566
+17: Account 4444 is now closed. Balance was 770
+‫‪Error‬‬ 14:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+18: Account 1111 balance is 1566
+‫‪Error‬‬ 13:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+12: New account id is 3333 with password 33 and initial balance 300
+15: Transfer 300 from account 2222 to account 1111 new account balance is 130 new target account balance is 1866
+Error 15: Your transaction failed – password for account id 2222 is incorrect
+16: Account 3333 is now closed. Balance was 300
+19: Account 1111 new balance is 1766 after 100 $ was withdrawn
+‫‪Error‬‬ 18:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+14: Account 1111 new balance is 1666 after 100 $ was withdrawn
+13: Account 1111 balance is 1666
+17: Account 1111 balance is 1666
+‫‪Error‬‬ 12:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+Error 15: Your transaction failed – password for account id 1111 is incorrect
+‫‪Error‬‬ 16:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+Bank: commissions of 4 % were charged, bank gained 66 ‫‪from‬‬ ‫‪account‬‬ ‫‪1111
+Bank: commissions of 4 % were charged, bank gained 5 ‫‪from‬‬ ‫‪account‬‬ ‫‪2222
+Bank: commissions of 4 % were charged, bank gained 12 ‫‪from‬‬ ‫‪account‬‬ ‫‪12348
+Bank: commissions of 4 % were charged, bank gained 1 ‫‪from‬‬ ‫‪account‬‬ ‫‪12350
+Bank: commissions of 4 % were charged, bank gained 2 ‫‪from‬‬ ‫‪account‬‬ ‫‪12351
+‫‪Error‬‬ 19:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+Error 14: Your transaction failed – password for account id 2222 is incorrect
+13: Account 1111 new balance is 1500 after 100 $ was withdrawn
+17: Transfer 100 from account 2222 to account 1111 new account balance is 25 new target account balance is 1600
+Error 17: Your transaction failed – password for account id 2222 is incorrect
+18: Account 2222 balance is 25
+‫‪Error‬‬ 12:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+15: Account 1111 balance is 1600
+‫‪Error‬‬ 16:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+‫‪Error‬‬ 19:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+12: Account 2222 balance is 25
+18: Account 1111 balance is 1600
+Error 17: Your transaction failed – account id 2222 is balance is lower than 100
+Error 17: Your transaction failed – password for account id 2222 is incorrect
+Error 13: Your transaction failed – account id 2222 is balance is lower than 100
+Error 13: Your transaction failed – password for account id 2222 is incorrect
+‫‪Error‬‬ 14:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+‫‪Error‬‬ 15:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+16: Account 1111 new balance is 1500 after 100 $ was withdrawn
+19: Account 1111 balance is 1500
+14: Account 1111 balance is 1500
+13: Account 1111 balance is 1500
+Error 18: Your transaction failed – account id 2222 is balance is lower than 300
+Error 18: Your transaction failed – password for account id 2222 is incorrect
+‫‪Error‬‬ 17:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+Error 12: Your transaction failed - account with the same id exists
+Error 15: Your transaction failed – account id 2222 is balance is lower than 100
+Error 15: Your transaction failed – password for account id 2222 is incorrect
+16: Account 1111 new balance is 1400 after 100 $ was withdrawn
+Bank: commissions of 1 % were charged, bank gained 14 ‫‪from‬‬ ‫‪account‬‬ ‫‪1111
+Bank: commissions of 1 % were charged, bank gained 0 ‫‪from‬‬ ‫‪account‬‬ ‫‪2222
+Bank: commissions of 1 % were charged, bank gained 2 ‫‪from‬‬ ‫‪account‬‬ ‫‪12348
+Bank: commissions of 1 % were charged, bank gained 0 ‫‪from‬‬ ‫‪account‬‬ ‫‪12350
+Bank: commissions of 1 % were charged, bank gained 0 ‫‪from‬‬ ‫‪account‬‬ ‫‪12351
+‫‪Error‬‬ 19:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+Error 17: Your transaction failed – password for account id 2222 is incorrect
+‫‪Error‬‬ 12:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+‫‪Error‬‬ 15:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+Error 13: Your transaction failed – password for account id 2222 is incorrect
+Error 18: Your transaction failed – account id 2222 is balance is lower than 100
+Error 18: Your transaction failed – password for account id 2222 is incorrect
+‫‪Error‬‬ 14:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+16: Account 1111 balance is 1386
+19: Account 1111 balance is 1386
+‫‪Error‬‬ 14:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+13: New account id is 4444 with password 44 and initial balance 1000
+18: Transfer 100 from account 4444 to account 1111 new account balance is 900 new target account balance is 1486
+Error 18: Your transaction failed – password for account id 4444 is incorrect
+15: Account 1111 new balance is 1586 after 100 $ was deposited
+Error 12: Your transaction failed – account id 2222 is balance is lower than 100
+Error 12: Your transaction failed – password for account id 2222 is incorrect
+17: Transfer 100 from account 4444 to account 2222 new account balance is 800 new target account balance is 125
+Error 17: Your transaction failed – password for account id 4444 is incorrect
+Error 16: Your transaction failed - account with the same id exists
+‫‪Error‬‬ 19:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+Bank: commissions of 3 % were charged, bank gained 47 ‫‪from‬‬ ‫‪account‬‬ ‫‪1111
+Bank: commissions of 3 % were charged, bank gained 3 ‫‪from‬‬ ‫‪account‬‬ ‫‪2222
+Bank: commissions of 3 % were charged, bank gained 24 ‫‪from‬‬ ‫‪account‬‬ ‫‪4444
+Bank: commissions of 3 % were charged, bank gained 8 ‫‪from‬‬ ‫‪account‬‬ ‫‪12348
+Bank: commissions of 3 % were charged, bank gained 0 ‫‪from‬‬ ‫‪account‬‬ ‫‪12350
+Bank: commissions of 3 % were charged, bank gained 1 ‫‪from‬‬ ‫‪account‬‬ ‫‪12351
+18: Transfer 100 from account 2222 to account 1111 new account balance is 22 new target account balance is 1639
+Error 18: Your transaction failed – password for account id 2222 is incorrect
+13: Account 1111 new balance is 1539 after 100 $ was withdrawn
+Error 14: Your transaction failed – account id 2222 is balance is lower than 100
+Error 14: Your transaction failed – password for account id 2222 is incorrect
+12: Account 1111 new balance is 1439 after 100 $ was withdrawn
+Error 17: Your transaction failed - account with the same id exists
+16: Account 1111 new balance is 1539 after 100 $ was deposited
+15: Rollback to 120 bank iterations ago was completed successfully
+19: Account 1111 new balance is 1639 after 100 $ was deposited
+15: Account 1111 new balance is 1539 after 100 $ was withdrawn
+13: Account 1111 new balance is 1639 after 100 $ was deposited
+Error 14: Your transaction failed - account with the same id exists
+18: Account 1111 balance is 1639
+17: Account 1111 balance is 1639
+Error 12: Your transaction failed - account with the same id exists
+Error 16: Your transaction failed - account with the same id exists
+19: Account 1111 new balance is 1539 after 100 $ was withdrawn
+Error 18: Your transaction failed – password for account id 1111 is incorrect
+‫‪Error‬‬ 14:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+13: Account 1111 new balance is 1439 after 100 $ was withdrawn
+‫‪Error‬‬ 15:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+Error 12: Your transaction failed – password for account id 1111 is incorrect
+Error 17: Your transaction failed – password for account id 1111 is incorrect
+Error 16: Your transaction failed – account id 2222 is balance is lower than 100
+Error 16: Your transaction failed – password for account id 2222 is incorrect
+Bank: commissions of 2 % were charged, bank gained 28 ‫‪from‬‬ ‫‪account‬‬ ‫‪1111
+Bank: commissions of 2 % were charged, bank gained 0 ‫‪from‬‬ ‫‪account‬‬ ‫‪2222
+Bank: commissions of 2 % were charged, bank gained 15 ‫‪from‬‬ ‫‪account‬‬ ‫‪4444
+Bank: commissions of 2 % were charged, bank gained 5 ‫‪from‬‬ ‫‪account‬‬ ‫‪12348
+Bank: commissions of 2 % were charged, bank gained 0 ‫‪from‬‬ ‫‪account‬‬ ‫‪12350
+Bank: commissions of 2 % were charged, bank gained 1 ‫‪from‬‬ ‫‪account‬‬ ‫‪12351
+Error 19: Your transaction failed – account id 2222 is balance is lower than 300
+Error 19: Your transaction failed – password for account id 2222 is incorrect
+‫‪Error‬‬ 13:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+14: Account 1111 new balance is 1511 after 100 $ was deposited
+18: New account id is 3333 with password 33 and initial balance 300
+15: Account 4444 is now closed. Balance was 761
+16: Transfer 100 from account 1111 to account 2222 new account balance is 1411 new target account balance is 122
+Error 16: Your transaction failed – password for account id 1111 is incorrect
+Error 17: Your transaction failed – password for account id 2222 is incorrect
+‫‪Error‬‬ 12:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+Error 19: Your transaction failed - account with the same id exists
+‫‪Error‬‬ 15:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+‫‪Error‬‬ 18:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+‫‪Error‬‬ 14:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+Error 13: Your transaction failed – password for account id 2222 is incorrect
+Error 16: Your transaction failed – password for account id 2222 is incorrect
+17: Account 1111 new balance is 1311 after 100 $ was withdrawn
+12: Account 3333 balance is 300
+19: Account 2222 balance is 122
+12: Account 1111 new balance is 1211 after 100 $ was withdrawn
+Error 17: Your transaction failed - account with the same id exists
+18: Account 1111 new balance is 1111 after 100 $ was withdrawn
+‫‪Error‬‬ 14:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+16: Account 1111 balance is 1111
+‫‪Error‬‬ 15:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+‫‪Error‬‬ 13:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+Bank: commissions of 2 % were charged, bank gained 22 ‫‪from‬‬ ‫‪account‬‬ ‫‪1111
+Bank: commissions of 2 % were charged, bank gained 2 ‫‪from‬‬ ‫‪account‬‬ ‫‪2222
+Bank: commissions of 2 % were charged, bank gained 6 ‫‪from‬‬ ‫‪account‬‬ ‫‪3333
+Bank: commissions of 2 % were charged, bank gained 5 ‫‪from‬‬ ‫‪account‬‬ ‫‪12348
+Bank: commissions of 2 % were charged, bank gained 0 ‫‪from‬‬ ‫‪account‬‬ ‫‪12350
+Bank: commissions of 2 % were charged, bank gained 1 ‫‪from‬‬ ‫‪account‬‬ ‫‪12351
+19: Account 3333 balance is 294
+13: Account 1111 new balance is 989 after 100 $ was withdrawn
+Error 15: Your transaction failed – password for account id 1111 is incorrect
+17: Account 2222 balance is 120
+18: Account 1111 new balance is 1089 after 100 $ was deposited
+14: Account 1111 balance is 1089
+12: Transfer 100 from account 2222 to account 1111 new account balance is 20 new target account balance is 1189
+Error 12: Your transaction failed – password for account id 2222 is incorrect
+‫‪Error‬‬ 16:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+19: Account 1111 balance is 1189
+15: Account 2222 balance is 20
+13: Transfer 10 from account 3333 to account 1111 new account balance is 284 new target account balance is 1199
+Error 13: Your transaction failed – password for account id 3333 is incorrect
+‫‪Error‬‬ 14:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+Error 18: Your transaction failed – account id 2222 is balance is lower than 100
+Error 18: Your transaction failed – password for account id 2222 is incorrect
+Error 12: Your transaction failed – password for account id 1111 is incorrect
+‫‪Error‬‬ 17:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+16: Account 1111 new balance is 1099 after 100 $ was withdrawn
+‫‪Error‬‬ 19:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+Bank: commissions of 5 % were charged, bank gained 54 ‫‪from‬‬ ‫‪account‬‬ ‫‪1111
+Bank: commissions of 5 % were charged, bank gained 1 ‫‪from‬‬ ‫‪account‬‬ ‫‪2222
+Bank: commissions of 5 % were charged, bank gained 14 ‫‪from‬‬ ‫‪account‬‬ ‫‪3333
+Bank: commissions of 5 % were charged, bank gained 13 ‫‪from‬‬ ‫‪account‬‬ ‫‪12348
+Bank: commissions of 5 % were charged, bank gained 1 ‫‪from‬‬ ‫‪account‬‬ ‫‪12350
+Bank: commissions of 5 % were charged, bank gained 3 ‫‪from‬‬ ‫‪account‬‬ ‫‪12351
+Error 13: Your transaction failed – password for account id 1111 is incorrect
+15: Account 3333 is now closed. Balance was 270
+14: Account 2222 balance is 19
+18: Account 2222 balance is 19
+12: Account 1111 new balance is 945 after 100 $ was withdrawn
+17: Account 1111 balance is 945
+‫‪Error‬‬ 16:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+19: Account 1111 new balance is 845 after 100 $ was withdrawn
+17: Account 2222 balance is 19
+Error 18: Your transaction failed – account id 2222 is balance is lower than 100
+Error 18: Your transaction failed – password for account id 2222 is incorrect
+‫‪Error‬‬ 12:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+‫‪Error‬‬ 14:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+‫‪Error‬‬ 16:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+‫‪Error‬‬ 15:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 4444 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+13: Account 2222 balance is 19
+‫‪Error‬‬ 19:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+Error 17: Your transaction failed – account id 2222 is balance is lower than 300
+Error 17: Your transaction failed – password for account id 2222 is incorrect
+14: New account id is 4444 with password 44 and initial balance 1000
+Error 12: Your transaction failed - account with the same id exists
+16: Account 1111 balance is 845
+‫‪Error‬‬ 13:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+Error 18: Your transaction failed - account with the same id exists
+15: Account 1111 balance is 845
+Error 19: Your transaction failed - account with the same id exists
+Bank: commissions of 5 % were charged, bank gained 42 ‫‪from‬‬ ‫‪account‬‬ ‫‪1111
+Bank: commissions of 5 % were charged, bank gained 0 ‫‪from‬‬ ‫‪account‬‬ ‫‪2222
+Bank: commissions of 5 % were charged, bank gained 50 ‫‪from‬‬ ‫‪account‬‬ ‫‪4444
+Bank: commissions of 5 % were charged, bank gained 13 ‫‪from‬‬ ‫‪account‬‬ ‫‪12348
+Bank: commissions of 5 % were charged, bank gained 1 ‫‪from‬‬ ‫‪account‬‬ ‫‪12350
+Bank: commissions of 5 % were charged, bank gained 2 ‫‪from‬‬ ‫‪account‬‬ ‫‪12351
+16: Account 2222 new balance is 219 after 200 $ was deposited
+Error 13: Your transaction failed - account with the same id exists
+12: Transfer 100 from account 4444 to account 2222 new account balance is 850 new target account balance is 319
+Error 12: Your transaction failed – password for account id 4444 is incorrect
+Error 14: Your transaction failed – password for account id 1111 is incorrect
+18: Account 1111 new balance is 703 after 100 $ was withdrawn
+17: Account 1111 balance is 703
+15: New account id is 3333 with password 33 and initial balance 300
+19: Account 1111 balance is 703
+14: Transfer 100 from account 1111 to account 2222 new account balance is 603 new target account balance is 419
+Error 14: Your transaction failed – password for account id 1111 is incorrect
+18: Account 1111 balance is 603
+13: Account 2222 balance is 419
+Error 12: Your transaction failed = password for account id 3333 is incorrect
+16: Transfer 100 from account 4444 to account 2222 new account balance is 750 new target account balance is 519
+Error 16: Your transaction failed – password for account id 4444 is incorrect
+17: Account 1111 new balance is 703 after 100 $ was deposited
+15: Account 2222 balance is 519
+19: Transfer 10 from account 3333 to account 1111 new account balance is 290 new target account balance is 713
+Error 19: Your transaction failed – password for account id 3333 is incorrect
+12: Account 1111 balance is 713
+13: Account 1111 balance is 713
+16: Account 3333 balance is 290
+18: Account 3333 is now closed. Balance was 290
+Error 14: Your transaction failed - account with the same id exists
+17: Account 2222 balance is 519
+Error 15: Your transaction failed - account with the same id exists
+Bank: commissions of 3 % were charged, bank gained 21 ‫‪from‬‬ ‫‪account‬‬ ‫‪1111
+Bank: commissions of 3 % were charged, bank gained 15 ‫‪from‬‬ ‫‪account‬‬ ‫‪2222
+Bank: commissions of 3 % were charged, bank gained 22 ‫‪from‬‬ ‫‪account‬‬ ‫‪4444
+Bank: commissions of 3 % were charged, bank gained 7 ‫‪from‬‬ ‫‪account‬‬ ‫‪12348
+Bank: commissions of 3 % were charged, bank gained 0 ‫‪from‬‬ ‫‪account‬‬ ‫‪12350
+Bank: commissions of 3 % were charged, bank gained 1 ‫‪from‬‬ ‫‪account‬‬ ‫‪12351
+19: Transfer 100 from account 1111 to account 2222 new account balance is 592 new target account balance is 604
+Error 19: Your transaction failed – password for account id 1111 is incorrect
+Error 12: Your transaction failed – password for account id 1111 is incorrect
+13: Transfer 300 from account 2222 to account 1111 new account balance is 304 new target account balance is 892
+Error 13: Your transaction failed – password for account id 2222 is incorrect
+Error 16: Your transaction failed - account with the same id exists
+18: Account 1111 balance is 892
+14: Transfer 100 from account 1111 to account 2222 new account balance is 792 new target account balance is 404
+Error 14: Your transaction failed – password for account id 1111 is incorrect
+Error 17: Your transaction failed – password for account id 2222 is incorrect
+Error 15: Your transaction failed – password for account id 1111 is incorrect
+‫‪Error‬‬ 19:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+Error 16: Your transaction failed – password for account id 1111 is incorrect
+17: Account 1111 new balance is 892 after 100 $ was deposited
+18: Account 2222 balance is 404
+Error 14: Your transaction failed – password for account id 2222 is incorrect
+Error 13: Your transaction failed – password for account id 1111 is incorrect
+Error 12: Your transaction failed - account with the same id exists
+15: Transfer 100 from account 2222 to account 1111 new account balance is 304 new target account balance is 992
+Error 15: Your transaction failed – password for account id 2222 is incorrect
+19: Transfer 100 from account 2222 to account 1111 new account balance is 204 new target account balance is 1092
+Error 19: Your transaction failed – password for account id 2222 is incorrect
+12: Transfer 100 from account 4444 to account 1111 new account balance is 628 new target account balance is 1192
+Error 12: Your transaction failed – password for account id 4444 is incorrect
+‫‪Error‬‬ 13:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+‫‪Error‬‬ 18:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+14: Account 2222 new balance is 404 after 200 $ was deposited
+‫‪Error‬‬ 17:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+16: Account 1111 balance is 1192
+15: Transfer 100 from account 4444 to account 1111 new account balance is 528 new target account balance is 1292
+Error 15: Your transaction failed – password for account id 4444 is incorrect
+Bank: commissions of 5 % were charged, bank gained 64 ‫‪from‬‬ ‫‪account‬‬ ‫‪1111
+Bank: commissions of 5 % were charged, bank gained 20 ‫‪from‬‬ ‫‪account‬‬ ‫‪2222
+Bank: commissions of 5 % were charged, bank gained 26 ‫‪from‬‬ ‫‪account‬‬ ‫‪4444
+Bank: commissions of 5 % were charged, bank gained 12 ‫‪from‬‬ ‫‪account‬‬ ‫‪12348
+Bank: commissions of 5 % were charged, bank gained 1 ‫‪from‬‬ ‫‪account‬‬ ‫‪12350
+Bank: commissions of 5 % were charged, bank gained 2 ‫‪from‬‬ ‫‪account‬‬ ‫‪12351
+Error 19: Your transaction failed – password for account id 1111 is incorrect
+17: Transfer 100 from account 4444 to account 1111 new account balance is 402 new target account balance is 1328
+Error 17: Your transaction failed – password for account id 4444 is incorrect
+‫‪Error‬‬ 15:‬‬ ‫‪Your‬‬ ‫‪transaction‬‬ ‫‪failed‬‬ ‫–‬ ‫‪account‬‬ ‫‪id‬‬ 3333 ‫‪does‬‬ ‫‪not‬‬ ‫‪exist‬‬
+19: Account 2222 balance is 384

@@ -71,7 +71,7 @@ void Bank::insert_new_account(int Account,int Amount,int Password,int Atm_id,boo
 		}
 		else{
 			reader_writer_bank_list.writer_unlocker();
-			str_to_logger = "Error " + to_string(Atm_id) + ": Your transaction failed – account with the same id exists";
+			str_to_logger = "Error " + to_string(Atm_id) + ": Your transaction failed - account with the same id exists";
 			logger.WriteToLogger(str_to_logger);
 		}
 	}
@@ -104,7 +104,7 @@ void Bank::close_existing_account(int Account,int Password,int Atm_id,bool PERSI
 	else if(user_res == WrongPassword)
 	{
 		reader_writer_bank_list.writer_unlocker();
-		str_to_write = "Error " + to_string(Atm_id) + ": Your transaction failed – password for account id " +to_string(Account) + " is incorrect";
+		str_to_write = "Error " + to_string(Atm_id) + ": Your transaction failed = password for account id " +to_string(Account) + " is incorrect";
 		logger.WriteToLogger(str_to_write);
 
 	}
@@ -335,7 +335,7 @@ void Bank::close_atm(int target_atm_id,int source_atm_id,bool PERSISTENT_flag,bo
 		if(isAtmActive[target_atm_id])
 		{
 			isAtmActive[target_atm_id] = false;
-			str_to_log = "‫‪Bank:‬‬ ‫‪ATM‬‬ ‫‪" + to_string(source_atm_id) + " ‫‪closed‬‬ ‫‪"+ to_string(target_atm_id) +" ‫‪successfully‬‬";
+			str_to_log = "‫‪Bank: ATM " + to_string(source_atm_id) + " closed ‫‪"+ to_string(target_atm_id) +" successfully";
 			if(is_write_to_log)
 			{
 				logger.WriteToLogger(str_to_log);
@@ -412,7 +412,7 @@ void Bank::print_bank_status()
     for (const auto& pair : sorted_accounts)
     {
         accounts* account = pair.second;
-        string str_to_cout = "‫‪Account‬‬ ‫‪" + to_string(account->account_id) + ":‬‬ ‫‪Balance‬‬ ‫‪-‬‬ " + to_string(account->amount) + " ‫‪$,‬‬ ‫‪Account‬‬ ‫‪Password‬‬ ‫‪-‬‬ " + to_string(account->password);
+        string str_to_cout = "Account ‫‪" + to_string(account->account_id) + ": Balance - " + to_string(account->amount) + " $, Account Password - " + to_string(account->password);
         cout << str_to_cout << endl;
     }
 
@@ -520,7 +520,7 @@ void Bank::collect_texas_from_all()
 
 		// Cast result to int (truncating the decimal part)
 		curr_account->amount -= value_for_bank;
-		string str_to_logger = "‫‪Bank:‬‬ ‫‪commissions‬‬ ‫‪of‬‬ ‫‪" + to_string(commisionPercent) + " %‬‬ ‫‪were‬‬ ‫‪charged,‬‬ ‫‪bank‬‬ ‫‪gained‬‬ " +to_string(value_for_bank) + " ‫‪from‬‬ ‫‪account‬‬ ‫‪" +to_string(curr_account->account_id);
+		string str_to_logger = "Bank: commissions of " + to_string(commisionPercent) + " % were charged, bank gained " +to_string(value_for_bank) + " ‫‪from‬‬ ‫‪account‬‬ ‫‪" +to_string(curr_account->account_id);
 		logger.WriteToLogger(str_to_logger);
 		curr_account->reader_writer_user_account.writer_unlocker();
 	}
@@ -539,7 +539,7 @@ void Bank::check_and_apply_restore()
 		reader_writer_restore_req_list.writer_unlocker();
 		restore_status_from_remember(maxValueToRestore);
 		// Clear the list after reading the max value
-		string str_to_log = to_string(correspondingAtmId) + ":‬‬ ‫‪Rollback‬‬ ‫‪to " +to_string(maxValueToRestore)+ "‬‬ ‫‪bank‬‬ ‫‪iterations‬‬ ‫‪ago‬‬ ‫‪was‬‬ ‫‪completed‬‬ ‫‪successfully‬‬";
+		string str_to_log = to_string(correspondingAtmId) + ": Rollback to " +to_string(maxValueToRestore)+ " bank iterations ago was completed successfully";
 		logger.WriteToLogger(str_to_log);
 	}
   else{
